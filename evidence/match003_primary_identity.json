@@ -1,0 +1,20 @@
+{
+  "schema_version": "TPlusVerifiedIdentityLinks.0.1",
+  "generated_at_utc": "2026-10-26T17:03:39.991411+00:00",
+  "note_cn": "仅核实比赛身份与开球时间；不证明终场赛果。只有一个赛果来源，尚不能执行双来源终场核验。",
+  "links": [
+    {
+      "t_match_id": "t:2026-10-27:周一003",
+      "provider": "openligadb",
+      "provider_match_id": "85433",
+      "identity_verified": true,
+      "evidence_url": "https://www.laliga.com/en-ES/match/temporada-2026-2027-laliga-ea-sports-sevilla-fc-ca-osasuna-10",
+      "crosscheck_url": "https://sevillafc.es/actualidad/noticias/horario-sevilla-fc-ca-osasuna-laliga-2026-2027",
+      "provider_source_url": "https://api.openligadb.de/getmatchdata/85433",
+      "kickoff_utc": "2026-10-26T20:00:00+00:00",
+      "identity_validation": "same competition, home/away, round and kickoff, confirmed by LaLiga and Sevilla FC",
+      "verification_scope": "MATCH_IDENTITY_ONLY",
+      "score_verified": false
+    }
+  ]
+}

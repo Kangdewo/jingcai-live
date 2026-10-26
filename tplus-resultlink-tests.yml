@@ -1,0 +1,42 @@
+name: T+ v0.6.2 result linkage tests
+on:
+  push:
+    branches:
+      - feat/tplus-match-intelligence-v05
+    paths:
+      - 'tplus_resultlink/**'
+      - 'tests/test_tplus_resultlink.py'
+      - 'evidence/match003*'
+      - '.github/workflows/tplus-resultlink-tests.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tplus_resultlink/**'
+      - 'tests/test_tplus_resultlink.py'
+      - 'evidence/match003*'
+      - '.github/workflows/tplus-resultlink-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-resultlink:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check unit tests
+        run: python -m unittest discover -s tests -p 'test_tplus_resultlink.py' -v
+      - name: Check existing v0.6 tests
+        run: python -m unittest discover -s tests -p 'test_tplus_realdata.py' -v
+      - name: Offline prematch result check (no fake FT)
+        run: |
+          python -m tplus_resultlink.cli check \
+            --openliga-file evidence/match003_openliga_prematch.json \
+            --out-dir "${RUNNER_TEMP}/resultlink-test"
+          python -c 'import json,sys; p=json.load(open(sys.argv[1],encoding="utf-8")); assert not p["result_review"]["ft_verified"]; assert not p["research_market_baseline"]["evaluated"]' "${RUNNER_TEMP}/resultlink-test/latest_review.json"
+      - name: Ensure tracked files untouched
+        run: git diff --exit-code -- .
