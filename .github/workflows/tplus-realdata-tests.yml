@@ -1,0 +1,49 @@
+name: T+ v0.6 real data contract tests
+
+on:
+  push:
+    branches:
+      - feat/tplus-match-intelligence-v05
+    paths:
+      - '.github/workflows/tplus-realdata-tests.yml'
+      - 'tplus_realdata/**'
+      - 'tests/test_tplus_realdata.py'
+      - 'examples/fictional_*.json'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/tplus-realdata-tests.yml'
+      - 'tplus_realdata/**'
+      - 'tests/test_tplus_realdata.py'
+      - 'examples/fictional_*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-realdata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run v0.6 offline real-data contract tests
+        run: python -m unittest discover -s tests -p 'test_tplus_realdata.py' -v
+      - name: Smoke test fictional OpenLigaDB fixture
+        run: |
+          python -m tplus_realdata.cli normalize-fixture \
+            --provider openligadb \
+            --input examples/fictional_openligadb.json \
+            --observed-at 2026-10-26T12:00:00+00:00 \
+            --output "${RUNNER_TEMP}/fictional_normalized.json"
+          python -m json.tool "${RUNNER_TEMP}/fictional_normalized.json" > /dev/null
+      - name: Verify tracked repository files are unchanged
+        run: |
+          git diff --exit-code -- .
+          git diff --cached --exit-code -- .
