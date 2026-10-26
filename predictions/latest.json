@@ -1,6 +1,6 @@
 {
   "ai_agent_runs": [],
-  "generated_at_utc": "2026-10-26T12:20:49.631922+00:00",
+  "generated_at_utc": "2026-10-26T14:54:13.269693+00:00",
   "independent_ai_agents_configured": false,
   "limitations": [
     "No independent team xG or verified lineup features in public T feed",
@@ -15,23 +15,23 @@
         "Market-implied baseline only; NO independent xG, form or verified lineups",
         "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
       ],
-      "feed_generated_at_utc": "2026-10-26T11:35:26+00:00",
-      "forecast_recorded_at_utc": "2026-10-26T12:20:49.631922+00:00",
+      "feed_generated_at_utc": "2026-10-26T14:48:50+00:00",
+      "forecast_recorded_at_utc": "2026-10-26T14:54:13.269693+00:00",
       "home": "圣克拉拉",
       "independent_of_market": false,
-      "information_cutoff_utc": "2026-10-26T11:35:26+00:00",
-      "input_hash": "c274c62fdab9c006b38d",
+      "information_cutoff_utc": "2026-10-26T14:48:50+00:00",
+      "input_hash": "f8255deb1d5c8c797df7",
       "is_betting_advice": false,
       "kickoff_utc": "2026-10-26T18:45:00+00:00",
-      "lead_minutes_at_recording": 384.17,
+      "lead_minutes_at_recording": 230.78,
       "league": "葡超",
-      "market_overround": 0.128644,
+      "market_overround": 0.129466,
       "model_class": "odds_market_baseline",
       "model_id": "market_devig_v1",
       "p_1x2": {
-        "away": 0.72624493,
-        "draw": 0.1789937,
-        "home": 0.09476137
+        "away": 0.75031705,
+        "draw": 0.16245397,
+        "home": 0.08722898
       },
       "schema_version": "0.4",
       "score_distribution": null,
@@ -39,7 +39,7 @@
       "t_match_id": "t:2026-10-27:周一001",
       "top1": "away",
       "total_goals_distribution": null,
-      "upstream_local_time": "2026-10-26 19:34:15",
+      "upstream_local_time": "2026-10-26 22:46:42",
       "upstream_time_zone_assumed": "Asia/Shanghai",
       "xg_source": null
     },
@@ -49,23 +49,23 @@
         "Market-implied baseline only; NO independent xG, form or verified lineups",
         "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
       ],
-      "feed_generated_at_utc": "2026-10-26T11:35:26+00:00",
-      "forecast_recorded_at_utc": "2026-10-26T12:20:49.631922+00:00",
+      "feed_generated_at_utc": "2026-10-26T14:48:50+00:00",
+      "forecast_recorded_at_utc": "2026-10-26T14:54:13.269693+00:00",
       "home": "布洛涅",
       "independent_of_market": false,
-      "information_cutoff_utc": "2026-10-26T11:35:26+00:00",
-      "input_hash": "da92474d89b353bf7455",
+      "information_cutoff_utc": "2026-10-26T14:48:50+00:00",
+      "input_hash": "ae5eae464ede7eaa21e8",
       "is_betting_advice": false,
       "kickoff_utc": "2026-10-26T19:45:00+00:00",
-      "lead_minutes_at_recording": 444.17,
+      "lead_minutes_at_recording": 290.78,
       "league": "法乙",
-      "market_overround": 0.128856,
+      "market_overround": 0.129629,
       "model_class": "odds_market_baseline",
       "model_id": "market_devig_v1",
       "p_1x2": {
-        "away": 0.49214027,
-        "draw": 0.26844015,
-        "home": 0.23941959
+        "away": 0.50585516,
+        "draw": 0.27663954,
+        "home": 0.21750529
       },
       "schema_version": "0.4",
       "score_distribution": null,
@@ -73,7 +73,7 @@
       "t_match_id": "t:2026-10-27:周一002",
       "top1": "away",
       "total_goals_distribution": null,
-      "upstream_local_time": "2026-10-26 19:34:15",
+      "upstream_local_time": "2026-10-26 22:46:42",
       "upstream_time_zone_assumed": "Asia/Shanghai",
       "xg_source": null
     },
@@ -83,23 +83,23 @@
         "Market-implied baseline only; NO independent xG, form or verified lineups",
         "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
       ],
-      "feed_generated_at_utc": "2026-10-26T11:35:26+00:00",
-      "forecast_recorded_at_utc": "2026-10-26T12:20:49.631922+00:00",
+      "feed_generated_at_utc": "2026-10-26T14:48:50+00:00",
+      "forecast_recorded_at_utc": "2026-10-26T14:54:13.269693+00:00",
       "home": "塞维利亚",
       "independent_of_market": false,
-      "information_cutoff_utc": "2026-10-26T11:35:26+00:00",
-      "input_hash": "e0a1b93b377e9c7606c4",
+      "information_cutoff_utc": "2026-10-26T14:48:50+00:00",
+      "input_hash": "6dec67769111602fc427",
       "is_betting_advice": false,
       "kickoff_utc": "2026-10-26T20:00:00+00:00",
-      "lead_minutes_at_recording": 459.17,
+      "lead_minutes_at_recording": 305.78,
       "league": "西甲",
-      "market_overround": 0.129828,
+      "market_overround": 0.12991,
       "model_class": "odds_market_baseline",
       "model_id": "market_devig_v1",
       "p_1x2": {
-        "away": 0.18993359,
-        "draw": 0.26032074,
-        "home": 0.54974567
+        "away": 0.18210422,
+        "draw": 0.26818986,
+        "home": 0.54970592
       },
       "schema_version": "0.4",
       "score_distribution": null,
@@ -107,7 +107,7 @@
       "t_match_id": "t:2026-10-27:周一003",
       "top1": "home",
       "total_goals_distribution": null,
-      "upstream_local_time": "2026-10-26 19:34:15",
+      "upstream_local_time": "2026-10-26 22:46:42",
       "upstream_time_zone_assumed": "Asia/Shanghai",
       "xg_source": null
     },
@@ -117,23 +117,23 @@
         "Market-implied baseline only; NO independent xG, form or verified lineups",
         "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
       ],
-      "feed_generated_at_utc": "2026-10-26T11:35:26+00:00",
-      "forecast_recorded_at_utc": "2026-10-26T12:20:49.631922+00:00",
+      "feed_generated_at_utc": "2026-10-26T14:48:50+00:00",
+      "forecast_recorded_at_utc": "2026-10-26T14:54:13.269693+00:00",
       "home": "弗拉门戈",
       "independent_of_market": false,
-      "information_cutoff_utc": "2026-10-26T11:35:26+00:00",
-      "input_hash": "8c0a521d80070364c560",
+      "information_cutoff_utc": "2026-10-26T14:48:50+00:00",
+      "input_hash": "30c4cde283fcc0ba1734",
       "is_betting_advice": false,
       "kickoff_utc": "2026-10-26T23:00:00+00:00",
-      "lead_minutes_at_recording": 639.17,
+      "lead_minutes_at_recording": 485.78,
       "league": "巴甲",
-      "market_overround": 0.129746,
+      "market_overround": 0.129155,
       "model_class": "odds_market_baseline",
       "model_id": "market_devig_v1",
       "p_1x2": {
-        "away": 0.08940959,
-        "draw": 0.14752582,
-        "home": 0.76306459
+        "away": 0.09036915,
+        "draw": 0.1526927,
+        "home": 0.75693816
       },
       "schema_version": "0.4",
       "score_distribution": null,
@@ -141,7 +141,7 @@
       "t_match_id": "t:2026-10-27:周一004",
       "top1": "home",
       "total_goals_distribution": null,
-      "upstream_local_time": "2026-10-26 19:34:15",
+      "upstream_local_time": "2026-10-26 22:46:42",
       "upstream_time_zone_assumed": "Asia/Shanghai",
       "xg_source": null
     }
@@ -155,5 +155,5 @@
   ],
   "research_only": true,
   "schema_version": "0.4",
-  "source_feed_generated_at_utc": "2026-10-26T11:35:26+00:00"
+  "source_feed_generated_at_utc": "2026-10-26T14:48:50+00:00"
 }
