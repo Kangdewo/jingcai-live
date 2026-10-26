@@ -1,0 +1,52 @@
+name: T+ v0.5 match intelligence tests
+
+on:
+  push:
+    branches:
+      - feat/tplus-match-intelligence-v05
+    paths:
+      - '.github/workflows/tplus-intelligence-tests.yml'
+      - 'tplus_intelligence/**'
+      - 'tests/test_tplus_intelligence.py'
+      - 'examples/synthetic_input.json'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/tplus-intelligence-tests.yml'
+      - 'tplus_intelligence/**'
+      - 'tests/test_tplus_intelligence.py'
+      - 'examples/synthetic_input.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-intelligence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run intelligence unit tests
+        run: python -m unittest discover -s tests -p 'test_tplus_intelligence.py' -v
+      - name: Build synthetic match dossier
+        run: python -m tplus_intelligence.cli --input examples/synthetic_input.json --output "${RUNNER_TEMP}/tplus-match-dossier.json"
+      - name: Verify dossier schema and synthetic-only markers
+        env:
+          DOSSIER_PATH: ${{ runner.temp }}/tplus-match-dossier.json
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads(Path(os.environ["DOSSIER_PATH"]).read_text(encoding="utf-8"))
+          assert result["coverage"]["expected"] == 16
+          assert result["coverage"]["verified_as_of"] == 0
+          assert result["media"]["eligible_unique_articles"] == 2
+          print("Synthetic dossier verification: OK")
+          PY
