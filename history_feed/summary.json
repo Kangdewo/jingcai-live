@@ -1,0 +1,34 @@
+{
+ "schema_version": "TPlusHistoryBridge.1",
+ "generated_at_utc": "2026-10-26T13:21:00.100460Z",
+ "dataset": {
+  "matches": 41514,
+  "final_score_count": 41514,
+  "date_min": "2012-03-10",
+  "date_max": "2026-08-03",
+  "market_tiers": {
+   "C_PARTIAL_CLOSE_PROXY": 30128,
+   "B_FULL_CLOSE_PROXY": 10774,
+   "D_OUTCOME_ONLY": 612
+  },
+  "historic_model_predictions": 16212,
+  "unique_model_games": 5404
+ },
+ "history_market_time_quality": "closing_proxy_untimed",
+ "public_aggregate_only": true,
+ "prediction_direct_use": false,
+ "reason": "Aggregate includes results known only after matches; use time-restricted queries for forecasting",
+ "available_factual_results": [
+  "fulltime_1x2",
+  "fulltime_exact_score",
+  "fulltime_total_goals"
+ ],
+ "absent_official_legacy_markets": [
+  "Jingcai_integer_handicap_prices",
+  "Jingcai_exact_score_prices",
+  "half_time_full_time"
+ ],
+ "no_real_xg": true,
+ "source_pack_sha256": "db50934b9a276617f5b408f685e6eb097ce24f8c58a51afe1cb654299025d01d",
+ "license_note": "Original raw data has unverified public redistribution rights; this public pack holds aggregate statistics only."
+}

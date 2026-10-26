@@ -1,0 +1,86 @@
+{
+  "schema_version": "TPlusLegacyBacktestSummary.1",
+  "source": "historical replay model rows, not independently timestamped pre-match freezes",
+  "research_only": true,
+  "model_metrics": {
+    "001": {
+      "model_id": "historical_001",
+      "row_count": 5404,
+      "metrics": {
+        "spf_hit": {
+          "mean": 0.5185,
+          "n": 5404
+        },
+        "score_hit": {
+          "mean": 0.24186,
+          "n": 5404
+        },
+        "total_hit": {
+          "mean": 0.46688,
+          "n": 5404
+        },
+        "ou_hit": {
+          "mean": 0.57457,
+          "n": 5404
+        },
+        "ah_hit": {
+          "mean": 0.53414,
+          "n": 5404
+        }
+      }
+    },
+    "002": {
+      "model_id": "historical_002",
+      "row_count": 5404,
+      "metrics": {
+        "spf_hit": {
+          "mean": 0.5185,
+          "n": 5404
+        },
+        "score_hit": {
+          "mean": 0.24482,
+          "n": 5404
+        },
+        "total_hit": {
+          "mean": 0.46947,
+          "n": 5404
+        },
+        "ou_hit": {
+          "mean": 0.57402,
+          "n": 5404
+        },
+        "ah_hit": {
+          "mean": 0.53266,
+          "n": 5404
+        }
+      }
+    },
+    "003": {
+      "model_id": "historical_003",
+      "row_count": 5404,
+      "metrics": {
+        "spf_hit": {
+          "mean": 0.5185,
+          "n": 5404
+        },
+        "score_hit": {
+          "mean": 0.24186,
+          "n": 5404
+        },
+        "total_hit": {
+          "mean": 0.46688,
+          "n": 5404
+        },
+        "ou_hit": {
+          "mean": 0.57457,
+          "n": 5404
+        },
+        "ah_hit": {
+          "mean": 0.53359,
+          "n": 5404
+        }
+      }
+    }
+  },
+  "caution": "AH here is Asian handicap, not Chinese Jingcai integer handicap. score_hit is historic old-model recorded score selection hit rate, not modern 005. Performance is retrospective; unverified pre-match freeze; cannot call realized deployment record."
+}
