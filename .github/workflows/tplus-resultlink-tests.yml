@@ -1,0 +1,64 @@
+name: T+ v0.6.2 result linkage tests
+
+on:
+  push:
+    branches:
+      - feat/tplus-match-intelligence-v05
+    paths:
+      - '.github/workflows/tplus-resultlink-tests.yml'
+      - 'tplus_resultlink/**'
+      - 'tests/test_tplus_resultlink.py'
+      - 'evidence/match003_*.json'
+      - 'tplus_realdata/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/tplus-resultlink-tests.yml'
+      - 'tplus_resultlink/**'
+      - 'tests/test_tplus_resultlink.py'
+      - 'evidence/match003_*.json'
+      - 'tplus_realdata/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-resultlink:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run v0.6.2 result linkage tests
+        run: python -m unittest discover -s tests -p 'test_tplus_resultlink.py' -v
+      - name: Offline check from archived prematch evidence
+        env:
+          OUT_DIR: ${{ runner.temp }}/tplus-resultlink-check
+        run: |
+          python -m tplus_resultlink.cli check \
+            --config evidence/match003_config.json \
+            --evidence evidence/match003_prematch_evidence.json \
+            --openliga-file evidence/match003_openliga_prematch.json \
+            --out-dir "$OUT_DIR"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report = json.loads((Path(os.environ['OUT_DIR']) / 'latest_review.json').read_text(encoding='utf-8'))
+          assert report['t_match_id'] == 't:2026-10-27:周一003'
+          assert report['result_review']['ft_verified'] is False
+          assert report['result_review']['ht_verified'] is False
+          assert report['research_market_baseline']['evaluated'] is False
+          assert report['formal_model_005_evaluation'] is None
+          assert report['training_eligible'] is False
+          print('Prematch evidence not incorrectly promoted to verified result: OK')
+          PY
+      - name: Verify tracked source files unchanged
+        run: |
+          git diff --exit-code -- .
+          git diff --cached --exit-code -- .
