@@ -1,0 +1,45 @@
+{
+  "notice": "SYNTHETIC TEST ONLY; NOT A REAL MATCH, NO REAL MEDIA INFERENCE",
+  "match": {
+    "canonical_match_id": "test:2030-01-03:001",
+    "home": "演示主队",
+    "away": "演示客队",
+    "kickoff_at": "2030-01-03T12:00:00+00:00"
+  },
+  "information_cutoff_at": "2030-01-03T10:00:00+00:00",
+  "sections": {},
+  "media_articles": [
+    {
+      "match_id": "test:2030-01-03:001",
+      "source_url": "https://news.example.com/story/1",
+      "publisher_id": "demonstration_outlet_1",
+      "published_at_utc": "2030-01-03T08:00:00+00:00",
+      "observed_at_utc": "2030-01-03T08:20:00+00:00",
+      "relevance": true,
+      "explicit_match_pick": "home",
+      "pick_evidence": "SYNTHETIC: explicitly predicts a home win.",
+      "syndication_origin_id": "syndicated_demo_story_1",
+      "tone_home": "positive",
+      "tone_away": "neutral",
+      "assessment_model": "human_demo",
+      "assessment_version": "0",
+      "evidence_verified": false
+    },
+    {
+      "match_id": "test:2030-01-03:001",
+      "source_url": "https://mirror.example.com/story/1",
+      "publisher_id": "demonstration_outlet_2",
+      "published_at_utc": "2030-01-03T08:01:00+00:00",
+      "observed_at_utc": "2030-01-03T08:30:00+00:00",
+      "relevance": true,
+      "explicit_match_pick": "home",
+      "pick_evidence": "SYNTHETIC: the same syndicated pick.",
+      "syndication_origin_id": "syndicated_demo_story_1",
+      "tone_home": "positive",
+      "tone_away": "neutral",
+      "assessment_model": "human_demo",
+      "assessment_version": "0",
+      "evidence_verified": false
+    }
+  ]
+}
