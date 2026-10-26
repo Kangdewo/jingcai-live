@@ -37,7 +37,10 @@ jobs:
           set -euo pipefail
           git config user.name 'tplus-analysis[bot]'
           git config user.email 'tplus-analysis[bot]@users.noreply.github.com'
-          git add predictions/analysis_latest.json predictions/analysis_status.json predictions/analysis_records/
+          git add -- predictions/analysis_latest.json predictions/analysis_status.json
+          if [ -d predictions/analysis_records ]; then
+            git add -- predictions/analysis_records/
+          fi
           if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
           git commit -m 'data(tplus): five-market analysis with as-of historical league priors'
           for i in 1 2 3 4; do
@@ -45,3 +48,4 @@ jobs:
             sleep 8
           done
           exit 1
+
