@@ -1,0 +1,34 @@
+{
+  "away": "卡利亚里",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-10-27T14:53:14+00:00",
+  "forecast_recorded_at_utc": "2026-10-27T14:53:14.079376+00:00",
+  "home": "罗马",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-10-27T14:53:14+00:00",
+  "input_hash": "862b19e40d195e95d9b0",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-10-27T19:45:00+00:00",
+  "lead_minutes_at_recording": 291.77,
+  "league": "意甲",
+  "market_overround": 0.12851,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.08439275,
+    "draw": 0.15823641,
+    "home": 0.75737084
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "2009",
+  "t_match_id": "t:2026-10-28:周二009",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-10-27 22:47:43",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
