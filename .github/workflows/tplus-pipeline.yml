@@ -63,14 +63,14 @@ jobs:
         run: python tplus_cloud/build.py
       - name: Generate pre-match market baseline and optional AI shadow forecasts
         env:
-          # Default ON, but calls occur only if at least one provider secret is configured.
-          # Set repository variable TPLUS_ENABLE_AI=0 to disable; API usage may incur separate charges.
-          TPLUS_ENABLE_AI: '1'
+          # Paid API calls require explicit opt-in via Actions repository variable TPLUS_ENABLE_AI=1.
+          # Default OFF to avoid unexpected recurring API charges.
+          TPLUS_ENABLE_AI: ${{ vars.TPLUS_ENABLE_AI || '0' }}
           TPLUS_AI_MAX_CALLS_PER_RUN: ${{ vars.TPLUS_AI_MAX_CALLS_PER_RUN || '2' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          TPLUS_OPENAI_MODEL: ${{ vars.TPLUS_OPENAI_MODEL || 'gpt-6-luna' }}
+          TPLUS_OPENAI_MODEL: ${{ vars.TPLUS_OPENAI_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TPLUS_GEMINI_MODEL: ${{ vars.TPLUS_GEMINI_MODEL || 'gemini-3.8-flash' }}
+          TPLUS_GEMINI_MODEL: ${{ vars.TPLUS_GEMINI_MODEL }}
         run: python tplus_predict/runner.py
       - name: Join five markets with strictly prior-season league aggregates
         run: python -m tplus_predict.market_analysis
