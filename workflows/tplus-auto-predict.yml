@@ -1,0 +1,49 @@
+name: T+ automated prediction baseline
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tplus-predict-publish
+  cancel-in-progress: false
+jobs:
+  predict:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic tests
+        run: python -m unittest discover -s tests -p 'test_autopredict.py' -v
+      - name: Run optional AI adapter tests
+        run: python -m unittest discover -s tests -p 'test_ai_adapters.py' -v
+      - name: Produce pre-match baseline, optional AI experiments and immutable records
+        env:
+          TPLUS_ENABLE_AI: ${{ vars.TPLUS_ENABLE_AI || '0' }}
+          TPLUS_AI_MAX_CALLS_PER_RUN: ${{ vars.TPLUS_AI_MAX_CALLS_PER_RUN || '2' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TPLUS_OPENAI_MODEL: ${{ vars.TPLUS_OPENAI_MODEL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TPLUS_GEMINI_MODEL: ${{ vars.TPLUS_GEMINI_MODEL }}
+        run: python tplus_predict/runner.py
+      - name: Commit research predictions and evaluation (not secrets)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-predict[bot]'
+          git config user.email 'tplus-predict[bot]@users.noreply.github.com'
+          git add predictions/
+          if git diff --cached --quiet; then echo 'No change'; exit 0; fi
+          git commit -m 'data(tplus): publish timestamped pre-match model baseline'
+          for i in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 8
+          done
+          exit 1

@@ -1,0 +1,43 @@
+name: T+ history five-market analysis
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tplus-history-analysis-publish
+  cancel-in-progress: false
+jobs:
+  history-analysis:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run five-market history tests
+        run: python -m unittest discover -s tests -p 'test_market_analysis.py' -v
+      - name: Join historical league priors with current T market probabilities
+        run: python -m tplus_predict.market_analysis
+      - name: Publish research analysis JSON
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-analysis[bot]'
+          git config user.email 'tplus-analysis[bot]@users.noreply.github.com'
+          git add -- predictions/analysis_latest.json predictions/analysis_status.json
+          if [ -d predictions/analysis_records ]; then
+            git add -- predictions/analysis_records/
+          fi
+          if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
+          git commit -m 'data(tplus): five-market analysis with as-of historical league priors'
+          for i in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 8
+          done
+          exit 1
