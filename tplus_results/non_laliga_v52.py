@@ -104,7 +104,7 @@ def safe_err(exc):
 def fetch(url,token=None):
     # Endpoints built internally; no user-supplied URLs allowed.
     if not (url.startswith(FD_BASE+'?') or (url.startswith(ESPN_BASE) and re.fullmatch(
-            r'https://site\.api\.espn\.com/apis/site/v2/sports/soccer/(ita\.1|ger\.dfb_pokal|eng\.league_cup)/scoreboard\?dates=[0-9]{8}-[0-9]{8}&limit=100',url))):
+            r'https://site\.api\.espn\.com/apis/site/v2/sports/soccer/(ita\.1|ger\.dfb_pokal|eng\.league_cup)/scoreboard\?dates=[0-9]{8}&limit=100',url))):
         raise ValueError('NON_ALLOWLISTED_URL')
     headers={'Accept':'application/json','User-Agent':'TPlus-NonLaLigaV52/1.0'}
     if token and url.startswith(FD_BASE):headers['X-Auth-Token']=token
@@ -156,7 +156,10 @@ def schedule_urls(fix):
         b=max(times).date()+dt.timedelta(days=1)
         fd_code,espn_code=PROVIDERS[league]
         if (b-a).days>10:continue  # safely limited query horizon
-        out[(league,'espn')]=ESPN_BASE+espn_code+'/scoreboard?dates='+a.strftime('%Y%m%d')+'-'+b.strftime('%Y%m%d')+'&limit=100'
+        # ESPN sometimes rejects ranges with 400; fetch one UTC calendar day per request.
+        for n in range((b-a).days+1):
+            day=a+dt.timedelta(days=n)
+            out[(league,'espn',day.isoformat())]=ESPN_BASE+espn_code+'/scoreboard?dates='+day.strftime('%Y%m%d')+'&limit=100'
         if fd_code:
             out[(league,'football_data')]=FD_BASE+'?'+urllib.parse.urlencode({'dateFrom':a.isoformat(),'dateTo':b.isoformat()})
     return out
@@ -230,9 +233,16 @@ def execute(root=ROOT,*,now=None,token=None,fetcher=fetch):
             arr=obj.get('matches' if name[1]=='football_data' else 'events')
             if not isinstance(arr,list):raise ValueError('BAD_SOURCE_SCHEDULE_SHAPE')
             if len(arr)>MAX_SOURCE_GAMES:raise ValueError('SOURCE_LIST_LIMIT_EXCEEDED')
-            responses[name]=[x for x in (parse_fd(y) if name[1]=='football_data' else parse_espn(y) for y in arr) if x]
+            parsed=[x for x in (parse_fd(y) if name[1]=='football_data' else parse_espn(y) for y in arr) if x]
+            label=name[:2]
+            if name[1]=='espn':
+                # ESPN broadcast days overlap. Keep exactly one event per provider match ID.
+                by_id={str(item['match_id']):item for item in responses.get(label,[])+parsed if safe_id(item.get('match_id'))}
+                responses[label]=list(by_id.values())
+            else:
+                responses[label]=parsed
         except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError,RuntimeError,ValueError,TypeError,KeyError,OSError,json.JSONDecodeError) as exc:
-            errors[name]=safe_err(exc)
+            errors[name[:2]]=safe_err(exc)
     configs=read_json(root/'predictions'/'non_laliga_links_approved.json',{'links':[]})
     approvals=configs.get('links',[]) if isinstance(configs,dict) else []
     if not isinstance(approvals,list) or len(approvals)>60:raise ValueError('INVALID_APPROVAL_LINKS')

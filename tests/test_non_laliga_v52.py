@@ -112,7 +112,10 @@ class Check(unittest.TestCase):
             self.assertEqual([],f);self.assertEqual([MATCH['t_match_id']],c)
     def test_retrieval_links_bounded(self):
         src=schedule_urls([MATCH])
-        self.assertEqual({('意甲','espn'),('意甲','football_data')},set(src))
+        self.assertEqual(1,sum(k[1]=='football_data' for k in src))
+        self.assertEqual(3,sum(k[1]=='espn' for k in src))
+        self.assertTrue(all('dates=' in v and '-' not in v.split('dates=',1)[1].split('&',1)[0]
+                            for k,v in src.items() if k[1]=='espn'))
         self.assertIn('dateFrom=',src[('意甲','football_data')])
 
 if __name__=='__main__':unittest.main()
