@@ -1,33 +1,10 @@
 {
   "schema_version": "TPlusResultDiagnostics.v5.1",
-  "checked_at_utc": "2026-10-27T14:50:19.259455+00:00",
+  "checked_at_utc": "2026-10-27T22:34:20.460996+00:00",
   "api_secret_present": true,
-  "approved_links": 1,
-  "probed_links": 1,
-  "matches": [
-    {
-      "t_match_id": "t:2026-10-27:周一003",
-      "sources": {
-        "openligadb": {
-          "state": "SOURCE_STALE_NOT_FINISHED",
-          "finished": false,
-          "score": null,
-          "last_updated": "2026-10-17T09:08:31.18",
-          "age_hours_approx": 245.7,
-          "updated_timezone": "UNSPECIFIED__AGE_APPROXIMATE"
-        },
-        "football_data": {
-          "state": "HTTP_ERROR",
-          "http_status": 400,
-          "hint": "REQUEST_INVALID"
-        }
-      },
-      "alternative": {
-        "state": "ALT_ID_REVIEW_REQUIRED"
-      },
-      "automatic_result_certified_by_this_module": false
-    }
-  ],
+  "approved_links": 0,
+  "probed_links": 0,
+  "matches": [],
   "certification_policy": "DIAGNOSTIC_ONLY_NO_FORMAL_RESULT_PROMOTION",
   "note_cn": "仅诊断外部接口，独立源候选不等于正式双源核验；此文件不改变预测、返奖或正式赛果。"
 }

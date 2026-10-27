@@ -1,19 +1,9 @@
 {
   "api_key_configured": true,
-  "approved_links": 1,
-  "checked_at_utc": "2026-10-27T14:50:17.858693+00:00",
-  "checked_links": 1,
-  "checks": [
-    {
-      "error_type": "HTTPError",
-      "source_ids": {
-        "football_data": 564721,
-        "openligadb": 85433
-      },
-      "status": "SOURCE_FETCH_OR_FORMAT_ERROR",
-      "t_match_id": "t:2026-10-27:周一003"
-    }
-  ],
+  "approved_links": 0,
+  "checked_at_utc": "2026-10-27T22:34:20.388577+00:00",
+  "checked_links": 0,
+  "checks": [],
   "dual_source_verified_results": 0,
   "eligible_formal_pre_match_evaluations": 0,
   "note_cn": "双来源比分一致只是比赛结果核验；只有赛前15分钟内真实冻结且核验合法的预测才计入正式模型准确率。票据现金返奖需独立核对。",
