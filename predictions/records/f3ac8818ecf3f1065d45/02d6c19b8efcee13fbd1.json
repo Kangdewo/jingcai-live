@@ -1,0 +1,34 @@
+{
+  "away": "全北现代",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-10-27T08:42:50+00:00",
+  "forecast_recorded_at_utc": "2026-10-27T08:42:50.112140+00:00",
+  "home": "北京国安",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-10-27T08:42:50+00:00",
+  "input_hash": "02d6c19b8efcee13fbd1",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-10-27T12:15:00+00:00",
+  "lead_minutes_at_recording": 212.16,
+  "league": "亚冠精英",
+  "market_overround": 0.129866,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.34844924,
+    "draw": 0.25287459,
+    "home": 0.39867616
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "2003",
+  "t_match_id": "t:2026-10-27:周二003",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-10-27 16:42:32",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}

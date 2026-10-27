@@ -1,0 +1,34 @@
+{
+  "away": "法兰克福",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-10-27T08:42:50+00:00",
+  "forecast_recorded_at_utc": "2026-10-27T08:42:50.112140+00:00",
+  "home": "汉堡",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-10-27T08:42:50+00:00",
+  "input_hash": "1f0af724946fd142c31e",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-10-27T17:00:00+00:00",
+  "lead_minutes_at_recording": 497.16,
+  "league": "德国杯",
+  "market_overround": 0.129866,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.4359906,
+    "draw": 0.24791622,
+    "home": 0.31609318
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "2004",
+  "t_match_id": "t:2026-10-28:周二004",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-10-27 16:42:32",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
