@@ -1,0 +1,43 @@
+name: T+ daily ticket ledger index (no paid API)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/data/ledger/days/*.json'
+permissions:
+  contents: write
+concurrency:
+  group: tplus-daily-ledger-index
+  cancel-in-progress: false
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check public ledger source contracts
+        run: python -m unittest discover -s tests -p 'test_ledger_v4.py' -v
+      - name: Rebuild daily/cumulative net profit index
+        run: python -m tplus_cloud.build_ledger_index
+      - name: Publish validated index only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-ledger[bot]'
+          git config user.email 'tplus-ledger[bot]@users.noreply.github.com'
+          git add docs/data/ledger/index.json
+          if git diff --cached --quiet; then echo 'Index unchanged'; exit 0; fi
+          git commit -m 'data(ledger): update sanitized daily index'
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
