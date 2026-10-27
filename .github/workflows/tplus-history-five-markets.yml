@@ -1,9 +1,6 @@
 name: T+ history five-market analysis
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["T+ automated prediction baseline"]
-    types: [completed]
 permissions:
   contents: write
 concurrency:
@@ -11,11 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   history-analysis:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.head_branch == 'main' &&
-       github.event.workflow_run.head_repository.full_name == github.repository)
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 7
     steps:
@@ -48,4 +41,3 @@ jobs:
             sleep 8
           done
           exit 1
-
