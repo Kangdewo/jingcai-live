@@ -1,5 +1,28 @@
 {
   "schema_version": "TPlusResultLinks.v5",
-  "links": [],
-  "note_cn": "仅手工批准并核查双方真实球队ID、比赛ID、开球时间和官方证据后才添加。不能由模糊名称自动批准比赛。"
+  "note_cn": "2026-10-27首场核验试运行：本文件仅在你核对并主动上传后才代表人工批准；历史本地证据给出的API映射必须由线上程序逐字段再核实，验证失败不得入库。",
+  "links": [
+    {
+      "approved": true,
+      "t_match_id": "t:2026-10-27:周一003",
+      "home": "塞维利亚",
+      "away": "奥萨苏纳",
+      "kickoff_utc": "2026-10-26T20:00:00+00:00",
+      "identity_evidence_urls": [
+        "https://www.laliga.com/en-IN/match/temporada-2026-2027-laliga-ea-sports-sevilla-fc-ca-osasuna-10",
+        "https://sevillafc.es/en/actualidad/noticias/match-report-osasuna-h-2627"
+      ],
+      "openligadb": {
+        "match_id": 85433,
+        "home_team_id": 1139,
+        "away_team_id": 1279
+      },
+      "football_data": {
+        "match_id": 564721,
+        "home_team_id": 559,
+        "away_team_id": 79
+      },
+      "approval_note_cn": "比赛身份与比分有联赛及俱乐部官方证据；API ID来自此前本地匹配候选和测试设定，并未通过本次联网直接验证。若API返回ID/球队/开球冲突、无权限或未完赛，应保留待核验状态，绝不可据此计算正式模型胜率。"
+    }
+  ]
 }
