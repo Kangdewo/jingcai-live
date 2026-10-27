@@ -1,0 +1,43 @@
+name: T+ v5.2 non-LaLiga fixture discovery and result gate
+on:
+  workflow_dispatch:
+  schedule:
+    # Four checks per day UTC; independent from market-odds updates.
+    - cron: '22 1,7,13,19 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: tplus-v52-non-laliga
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Contract tests (no external network; no invented scores)
+        run: python -m unittest discover -s tests -p 'test_non_laliga_v52.py' -v
+      - name: Discover non-LaLiga fixtures and verify manually approved double-source results
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python -m tplus_results.non_laliga_v52
+      - name: Publish diagnostic data only (no forecasts or ticket writes)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-non-laliga[bot]'
+          git config user.email 'tplus-non-laliga[bot]@users.noreply.github.com'
+          git add docs/data/results/non_laliga_discovery.json docs/data/results/non_laliga_verified.json
+          if git diff --cached --quiet; then echo 'No report changes'; exit 0; fi
+          git commit -m 'data(tplus): v5.2 non-LaLiga fixture audit'
+          for try in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 8
+          done
+          exit 1
