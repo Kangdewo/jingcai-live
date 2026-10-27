@@ -2,7 +2,7 @@ name: T+ v5 two-provider result verification
 on:
   workflow_dispatch:
   schedule:
-    # UTC, every 6 hours; does not depend on whether current odds are fresh.
+    # UTC: six-hourly, independent of current odds freshness.
     - cron: '37 0,6,12,18 * * *'
 permissions:
   contents: write
@@ -21,21 +21,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Test dual-provider verification and fail-closed gating
+      - name: Test strict two-provider verification and fail-closed gating
         run: python -m unittest discover -s tests -p 'test_result_verification_v5.py' -v
+      - name: Test v5.1 independent source diagnostics and no-promotion rules
+        run: python -m unittest discover -s tests -p 'test_result_diagnostics_v51.py' -v
       - name: Cross-check approved fixture identities, FT scores and frozen predictions
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python -m tplus_results.verify
-      - name: Commit verified scores and audit status only
+      - name: Inspect each API independently and check alternative candidate (read-only)
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python -m tplus_results.diagnose_v51
+      - name: Commit strict results and source diagnostics; never update forecasts
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'tplus-result-v5[bot]'
           git config user.email 'tplus-result-v5[bot]@users.noreply.github.com'
-          git add predictions/results_verified.json predictions/evaluation.json docs/data/results/status.json
+          git add predictions/results_verified.json predictions/evaluation.json docs/data/results/status.json docs/data/results/diagnostics.json
           if git diff --cached --quiet; then echo 'No data changed'; exit 0; fi
-          git commit -m 'data(tplus): two-provider result verification audit'
+          git commit -m 'data(tplus): audited FT status and v5.1 source diagnostics'
           for i in 1 2 3 4; do
             if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
             sleep 8
