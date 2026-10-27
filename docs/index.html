@@ -4,21 +4,186 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1220">
-<title>T+ 足球数据中枢</title>
+<title>T+ 足球数据中枢｜紧凑版</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1220;--panel:#121d2e;--panel2:#17253a;--line:#293b52;--text:#e8eef7;--muted:#94a8bf;--cyan:#69d5d0;--amber:#f1c777;--red:#ff8585;--green:#7fe0b2}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#172d43 0%,var(--bg) 55%);color:var(--text);font:14px/1.5 "Microsoft YaHei","PingFang SC",Arial,sans-serif}
-a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1400px;margin:auto;padding:22px}
-header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}.brand{display:flex;gap:12px;align-items:center}.logo{width:42px;height:42px;border:1px solid #4b8f9a;border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-weight:800;font-size:18px;background:#102936}.title{font-size:21px;font-weight:700;letter-spacing:1px}.subtitle{font-size:12px;color:var(--muted);margin-top:3px}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-button,.button{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--panel2);color:var(--text);cursor:pointer;font:inherit}.button:hover,button:hover{border-color:var(--cyan)}.primary{background:#163c47;border-color:#2c7880}
-.banner{border:1px solid #6a5530;background:#2a2418;color:#f5d99a;border-radius:12px;padding:12px 14px;margin-bottom:16px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;padding:8px;background:#0e1827;border:1px solid var(--line);border-radius:14px;margin-bottom:16px;position:sticky;top:0;z-index:5}
-.nav button{border-color:transparent;background:transparent;color:var(--muted);padding:9px 12px}.nav button.active{background:#183b48;color:#eaffff;border-color:#316d77}
-.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-width:0;background:linear-gradient(145deg,rgba(22,35,54,.98),rgba(15,26,42,.98));border:1px solid var(--line);border-radius:16px;padding:16px}.card h3{font-size:14px;margin:0 0 10px;color:#cfe0f2}.big{font-size:26px;font-weight:700;letter-spacing:.2px;overflow-wrap:anywhere}.small{font-size:12px;color:var(--muted)}.muted{color:var(--muted)}.ok{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:3px 8px;font-size:11px;color:var(--muted);white-space:nowrap}.pill.good{border-color:#2c705a;color:var(--green)}.pill.warn{border-color:#6a5530;color:var(--amber)}.pill.bad{border-color:#75434a;color:var(--red)}
-.sectionhead{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap;margin:4px 0 12px}.sectionhead h2{margin:0;font-size:18px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:12px}
-.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#0f1928}table{border-collapse:collapse;width:100%;min-width:760px}th,td{text-align:left;padding:10px 11px;border-bottom:1px solid #223349;vertical-align:top}th{background:#152338;color:#b9cce0;font-size:12px;position:sticky;top:0}td{font-size:12px}tr:last-child td{border-bottom:0}tbody tr:hover{background:#15253a}.tag{font-size:11px;color:var(--cyan)}.source-list{display:flex;flex-wrap:wrap;gap:8px}.source-list a{border:1px solid var(--line);border-radius:9px;padding:7px 10px;background:#101b2c}.empty{padding:18px;border:1px dashed #3b4c62;border-radius:12px;color:var(--muted);background:#101a29}.kv{display:grid;grid-template-columns:170px minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid #24364b}.kv:last-child{border-bottom:0}.kv b{font-weight:600;color:#bcd0e5}.foot{color:#71869e;font-size:11px;padding:22px 2px 6px}.error{color:var(--red);font-size:12px;white-space:pre-wrap}.search{width:min(100%,320px);border:1px solid var(--line);border-radius:10px;background:#0d1726;color:var(--text);padding:9px 11px;font:inherit}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:14px}.title{font-size:18px}.nav{position:static}}
-@media(max-width:560px){.grid,.grid.two{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:2px}.big{font-size:23px}}
+
+:root {
+  color-scheme: dark;
+  --bg: #09131f;
+  --panel: #101f31;
+  --panel2: #13263a;
+  --line: #294156;
+  --text: #eff4fa;
+  --muted: #95aabc;
+  --cyan: #72cfcb;
+  --amber: #f2c77c;
+  --red: #ff9494;
+  --green: #83dcb3;
+  --font: "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: linear-gradient(155deg, #11273b 0, #09131f 320px, #08121e 100%);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; letter-spacing: inherit; }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+.wrap { max-width: 1420px; margin: 0 auto; padding: 16px 22px 26px; }
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; column-gap: 12px; row-gap: 8px; margin-bottom: 12px;
+}
+.brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.logo {
+  display: grid; place-items: center; flex-shrink: 0;
+  height: 36px; width: 36px; border-radius: 10px;
+  background: #133945; border: 1px solid #397582;
+  color: #a3e9e1; font-size: 16px; font-weight: 750;
+}
+.title { font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: .1px; }
+.subtitle { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.actions .small { white-space: nowrap; }
+button, .button {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid #355167; border-radius: 8px;
+  padding: 7px 11px; color: #eaf5fb; background: #132638;
+  font-size: 12px; line-height: 1.5; cursor: pointer; white-space: nowrap;
+}
+button:hover, .button:hover { border-color: #65b5bf; background: #1b364b; text-decoration: none; }
+.primary { color: #d6fffa; background: #16434d; border-color: #368b8b; }
+.banner {
+  border: 1px solid #6b5a39; background: rgba(55,43,26,.6);
+  border-radius: 9px; color: #e9ce9a; margin: 0 0 12px;
+  font-size: 11.5px; line-height: 1.6;
+}
+.banner summary { padding: 7px 12px; cursor: pointer; font-weight: 600; }
+.banner .banner-content { padding: 0 12px 10px 27px; color: #dcc4a0; }
+.nav {
+  display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  margin: 0 0 14px; padding: 5px;
+  background: #0c1a2a; border: 1px solid #284155;
+  border-radius: 11px;
+  position: sticky; top: 0; z-index: 5;
+  box-shadow: 0 8px 22px #08111b7a;
+}
+.nav button {
+  border-color: transparent; background: transparent; color: #acbfd1;
+  padding: 7px 12px; font-size: 12.5px; font-weight: 500;
+}
+.nav button:hover { background: #172d40; }
+.nav button.active { color: #dcfffb; border-color: #356c75; background: #17404c; font-weight: 650; }
+.view { display: none; }
+.view.active { display: block; }
+.sectionhead {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; margin: 1px 0 10px;
+}
+.sectionhead h2 { margin: 0; font-size: 16px; line-height: 1.3; font-weight: 700; letter-spacing: 0; }
+.sectionhead p { margin: 3px 0 0; color: var(--muted); font-size: 11.5px; }
+.grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; margin-bottom: 10px; }
+.grid.two { grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; }
+.card {
+  min-width: 0; border-radius: 11px; padding: 12px 14px;
+  background: #102035; border: 1px solid #29435b;
+  box-shadow: 0 2px 6px #050e1a2b;
+}
+.card h3 { margin: 0 0 6px; color: #bfd3e7; font-size: 12px; line-height: 1.4; font-weight: 650; }
+.big {
+  color: #f4f8ff; font-family: "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 25px; line-height: 1.15; font-weight: 750; letter-spacing: -.2px;
+  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+  margin-bottom: 5px;
+}
+.small { color: var(--muted); font-size: 11.5px; line-height: 1.45; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.ok { color: var(--green); }.warn { color: var(--amber); }.bad { color: var(--red); }
+.pill {
+  display: inline-flex; align-items: center; max-width: 100%;
+  border: 1px solid #355369; border-radius: 999px; padding: 2px 8px;
+  color: #b9cbdd; font-size: 11px; font-weight: 600; line-height: 1.4;
+  white-space: normal; overflow-wrap: anywhere;
+  background: #122537;
+}
+.pill.good { border-color: #306a56; color: var(--green); background: #102f28; }
+.pill.warn { border-color: #79633e; color: var(--amber); background: #30271b; }
+.pill.bad { border-color: #81444c; color: var(--red); background: #321e28; }
+/* Each key/value pair is one row. Never apply a grid directly to the wrapper:
+   the previous page used .kv on the container AND its children, causing
+   interleaved columns, overlapping text and vertical single-character dates. */
+.data-list { display: block; min-width: 0; margin: 0 0 10px; }
+.kv {
+  display: grid; grid-template-columns: minmax(108px, 38%) minmax(0,1fr);
+  align-items: start; gap: 8px;
+  padding: 7px 0; border-bottom: 1px solid #263b50;
+  min-width: 0; overflow-wrap: anywhere;
+}
+.kv:last-child { border-bottom: 0; }
+.kv b { color: #afc6db; font-size: 11.5px; font-weight: 650; min-width: 0; }
+.kv > span { display: block; min-width: 0; color: #e6eef7; font-size: 11.5px; overflow-wrap: anywhere; }
+.data-list > .kv { width: 100%; }
+#ov-pipeline, #ov-blockers { min-height: 0; }
+.source-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.source-list a {
+  display: inline-flex; align-items: center; font-size: 11.5px;
+  color: #83d7de; background: #0e2736; border: 1px solid #294c60;
+  border-radius: 7px; padding: 5px 9px; line-height: 1.35;
+}
+.source-list a:hover { background: #194255; text-decoration: none; }
+#quick-links { margin-top: 4px; }
+.tablewrap { overflow: auto; max-width: 100%; border-radius: 10px; border: 1px solid #2c465d; background: #0c1a2c; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th, td { padding: 9px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #24394d; }
+th { position: sticky; top: 0; background: #183049; font-weight: 650; color: #cddded; font-size: 11.5px; }
+td { font-size: 11.5px; overflow-wrap: anywhere; }
+tbody tr:hover { background: #172e45; }
+tr:last-child td { border-bottom: 0; }
+.tag { color: var(--cyan); font-size: 11px; }
+.empty { padding: 12px 14px; border-radius: 9px; color: #b2c6d5; border: 1px dashed #38546a; background: #101e2e; font-size: 12px; }
+.foot { color: #8da2b4; font-size: 11px; padding: 16px 1px 3px; }
+.error { color: var(--red); font-size: 11.5px; white-space: pre-wrap; }
+.search { min-width: 160px; width: min(100%,320px); padding: 7px 10px; border-radius: 8px; border: 1px solid #355369; color: var(--text); background: #0d1d2d; font-size: 12px; }
+#view-overview > .card:last-child { padding-top: 10px; padding-bottom: 10px; }
+#history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: minmax(140px, 26%) minmax(0,1fr); }
+#view-markets #mk-time.big, #view-history #hist-range.big { font-size: 17px !important; }
+@media(max-width:1050px){
+  .grid.two { grid-template-columns: 1fr; }
+  .wrap { padding: 14px 16px 22px; }
+  .actions .small { white-space: normal; }
+}
+@media(max-width:760px){
+  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nav { position: static; }
+  .title { font-size: 17px; }
+  .nav button { padding: 6px 9px; }
+  #history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: minmax(120px,35%) minmax(0,1fr); }
+}
+@media(max-width:480px){
+  .wrap { padding: 11px 10px 18px; }
+  .grid { gap: 7px; }
+  .card { padding: 10px; }
+  .big { font-size: 22px; }
+  .nav { gap: 2px; }
+  .nav button { font-size: 11.5px; }
+  .kv, #history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: 1fr; gap: 1px; }
+  .kv b { color: #a9bed2; }
+  .actions { width: 100%; }
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
 </style>
 </head>
 <body>
@@ -27,7 +192,7 @@ button,.button{border:1px solid var(--line);border-radius:10px;padding:9px 12px;
   <div class="brand"><div class="logo">T+</div><div><div class="title">T+ 足球数据中枢</div><div class="subtitle">统一入口 · 真实来源 · 时间戳可追溯 · 缺失不造数</div></div></div>
   <div class="actions"><span id="page-refresh" class="small">页面尚未读取数据</span><button id="refresh" class="primary">刷新数据</button><a class="button" href="https://github.com/Kangdewo/jingcai-live/actions" target="_blank" rel="noopener">查看自动运行</a></div>
 </header>
-<div class="banner"><b>数据边界：</b>页面每 60 秒尝试重新读取公开 JSON；这不代表上游实时更新。未接入的首发、伤停、球员、天气和场地字段会明确显示“未接入/未发布”，不会用示例值填充。AI API 运行器与 001—005 等外部对话模型不是同一系统。</div>
+<details class="banner"><summary>数据说明：每 60 秒刷新页面读取，不代表数据源每分钟更新（点击展开）</summary><div class="banner-content">首发、伤停、球员、天气和场地未接入时显示“未接入/未发布”，不会填充示例数据。AI API 运行器与 001—005 等外部对话模型不是同一系统。</div></details>
 <nav class="nav" aria-label="数据中枢导航">
   <button class="active" data-view="overview">总览</button>
   <button data-view="fixtures">赛程与赔率</button>
@@ -39,7 +204,7 @@ button,.button{border:1px solid var(--line);border-radius:10px;padding:9px 12px;
 </nav>
 
 <section id="view-overview" class="view active">
-  <div class="sectionhead"><div><h2>运行总览</h2><p>先看源数据是否新鲜，再看预测和评估是否真实产生。</p></div><span id="overall-state" class="pill">读取中</span></div>
+  <div class="sectionhead"><div><h2>运行总览</h2><p>数据是否更新、预测是否生成、核验是否完成，一屏查看。</p></div><span id="overall-state" class="pill">读取中</span></div>
   <div class="grid">
     <div class="card"><h3>原始 T 赔率</h3><div id="ov-odds-count" class="big">—</div><div id="ov-odds-time" class="small">等待读取</div></div>
     <div class="card"><h3>T+ 公开数据 Feed</h3><div id="ov-feed-count" class="big">—</div><div id="ov-feed-time" class="small">等待读取</div></div>
@@ -47,10 +212,10 @@ button,.button{border:1px solid var(--line);border-radius:10px;padding:9px 12px;
     <div class="card"><h3>已验证赛果评估</h3><div id="ov-result-count" class="big">—</div><div id="ov-result-time" class="small">等待读取</div></div>
   </div>
   <div class="grid two">
-    <div class="card"><h3>自动运行链路</h3><div id="ov-pipeline" class="kv"></div><div class="source-list"><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">统一流水线</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-model-feed.yml" target="_blank" rel="noopener">旧 Feed 工作流</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-auto-predict.yml" target="_blank" rel="noopener">旧预测工作流</a></div></div>
-    <div class="card"><h3>当前需要关注的阻塞项</h3><div id="ov-blockers" class="kv"></div></div>
+    <div class="card"><h3>数据同步与运行状态</h3><div id="ov-pipeline" class="data-list"></div><div class="source-list"><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">统一流水线</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-model-feed.yml" target="_blank" rel="noopener">旧 Feed 工作流</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-auto-predict.yml" target="_blank" rel="noopener">旧预测工作流</a></div></div>
+    <div class="card"><h3>待处理事项与运行风险</h3><div id="ov-blockers" class="data-list"></div></div>
   </div>
-  <div class="card"><h3>公开数据源直达</h3><div class="source-list" id="quick-links"></div></div>
+  <div class="card"><h3>数据源快捷入口</h3><div class="source-list" id="quick-links"></div></div>
 </section>
 
 <section id="view-fixtures" class="view">
