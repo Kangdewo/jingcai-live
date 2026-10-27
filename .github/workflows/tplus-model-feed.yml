@@ -1,8 +1,6 @@
 name: T+ publish sanitized model feed
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '11,26,41,56 * * * *'
 permissions:
   contents: write
 concurrency:

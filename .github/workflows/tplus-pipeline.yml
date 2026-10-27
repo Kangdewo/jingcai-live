@@ -1,0 +1,90 @@
+name: T+ unified data-to-prediction pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC; GitHub scheduling is best-effort, not second-level real-time.
+    - cron: '11,26,41,56 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tplus-unified-pipeline
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject stale T source before producing forecasts
+        run: |
+          python - <<'PY'
+          import datetime as dt, json
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          p = Path('odds_latest.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          raw = data.get('updated_at')
+          if not isinstance(raw, str):
+              raise SystemExit('SOURCE_STALE: odds_latest.updated_at missing')
+          try:
+              stamp = dt.datetime.fromisoformat(raw)
+          except ValueError:
+              raise SystemExit('SOURCE_STALE: invalid odds_latest.updated_at')
+          if stamp.tzinfo is None:
+              stamp = stamp.replace(tzinfo=ZoneInfo('Asia/Shanghai'))
+          now = dt.datetime.now(ZoneInfo('Asia/Shanghai'))
+          age = (now - stamp.astimezone(ZoneInfo('Asia/Shanghai'))).total_seconds() / 60
+          print(f'T source updated_at={raw}; age_minutes={age:.1f}')
+          if age < -5 or age > 30:
+              raise SystemExit(f'SOURCE_STALE: refusing forecasts from a {age:.1f}-minute-old T snapshot')
+          PY
+      - name: Run T feed contract tests
+        run: python -m unittest discover -s tests -p 'test_build.py' -v
+      - name: Run baseline prediction tests
+        run: python -m unittest discover -s tests -p 'test_autopredict.py' -v
+      - name: Run AI adapter tests
+        run: python -m unittest discover -s tests -p 'test_ai_adapters.py' -v
+      - name: Run AI provider scheduling tests
+        run: python -m unittest discover -s tests -p 'test_agents_runner.py' -v
+      - name: Run five-market analysis tests
+        run: python -m unittest discover -s tests -p 'test_market_analysis.py' -v
+      - name: Build sanitized T+ feed from the latest T snapshot
+        run: python tplus_cloud/build.py
+      - name: Generate pre-match market baseline and optional AI shadow forecasts
+        env:
+          # Paid API calls require explicit opt-in via Actions repository variable TPLUS_ENABLE_AI=1.
+          # Default OFF to avoid unexpected recurring API charges.
+          TPLUS_ENABLE_AI: ${{ vars.TPLUS_ENABLE_AI || '0' }}
+          TPLUS_AI_MAX_CALLS_PER_RUN: ${{ vars.TPLUS_AI_MAX_CALLS_PER_RUN || '2' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TPLUS_OPENAI_MODEL: ${{ vars.TPLUS_OPENAI_MODEL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TPLUS_GEMINI_MODEL: ${{ vars.TPLUS_GEMINI_MODEL }}
+        run: python tplus_predict/runner.py
+      - name: Join five markets with strictly prior-season league aggregates
+        run: python -m tplus_predict.market_analysis
+      - name: Publish one atomic research snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-pipeline[bot]'
+          git config user.email 'tplus-pipeline[bot]@users.noreply.github.com'
+          git add model_feed/ predictions/
+          if git diff --cached --quiet; then echo 'No change'; exit 0; fi
+          git commit -m 'data(tplus): unified feed, prediction and five-market snapshot'
+          for i in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 8
+          done
+          exit 1
