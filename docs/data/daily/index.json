@@ -1,5 +1,21 @@
 {
+  "dates": [
+    {
+      "date_bjt": "2026-10-29",
+      "match_count": 10,
+      "path": "data/daily/2026-10-29.json"
+    },
+    {
+      "date_bjt": "2026-10-28",
+      "match_count": 10,
+      "path": "data/daily/2026-10-28.json"
+    },
+    {
+      "date_bjt": "2026-10-27",
+      "match_count": 1,
+      "path": "data/daily/2026-10-27.json"
+    }
+  ],
   "schema_version": "TPlusDailyIndex.1",
-  "dates": [],
-  "source": "Index created; the first successful unified pipeline run will populate pre-match snapshots. Not a result record."
+  "source": "archived pre-match market-only probabilities; results are tracked separately"
 }
