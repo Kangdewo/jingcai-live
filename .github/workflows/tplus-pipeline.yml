@@ -59,6 +59,10 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_agents_runner.py' -v
       - name: Run five-market analysis tests
         run: python -m unittest discover -s tests -p 'test_market_analysis.py' -v
+      - name: Verify separated historical score and frozen ticket ledgers
+        run: python -m unittest discover -s tests -p 'test_historical_review.py' -v
+      - name: Run daily pre-match archive tests
+        run: python -m unittest discover -s tests -p 'test_daily_archive.py' -v
       - name: Build sanitized T+ feed from the latest T snapshot
         run: python tplus_cloud/build.py
       - name: Generate pre-match market baseline and optional AI shadow forecasts
@@ -74,15 +78,17 @@ jobs:
         run: python tplus_predict/runner.py
       - name: Join five markets with strictly prior-season league aggregates
         run: python -m tplus_predict.market_analysis
+      - name: Archive earliest and latest market-only pre-match snapshots by kickoff date
+        run: python -m tplus_cloud.archive_daily
       - name: Publish one atomic research snapshot
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'tplus-pipeline[bot]'
           git config user.email 'tplus-pipeline[bot]@users.noreply.github.com'
-          git add model_feed/ predictions/
+          git add model_feed/ predictions/ docs/data/daily/
           if git diff --cached --quiet; then echo 'No change'; exit 0; fi
-          git commit -m 'data(tplus): unified feed, prediction and five-market snapshot'
+          git commit -m 'data(tplus): unified feed, prediction and daily pre-match archive'
           for i in 1 2 3 4; do
             if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
             sleep 8
