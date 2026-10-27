@@ -1,472 +1,92 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b1220">
-<title>T+ 足球数据中枢｜紧凑版</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1524">
+<title>T+ 足球数据中枢 · 历史实单与赛果复盘</title>
 <style>
-
-:root {
-  color-scheme: dark;
-  --bg: #09131f;
-  --panel: #101f31;
-  --panel2: #13263a;
-  --line: #294156;
-  --text: #eff4fa;
-  --muted: #95aabc;
-  --cyan: #72cfcb;
-  --amber: #f2c77c;
-  --red: #ff9494;
-  --green: #83dcb3;
-  --font: "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: linear-gradient(155deg, #11273b 0, #09131f 320px, #08121e 100%);
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-  letter-spacing: 0;
-  -webkit-font-smoothing: antialiased;
-}
-button, input, select { font: inherit; letter-spacing: inherit; }
-a { color: var(--cyan); text-decoration: none; }
-a:hover { text-decoration: underline; }
-button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 2px;
-}
-.wrap { max-width: 1420px; margin: 0 auto; padding: 16px 22px 26px; }
-header {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; column-gap: 12px; row-gap: 8px; margin-bottom: 12px;
-}
-.brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
-.logo {
-  display: grid; place-items: center; flex-shrink: 0;
-  height: 36px; width: 36px; border-radius: 10px;
-  background: #133945; border: 1px solid #397582;
-  color: #a3e9e1; font-size: 16px; font-weight: 750;
-}
-.title { font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: .1px; }
-.subtitle { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.actions .small { white-space: nowrap; }
-button, .button {
-  display: inline-flex; align-items: center; justify-content: center;
-  border: 1px solid #355167; border-radius: 8px;
-  padding: 7px 11px; color: #eaf5fb; background: #132638;
-  font-size: 12px; line-height: 1.5; cursor: pointer; white-space: nowrap;
-}
-button:hover, .button:hover { border-color: #65b5bf; background: #1b364b; text-decoration: none; }
-.primary { color: #d6fffa; background: #16434d; border-color: #368b8b; }
-.banner {
-  border: 1px solid #6b5a39; background: rgba(55,43,26,.6);
-  border-radius: 9px; color: #e9ce9a; margin: 0 0 12px;
-  font-size: 11.5px; line-height: 1.6;
-}
-.banner summary { padding: 7px 12px; cursor: pointer; font-weight: 600; }
-.banner .banner-content { padding: 0 12px 10px 27px; color: #dcc4a0; }
-.nav {
-  display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
-  margin: 0 0 14px; padding: 5px;
-  background: #0c1a2a; border: 1px solid #284155;
-  border-radius: 11px;
-  position: sticky; top: 0; z-index: 5;
-  box-shadow: 0 8px 22px #08111b7a;
-}
-.nav button {
-  border-color: transparent; background: transparent; color: #acbfd1;
-  padding: 7px 12px; font-size: 12.5px; font-weight: 500;
-}
-.nav button:hover { background: #172d40; }
-.nav button.active { color: #dcfffb; border-color: #356c75; background: #17404c; font-weight: 650; }
-.view { display: none; }
-.view.active { display: block; }
-.sectionhead {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 8px; margin: 1px 0 10px;
-}
-.sectionhead h2 { margin: 0; font-size: 16px; line-height: 1.3; font-weight: 700; letter-spacing: 0; }
-.sectionhead p { margin: 3px 0 0; color: var(--muted); font-size: 11.5px; }
-.grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; margin-bottom: 10px; }
-.grid.two { grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; }
-.card {
-  min-width: 0; border-radius: 11px; padding: 12px 14px;
-  background: #102035; border: 1px solid #29435b;
-  box-shadow: 0 2px 6px #050e1a2b;
-}
-.card h3 { margin: 0 0 6px; color: #bfd3e7; font-size: 12px; line-height: 1.4; font-weight: 650; }
-.big {
-  color: #f4f8ff; font-family: "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
-  font-size: 25px; line-height: 1.15; font-weight: 750; letter-spacing: -.2px;
-  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
-  margin-bottom: 5px;
-}
-.small { color: var(--muted); font-size: 11.5px; line-height: 1.45; overflow-wrap: anywhere; }
-.muted { color: var(--muted); }
-.ok { color: var(--green); }.warn { color: var(--amber); }.bad { color: var(--red); }
-.pill {
-  display: inline-flex; align-items: center; max-width: 100%;
-  border: 1px solid #355369; border-radius: 999px; padding: 2px 8px;
-  color: #b9cbdd; font-size: 11px; font-weight: 600; line-height: 1.4;
-  white-space: normal; overflow-wrap: anywhere;
-  background: #122537;
-}
-.pill.good { border-color: #306a56; color: var(--green); background: #102f28; }
-.pill.warn { border-color: #79633e; color: var(--amber); background: #30271b; }
-.pill.bad { border-color: #81444c; color: var(--red); background: #321e28; }
-/* Each key/value pair is one row. Never apply a grid directly to the wrapper:
-   the previous page used .kv on the container AND its children, causing
-   interleaved columns, overlapping text and vertical single-character dates. */
-.data-list { display: block; min-width: 0; margin: 0 0 10px; }
-.kv {
-  display: grid; grid-template-columns: minmax(108px, 38%) minmax(0,1fr);
-  align-items: start; gap: 8px;
-  padding: 7px 0; border-bottom: 1px solid #263b50;
-  min-width: 0; overflow-wrap: anywhere;
-}
-.kv:last-child { border-bottom: 0; }
-.kv b { color: #afc6db; font-size: 11.5px; font-weight: 650; min-width: 0; }
-.kv > span { display: block; min-width: 0; color: #e6eef7; font-size: 11.5px; overflow-wrap: anywhere; }
-.data-list > .kv { width: 100%; }
-#ov-pipeline, #ov-blockers { min-height: 0; }
-.source-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.source-list a {
-  display: inline-flex; align-items: center; font-size: 11.5px;
-  color: #83d7de; background: #0e2736; border: 1px solid #294c60;
-  border-radius: 7px; padding: 5px 9px; line-height: 1.35;
-}
-.source-list a:hover { background: #194255; text-decoration: none; }
-#quick-links { margin-top: 4px; }
-.tablewrap { overflow: auto; max-width: 100%; border-radius: 10px; border: 1px solid #2c465d; background: #0c1a2c; }
-table { border-collapse: collapse; width: 100%; min-width: 760px; }
-th, td { padding: 9px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #24394d; }
-th { position: sticky; top: 0; background: #183049; font-weight: 650; color: #cddded; font-size: 11.5px; }
-td { font-size: 11.5px; overflow-wrap: anywhere; }
-tbody tr:hover { background: #172e45; }
-tr:last-child td { border-bottom: 0; }
-.tag { color: var(--cyan); font-size: 11px; }
-.empty { padding: 12px 14px; border-radius: 9px; color: #b2c6d5; border: 1px dashed #38546a; background: #101e2e; font-size: 12px; }
-.foot { color: #8da2b4; font-size: 11px; padding: 16px 1px 3px; }
-.error { color: var(--red); font-size: 11.5px; white-space: pre-wrap; }
-.search { min-width: 160px; width: min(100%,320px); padding: 7px 10px; border-radius: 8px; border: 1px solid #355369; color: var(--text); background: #0d1d2d; font-size: 12px; }
-#view-overview > .card:last-child { padding-top: 10px; padding-bottom: 10px; }
-#history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: minmax(140px, 26%) minmax(0,1fr); }
-#view-markets #mk-time.big, #view-history #hist-range.big { font-size: 17px !important; }
-@media(max-width:1050px){
-  .grid.two { grid-template-columns: 1fr; }
-  .wrap { padding: 14px 16px 22px; }
-  .actions .small { white-space: normal; }
-}
-@media(max-width:760px){
-  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .nav { position: static; }
-  .title { font-size: 17px; }
-  .nav button { padding: 6px 9px; }
-  #history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: minmax(120px,35%) minmax(0,1fr); }
-}
-@media(max-width:480px){
-  .wrap { padding: 11px 10px 18px; }
-  .grid { gap: 7px; }
-  .card { padding: 10px; }
-  .big { font-size: 22px; }
-  .nav { gap: 2px; }
-  .nav button { font-size: 11.5px; }
-  .kv, #history-details .kv, #ai-explain .kv, #coverage-details .kv, #source-details .kv { grid-template-columns: 1fr; gap: 1px; }
-  .kv b { color: #a9bed2; }
-  .actions { width: 100%; }
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
-
+:root{color-scheme:dark;--bg:#081320;--surface:#0e2032;--surface2:#13283d;--stroke:#263e51;--text:#edf5fc;--muted:#9bb0c3;--accent:#73d9d3;--good:#7be0b3;--bad:#f58c95;--warn:#efc87e;--font:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Noto Sans SC",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#10263b 0,#081320 320px);color:var(--text);font:13px/1.5 var(--font);-webkit-font-smoothing:antialiased}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1460px;margin:auto;padding:18px 22px 35px}header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:10px}.logo{display:grid;place-items:center;width:37px;height:37px;border:1px solid #377784;border-radius:10px;color:#b4fff4;background:#17404c;font-size:17px;font-weight:750}h1{margin:0;font-size:19px;letter-spacing:.1px;line-height:1.25}h2{font-size:16px;margin:0;line-height:1.35}h3{margin:0 0 9px;font-size:13px;font-weight:650}.subtitle{font-size:11px;color:var(--muted);margin:2px 0 0}.toolbar,.links{display:flex;gap:7px;align-items:center;flex-wrap:wrap}button,.btn,select,input{font:inherit}button,.btn{border:1px solid #3a586b;border-radius:8px;background:#14293e;color:#eaf7fa;padding:7px 11px;cursor:pointer;white-space:nowrap}button:hover,.btn:hover{background:#21445a;border-color:var(--accent);text-decoration:none}button.selected{background:#185160;border-color:#4d9aa0;color:white}.mini{font-size:11px}.muted{color:var(--muted)}.banner{border:1px solid #66543c;background:#2a261c;color:#f1d7a2;border-radius:9px;margin-bottom:12px}details>summary{cursor:pointer}.banner summary{padding:7px 11px;font-size:11.5px;font-weight:600}.banner p{padding:0 12px 10px;margin:0;font-size:12px}.nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;padding:5px;background:#0c1b2c;border:1px solid var(--stroke);border-radius:11px;margin-bottom:15px;position:sticky;top:0;z-index:5}.nav button{border-color:transparent;background:transparent;color:#b1c4d6;font-size:12.5px;padding:7px 11px}.nav button.active{background:#1a4553;color:#f1ffff;border-color:#397d85;font-weight:650}.view{display:none}.view.active{display:block}.section{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:3px 0 10px}.section p{font-size:11.5px;color:var(--muted);margin:2px 0 0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.stats.three{grid-template-columns:repeat(3,minmax(0,1fr))}.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:10px}.card{border:1px solid var(--stroke);background:linear-gradient(150deg,#13283e,#0d1e2f);border-radius:12px;padding:12px 14px;min-width:0}.card .cap{font-size:11px;color:#c4d5e4;font-weight:650}.big{font-size:25px;font-weight:720;line-height:1.22;margin:6px 0 4px;white-space:normal;overflow-wrap:break-word}.big.smallbig{font-size:17px}.hint{font-size:11px;color:var(--muted)}.note{border:1px dashed #38576c;border-radius:9px;background:#102236;color:#b7d0e1;padding:10px 13px;margin-bottom:10px;font-size:12px}.note.warn{border-color:#785b40;color:#f1d39d}.good{color:var(--good)}.bad{color:var(--bad)}.warncolor{color:var(--warn)}.tag{display:inline-flex;align-items:center;border:1px solid #3c5367;border-radius:30px;padding:3px 8px;font-size:10.5px;color:#b7cada;white-space:nowrap}.tag.good{border-color:#316e59;background:#103b32;color:var(--good)}.tag.bad{border-color:#7e4951;background:#351e2b;color:var(--bad)}.tag.warn{border-color:#82663d;background:#342b1c;color:var(--warn)}.kv{display:grid;grid-template-columns:minmax(108px,31%) minmax(0,1fr);align-items:start;border-bottom:1px solid #2a4051;padding:7px 0;gap:12px;font-size:12px}.kv:last-child{border-bottom:0}.kv .key{color:#b6c9d9;font-weight:600}.kv .val{overflow-wrap:anywhere}.tablebox{overflow:auto;border:1px solid var(--stroke);border-radius:10px;background:#0c1b2d;margin-bottom:10px}.tablebox table{width:100%;border-collapse:collapse;min-width:840px;font-size:11.5px}th,td{text-align:left;border-bottom:1px solid #243d4f;padding:9px 10px;vertical-align:top}th{font-size:11px;font-weight:650;background:#18344c;color:#d5e5ef;white-space:nowrap}tr:last-child td{border-bottom:0}tbody tr:hover{background:#193149}td strong{color:#e7f6fd;font-size:12px}.data-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}.input{background:#0d1f30;border:1px solid #385468;color:#eef9ff;border-radius:8px;padding:8px 10px;width:min(100%,260px)}.links a{font-size:11.5px;border:1px solid #2c4c62;border-radius:8px;background:#10273a;padding:7px 10px}.right{margin-left:auto}.empty{padding:20px;color:var(--muted);font-size:12px}.footer{color:#8299ad;font-size:11px;margin-top:24px}.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.nowrap{white-space:nowrap}.timeline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.timeline b{color:#e8f4fc}.chip{border:1px solid #315369;border-radius:8px;padding:5px 9px;font-size:11px;color:#bed4e1;background:#0c2438}.code{font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#a8cee3}.source{font-size:11px;color:#9fc5d1}.linkbtn{background:none;border:0;color:var(--accent);padding:0;font-size:11px;cursor:pointer}::selection{background:#296c74;color:#fff}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.wrap{padding:12px}.split,.cols{grid-template-columns:1fr}.stats.three{grid-template-columns:repeat(2,minmax(0,1fr))}.kv{grid-template-columns:100px 1fr}.big{font-size:22px}.nav{position:static}}
+@media(max-width:420px){.stats,.stats.three{grid-template-columns:1fr 1fr}.big{font-size:20px}.kv{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<header>
-  <div class="brand"><div class="logo">T+</div><div><div class="title">T+ 足球数据中枢</div><div class="subtitle">统一入口 · 真实来源 · 时间戳可追溯 · 缺失不造数</div></div></div>
-  <div class="actions"><span id="page-refresh" class="small">页面尚未读取数据</span><button id="refresh" class="primary">刷新数据</button><a class="button" href="https://github.com/Kangdewo/jingcai-live/actions" target="_blank" rel="noopener">查看自动运行</a></div>
-</header>
-<details class="banner"><summary>数据说明：每 60 秒刷新页面读取，不代表数据源每分钟更新（点击展开）</summary><div class="banner-content">首发、伤停、球员、天气和场地未接入时显示“未接入/未发布”，不会填充示例数据。AI API 运行器与 001—005 等外部对话模型不是同一系统。</div></details>
-<nav class="nav" aria-label="数据中枢导航">
-  <button class="active" data-view="overview">总览</button>
-  <button data-view="fixtures">赛程与赔率</button>
-  <button data-view="markets">五大玩法</button>
-  <button data-view="history">历史研究</button>
-  <button data-view="ai">AI运行状态</button>
-  <button data-view="results">赛果与复盘</button>
-  <button data-view="coverage">数据覆盖与来源</button>
+<body><div class="wrap">
+<header><div class="brand"><div class="logo">T+</div><div><h1>T+ 足球数据中枢</h1><p class="subtitle">赔率 · 五玩法 · 赛前冻结 · 历史赛果 · 实单复盘 · 可追溯来源</p></div></div><div class="toolbar"><span id="refresh-time" class="muted mini">读取中…</span><button id="refresh" class="selected">刷新数据</button><a href="https://github.com/Kangdewo/jingcai-live/actions" target="_blank" rel="noopener" class="btn">自动运行</a></div></header>
+<details class="banner"><summary>数据口径：区分市场基线、人工研究、体彩票据、外部赛果和正式双源核验（点击展开）</summary><p>页面每60秒读取一次公开JSON，不保证底层数据每60秒更新。2026-10-26历史复盘是独立审计记录，不能替代官方 T+ 的 evaluation.json。票面返奖按冻结 SP 理论推算，未核实实际兑奖。没有授权 API 的首发、伤停、球队 xG、天气不填假数据。历史数据库中约4.15万场赛果仅可公开使用汇总，不代表对应4.15万场实盘盈利。</p></details>
+<nav class="nav" id="navbar">
+<button class="active" data-view="overview">总览</button><button data-view="fixtures">赛程与赔率</button><button data-view="markets">五大玩法</button><button data-view="yesterday">昨日复盘</button><button data-view="tickets">实单账本</button><button data-view="history">历史研究</button><button data-view="results">赛果评估</button><button data-view="ai">AI运行</button><button data-view="coverage">数据来源</button>
 </nav>
-
-<section id="view-overview" class="view active">
-  <div class="sectionhead"><div><h2>运行总览</h2><p>数据是否更新、预测是否生成、核验是否完成，一屏查看。</p></div><span id="overall-state" class="pill">读取中</span></div>
-  <div class="grid">
-    <div class="card"><h3>原始 T 赔率</h3><div id="ov-odds-count" class="big">—</div><div id="ov-odds-time" class="small">等待读取</div></div>
-    <div class="card"><h3>T+ 公开数据 Feed</h3><div id="ov-feed-count" class="big">—</div><div id="ov-feed-time" class="small">等待读取</div></div>
-    <div class="card"><h3>当前预测记录</h3><div id="ov-pred-count" class="big">—</div><div id="ov-pred-time" class="small">等待读取</div></div>
-    <div class="card"><h3>已验证赛果评估</h3><div id="ov-result-count" class="big">—</div><div id="ov-result-time" class="small">等待读取</div></div>
-  </div>
-  <div class="grid two">
-    <div class="card"><h3>数据同步与运行状态</h3><div id="ov-pipeline" class="data-list"></div><div class="source-list"><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">统一流水线</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-model-feed.yml" target="_blank" rel="noopener">旧 Feed 工作流</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-auto-predict.yml" target="_blank" rel="noopener">旧预测工作流</a></div></div>
-    <div class="card"><h3>待处理事项与运行风险</h3><div id="ov-blockers" class="data-list"></div></div>
-  </div>
-  <div class="card"><h3>数据源快捷入口</h3><div class="source-list" id="quick-links"></div></div>
-</section>
-
-<section id="view-fixtures" class="view">
-  <div class="sectionhead"><div><h2>赛程与赔率</h2><p>展示原始 T 赔率中的当前场次；所有价格来自原始公开文件。</p></div><input id="match-search" class="search" placeholder="搜索编号、球队或联赛"></div>
-  <div id="fixture-summary" class="small" style="margin-bottom:10px">读取中</div>
-  <div id="fixtures-table" class="tablewrap"><div class="empty">正在读取赔率文件…</div></div>
-</section>
-
-<section id="view-markets" class="view">
-  <div class="sectionhead"><div><h2>五大玩法</h2><p>胜平负、让球胜平负、精确比分、总进球、半全场。</p></div><span id="markets-state" class="pill">读取中</span></div>
-  <div class="grid">
-    <div class="card"><h3>当前分析场次</h3><div id="mk-count" class="big">—</div><div class="small">来自 analysis_latest.json</div></div>
-    <div class="card"><h3>覆盖的玩法</h3><div id="mk-types" class="big">—</div><div class="small">每场覆盖数，不代表模型独立性</div></div>
-    <div class="card"><h3>与当前赛程匹配</h3><div id="mk-match" class="big">—</div><div class="small">按比赛 ID 精确匹配</div></div>
-    <div class="card"><h3>分析更新时间</h3><div id="mk-time" class="big" style="font-size:18px">—</div><div class="small">旧分析不会冒充最新分析</div></div>
-  </div>
-  <div id="markets-note" class="empty" style="margin-bottom:12px">正在核对分析与赛程的匹配关系…</div>
-  <div id="markets-table" class="tablewrap"><div class="empty">读取中</div></div>
-</section>
-
-<section id="view-history" class="view">
-  <div class="sectionhead"><div><h2>历史研究库</h2><p>历史汇总用于背景分析，不等于经过时间隔离的前瞻预测成绩。</p></div><span id="history-state" class="pill">读取中</span></div>
-  <div class="grid">
-    <div class="card"><h3>历史完赛场次</h3><div id="hist-count" class="big">—</div><div class="small">公开汇总口径</div></div>
-    <div class="card"><h3>覆盖日期</h3><div id="hist-range" class="big" style="font-size:18px">—</div><div class="small">起止日期</div></div>
-    <div class="card"><h3>历史模型记录</h3><div id="hist-models" class="big">—</div><div class="small">不能直接当作独立前瞻成绩</div></div>
-    <div class="card"><h3>历史 xG</h3><div id="hist-xg" class="big">—</div><div class="small">真实 xG 字段状态</div></div>
-  </div>
-  <div class="card"><h3>历史数据质量说明</h3><div id="history-details"></div></div>
-</section>
-
-<section id="view-ai" class="view">
-  <div class="sectionhead"><div><h2>AI 运行状态</h2><p>区分市场基线、API 模型试验和外部 001—005 模型。</p></div><span id="ai-state" class="pill">读取中</span></div>
-  <div class="grid">
-    <div class="card"><h3>AI Runner 状态</h3><div id="ai-runner" class="big">—</div><div id="ai-config" class="small">等待读取</div></div>
-    <div class="card"><h3>API 请求次数</h3><div id="ai-requests" class="big">—</div><div class="small">当前状态文件累计/本次状态</div></div>
-    <div class="card"><h3>AI 预测保存数</h3><div id="ai-saved" class="big">—</div><div class="small">只统计真正写入的记录</div></div>
-    <div class="card"><h3>独立球队特征</h3><div id="ai-features" class="big">—</div><div class="small">xG、真实首发等</div></div>
-  </div>
-  <div class="card"><h3>准确解释</h3><div id="ai-explain"></div><div class="source-list" style="margin-top:12px"><a href="https://github.com/Kangdewo/jingcai-live/settings/secrets/actions" target="_blank" rel="noopener">检查 API Secrets（需登录）</a><a href="https://github.com/Kangdewo/jingcai-live/settings/variables/actions" target="_blank" rel="noopener">检查模型变量（需登录）</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">运行统一流水线</a></div></div>
-</section>
-
-<section id="view-results" class="view">
-  <div class="sectionhead"><div><h2>赛果与复盘</h2><p>只有满足来源、完赛状态和核验时间要求的结果，才计入评估。</p></div><span id="results-state" class="pill">读取中</span></div>
-  <div class="grid">
-    <div class="card"><h3>已核验完赛场次</h3><div id="res-count" class="big">—</div></div>
-    <div class="card"><h3>Top-1 命中率</h3><div id="res-hit" class="big">—</div><div class="small">无验证样本时不显示百分比</div></div>
-    <div class="card"><h3>平均 Brier</h3><div id="res-brier" class="big">—</div></div>
-    <div class="card"><h3>平均 Log Loss</h3><div id="res-logloss" class="big">—</div></div>
-  </div>
-  <div id="results-note" class="empty" style="margin-bottom:12px">读取中</div>
-  <div id="results-table" class="tablewrap"><div class="empty">读取中</div></div>
-</section>
-
-<section id="view-coverage" class="view">
-  <div class="sectionhead"><div><h2>数据覆盖与来源</h2><p>栏目存在不代表数据源已接通；每个字段需要独立来源和更新时间。</p></div></div>
-  <div class="grid">
-    <div class="card"><h3>赔率 / 盘口</h3><div id="cov-odds" class="big">—</div><div class="small">原始 T 数据</div></div>
-    <div class="card"><h3>历史联赛汇总</h3><div id="cov-history" class="big">—</div><div class="small">历史研究资料</div></div>
-    <div class="card"><h3>正式首发 / 伤停</h3><div id="cov-lineup" class="big">—</div><div class="small">当前公开 feed 未发布</div></div>
-    <div class="card"><h3>xG / 球员统计</h3><div id="cov-xg" class="big">—</div><div class="small">当前公开 feed 未发布</div></div>
-  </div>
-  <div class="card"><h3>数据字段接入清单</h3><div id="coverage-details"></div></div>
-  <div class="card" style="margin-top:12px"><h3>原始文件与更新时间</h3><div id="source-details"></div></div>
-</section>
-
-<div class="foot">T+ 数据中枢 · 研究用途。市场概率不等于独立预测；历史汇总不等于赛前可用特征；未验证赛果不参与准确率计算。若数据源未响应，页面会显示不可用而不是生成假数据。</div>
-</div>
-<script>
-(function(){
-'use strict';
-var BASE='https://raw.githubusercontent.com/Kangdewo/jingcai-live/main/';
-var urls={
-  odds:'odds_latest.json',tstatus:'status.json',feed:'model_feed/latest.json',feedstatus:'model_feed/status.json',
-  predictions:'predictions/latest.json',pstatus:'predictions/status.json',evaluation:'predictions/evaluation.json',
-  analysis:'predictions/analysis_latest.json',astatus:'predictions/analysis_status.json',history:'history_feed/summary.json',
-  leaguehistory:'history_feed/league_seasons.json'
-};
-var data={},errors={},currentView='overview';
-function $(id){return document.getElementById(id);}
-function esc(v){return String(v===undefined||v===null?'—':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
-function rawTime(v){return v||'未提供';}
-function bjtTime(v){
- if(!v)return '未提供';
- var s=String(v);
- if(/Z$|[+-]\d\d:\d\d$/.test(s)){
-   var d=new Date(s);
-   if(!isNaN(d.getTime())){
-     try{return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(d)+' 北京时间';}
-     catch(e){return s;}
-   }
- }
- return s+'（源本地时间，按北京时间口径记录）';
-}
-function ageMinutes(v){
- if(!v)return null;
- var s=String(v),d;
- if(/Z$|[+-]\d\d:\d\d$/.test(s))d=new Date(s);
- else d=new Date(s.replace(' ','T')+'+08:00');
- if(isNaN(d.getTime()))return null;
- return Math.round((Date.now()-d.getTime())/60000);
-}
-function ageText(v){var a=ageMinutes(v);return a===null?'时效未知':(a<0?'时间在未来 '+Math.abs(a)+' 分钟':('距今 '+a+' 分钟'));}
-function pill(text,kind){return '<span class="pill '+(kind||'')+'">'+esc(text)+'</span>';}
-function kv(label,value){return '<div class="kv"><b>'+esc(label)+'</b><span>'+value+'</span></div>';}
-function link(label,path){return '<a href="'+BASE+path+'" target="_blank" rel="noopener">'+esc(label)+'</a>';}
-function setHtml(id,html){var el=$(id);if(el)el.innerHTML=html;}
-function loadOne(key,path,done){
- var x=new XMLHttpRequest(),url=BASE+path+'?v='+Date.now();
- x.open('GET',url,true);x.timeout=12000;
- x.onreadystatechange=function(){if(x.readyState!==4)return;
-  if(x.status>=200&&x.status<300){try{data[key]=JSON.parse(x.responseText);delete errors[key];}catch(e){errors[key]='JSON解析失败';}}
-  else errors[key]='HTTP '+x.status;
-  done();
- };
- x.onerror=function(){errors[key]='网络/CORS错误';done();};
- x.ontimeout=function(){errors[key]='请求超时';done();};
- try{x.send();}catch(e){errors[key]='请求失败';done();}
-}
-function loadAll(){
- var keys=Object.keys(urls),left=keys.length;
- data={};errors={};
- keys.forEach(function(k){loadOne(k,urls[k],function(){left--;if(left===0)renderAll();});});
- $('page-refresh').textContent='正在读取 '+keys.length+' 个公开数据文件…';
-}
-function oddsRows(){
- var o=data.odds||{},matches=o.matches||{},keys=Object.keys(matches);
- keys.sort(function(a,b){var x=matches[a]||{},y=matches[b]||{};return String(x.mDate||'').localeCompare(String(y.mDate||''))||String(x.mTime||'').localeCompare(String(y.mTime||''))||String(x.numStr||'').localeCompare(String(y.numStr||''));});
- return keys.map(function(k){var m=matches[k]||{};return {key:k,m:m,id:'t:'+m.mDate+':'+m.numStr};});
-}
-function renderAll(){
- renderOverview();renderFixtures();renderMarkets();renderHistory();renderAI();renderResults();renderCoverage();
- $('page-refresh').textContent='页面刷新于 '+new Date().toLocaleTimeString()+'；每60秒自动重读';
-}
-function renderOverview(){
- var o=data.odds||{},t=data.tstatus||{},f=data.feed||{},fs=data.feedstatus||{},p=data.predictions||{},ps=data.pstatus||{},ev=data.evaluation||{},an=data.analysis||{},h=data.history||{};
- var matches=oddsRows(),preds=(p.matches||[]).length,verified=ev.verified_completed_count||0;
- $('ov-odds-count').textContent=matches.length+' 场';$('ov-odds-time').textContent='源更新时间 '+rawTime(o.updated_at)+'；'+ageText(o.updated_at);
- $('ov-feed-count').textContent=(f.match_count||0)+' 场';$('ov-feed-time').textContent='生成 '+bjtTime(f.generated_at_utc)+'；上游 '+rawTime(f.upstream_updated_at_local);
- $('ov-pred-count').textContent=preds+' 场';$('ov-pred-time').textContent='预测生成 '+bjtTime(p.generated_at_utc);
- $('ov-result-count').textContent=verified+' 场';$('ov-result-time').textContent='评估状态 '+rawTime(ev.status);
- var stale=ageMinutes(o.updated_at),feedAge=ageMinutes(f.generated_at_utc),pipelineGood=(stale!==null&&stale<=30&&feedAge!==null&&feedAge<=30);
- $('overall-state').className='pill '+(pipelineGood?'good':'warn');$('overall-state').textContent=pipelineGood?'数据时效暂可接受':'数据链路需要检查';
- setHtml('ov-pipeline',kv('原始 T 状态',pill(t.alive?'在线':'未知',t.alive?'good':'warn'))+kv('原始场次',esc(t.match_count||matches.length))+kv('Feed 场次',esc(f.match_count||0))+kv('AI Runner',pill(ps.ai_runner_state||'未提供',ps.ai_runner_state==='ENABLED'?'good':'bad'))+kv('五大玩法分析',bjtTime(an.generated_at_utc))+kv('最后错误',esc(t.last_error||'无记录')));
- var blockers=[];
- if(stale===null||stale>30)blockers.push(kv('赔率新鲜度',pill('超过30分钟或未知','bad')));
- if(!p.generated_at_utc||preds===0)blockers.push(kv('预测输出',pill('无有效预测','bad')));
- if((ps.ai_runner_state||'DISABLED')!=='ENABLED')blockers.push(kv('AI调用',pill(ps.ai_runner_state||'未配置','bad')));
- if(!verified)blockers.push(kv('赛果评估',pill('没有已验证样本','warn')));
- if(!an.matches||!an.matches.length)blockers.push(kv('五大玩法',pill('无分析记录','warn')));
- setHtml('ov-blockers',blockers.join('')||kv('状态','未发现上述阻塞项；仍需检查源字段覆盖。'));
- setHtml('quick-links',[link('原始赔率','odds_latest.json'),link('赔率历史','odds_history.json'),link('T+ Feed','model_feed/latest.json'),link('预测结果','predictions/latest.json'),link('运行状态','predictions/status.json'),link('五大玩法分析','predictions/analysis_latest.json'),link('历史摘要','history_feed/summary.json')].join(''));
-}
-function renderFixtures(){
- var rows=oddsRows(),filter=String($('match-search').value||'').toLowerCase(),out=[];
- rows=rows.filter(function(r){var m=r.m,s=[r.key,r.id,m.numStr,m.home,m.away,m.league,m.mDate].join(' ').toLowerCase();return s.indexOf(filter)>=0;});
- $('fixture-summary').textContent='展示 '+rows.length+' 场；原始 T 文件更新时间 '+rawTime((data.odds||{}).updated_at)+'（'+ageText((data.odds||{}).updated_at)+'）。';
- rows.forEach(function(r){
-  var m=r.m,od=m.had_h!==undefined?String(m.had_h)+' / '+String(m.had_d)+' / '+String(m.had_a):'缺失';
-  var h=m.hhad_h!==undefined?String(m.hhad_h)+' / '+String(m.hhad_d)+' / '+String(m.hhad_a):'缺失';
-  var hf=m.hf_hh!==undefined?String(m.hf_hh)+' / '+String(m.hf_dd)+' / '+String(m.hf_aa):'缺失';
-  var exact=[];Object.keys(m).forEach(function(k){if(k.indexOf('crs_')===0&&m[k]!==null)exact.push({k:k,v:m[k]});});
-  exact.sort(function(a,b){return Number(a.v)-Number(b.v);});
-  var top=exact.slice(0,3).map(function(x){return x.k.replace('crs_','')+' @ '+x.v;}).join('; ')||'缺失';
-  out.push('<tr><td>'+esc(m.numStr)+'</td><td>'+esc(m.mDate)+' '+esc(m.mTime)+'</td><td>'+esc(m.league)+'</td><td><b>'+esc(m.home)+'</b><br><span class="muted">vs</span><br><b>'+esc(m.away)+'</b></td><td>'+esc(od)+'</td><td>'+esc(m.goal||'—')+'<br><span class="muted">'+esc(h)+'</span></td><td>'+esc(hf)+'</td><td>'+esc(top)+'</td></tr>');
- });
- setHtml('fixtures-table',out.length?'<table><thead><tr><th>编号</th><th>开球时间（源）</th><th>联赛</th><th>比赛</th><th>胜平负赔率</th><th>让球 / 让球胜平负赔率</th><th>半全场示例赔率</th><th>比分赔率低价项（非概率）</th></tr></thead><tbody>'+out.join('')+'</tbody></table>':'<div class="empty">没有匹配的比赛，或原始赔率文件不可用。');
-}
-function renderMarkets(){
- var a=data.analysis||{},as=data.astatus||{},rows=a.matches||[],current=oddsRows(),idSet={},matched=0;
- current.forEach(function(r){idSet[r.id]=true;});
- rows.forEach(function(r){if(idSet[r.t_match_id])matched++;});
- $('mk-count').textContent=rows.length+' 场';$('mk-types').textContent=rows.length?((rows[0].five_markets_covered||0)+'/5'):'—';$('mk-match').textContent=matched+' / '+current.length;
- $('mk-time').textContent=as.updated_at_utc?bjtTime(as.updated_at_utc):bjtTime(a.generated_at_utc);
- var fresh=ageMinutes(as.updated_at_utc||a.generated_at_utc),state=(fresh!==null&&fresh<=30&&matched>0);
- $('markets-state').className='pill '+(state?'good':'bad');$('markets-state').textContent=state?'有匹配分析':'过期或未匹配';
- setHtml('markets-note',state?'当前分析与部分当前场次匹配。概率仍需按数据来源与模型类别解释。':'<b class="warn">当前五大玩法分析不能作为当前赛程预测：</b>分析记录更新时间较旧或比赛 ID 与最新 23 场不一致。系统不会把旧分析硬套到新比赛。请先让统一流水线成功运行。');
- var out=[];
- rows.forEach(function(m){
-  var q=m.market_odds_implied||{};
-  function top(name){var t=(q[name]||{}).top_three||[];return t.slice(0,3).map(function(x){return x.outcome+' ('+(Number(x.probability)*100).toFixed(1)+'%)';}).join('<br>')||'未提供';}
-  out.push('<tr><td>'+esc(m.t_match_id)+'</td><td>'+esc(m.home)+' vs '+esc(m.away)+'</td><td>'+esc(m.model_id||m.model_class||'未提供')+'</td><td>'+top('spf')+'</td><td>'+top('rqspf')+'</td><td>'+top('exact_score')+'</td><td>'+top('total_goals')+'</td><td>'+top('half_full')+'</td></tr>');
- });
- setHtml('markets-table',out.length?'<table><thead><tr><th>比赛 ID</th><th>比赛</th><th>分析类型</th><th>胜平负 Top3</th><th>让球胜平负 Top3</th><th>比分 Top3</th><th>总进球 Top3</th><th>半全场 Top3</th></tr></thead><tbody>'+out.join('')+'</tbody></table>':'<div class="empty">没有可展示的五大玩法分析记录。</div>');
-}
-function renderHistory(){
- var h=data.history||{},d=h.dataset||{};
- $('history-state').className='pill '+(d.matches?'good':'warn');$('history-state').textContent=d.matches?'已读取历史摘要':'未读取';
- $('hist-count').textContent=d.matches?Number(d.matches).toLocaleString():'—';
- $('hist-range').textContent=(d.date_min||'—')+' 至 '+(d.date_max||'—');
- $('hist-models').textContent=d.historic_model_predictions?Number(d.historic_model_predictions).toLocaleString():'—';
- $('hist-xg').textContent=d.no_real_xg?'无真实 xG':'需核验';
- setHtml('history-details',kv('数据集',esc(h.schema_version||'未提供'))+kv('历史市场时间质量',esc(d.history_market_time_quality||h.history_market_time_quality||'未提供'))+kv('可用事实结果',esc((d.available_factual_results||h.available_factual_results||[]).join('、')||'未提供'))+kv('缺失官方历史玩法',esc((h.absent_official_legacy_markets||[]).join('、')||'未提供'))+kv('使用限制',esc(h.reason||'历史聚合不能自动作为前瞻预测输入'))+kv('最后生成时间',bjtTime(h.generated_at_utc)));
-}
-function renderAI(){
- var p=data.predictions||{},s=data.pstatus||{},ai=(p.ai_agent_runs||[]),state=s.ai_runner_state||'未提供';
- $('ai-state').className='pill '+(state==='ENABLED'?'good':'bad');$('ai-state').textContent=state;
- $('ai-runner').textContent=state;$('ai-config').textContent=(p.independent_ai_agents_configured?'至少一个 API 提供方已配置':'没有可用的已配置 API 提供方');
- $('ai-requests').textContent=String(s.agent_requests_attempted||0);$('ai-saved').textContent=String(s.agent_predictions_saved||ai.length||0);
- $('ai-features').textContent=s.has_independent_team_features?'部分已接入':'未接入';
- var msg='';
- msg+=kv('市场基线',pill('market_devig_v1','warn')+' 只由赔率推导，不是独立球队模型。');
- msg+=kv('LLM API 影子预测',state==='ENABLED'?'已启用 API 调用，但仍需检查实际保存数量。':('当前状态：'+esc(state)+'。需要 API Secret 和模型名变量。'));
- msg+=kv('001—005 / 其他聊天模型',pill('未被自动调用','bad')+' 普通 ChatGPT 对话不能被 GitHub Actions 定时唤起；需要独立 API 或有授权的服务端接口。');
- msg+=kv('输入特征',esc((p.limitations||[]).join('；')||'当前公开输入以 T 赔率与比赛元数据为主。'));
- msg+=kv('费用提醒','OpenAI/Gemini API 可能产生单独的 API 费用；ChatGPT 订阅不等同于 API 额度。');
- if(s.agent_errors&&s.agent_errors.length)msg+=kv('最近错误',esc(JSON.stringify(s.agent_errors)));
- setHtml('ai-explain',msg);
-}
-function renderResults(){
- var e=data.evaluation||{},n=Number(e.verified_completed_count||0),sum=e.summary||{},rows=e.evaluations||[];
- $('results-state').className='pill '+(n?'good':'warn');$('results-state').textContent=n?'已评估':'无已验证样本';
- $('res-count').textContent=String(n);$('res-hit').textContent=n&&sum.top1_hit_rate!==null?(Number(sum.top1_hit_rate)*100).toFixed(1)+'%':'—';
- $('res-brier').textContent=n&&sum.mean_brier!==null?Number(sum.mean_brier).toFixed(4):'—';
- $('res-logloss').textContent=n&&sum.mean_log_loss!==null?Number(sum.mean_log_loss).toFixed(4):'—';
- setHtml('results-note',n?'评估仅包含已经过验证的完赛结果和赛前保存的预测。':'<b class="warn">当前没有已验证的完赛结果用于计算模型准确率。</b> 页面不会用第三方未核验比分或空数据计算命中率。');
- var out=rows.map(function(r){return '<tr><td>'+esc(r.t_match_id)+'</td><td>'+esc(r.model_id)+'</td><td>'+esc(r.verified_result&&r.verified_result.home_goals)+' : '+esc(r.verified_result&&r.verified_result.away_goals)+'</td><td>'+esc(r.verified_result&&r.verified_result.outcome)+'</td><td>'+esc(r.top1_hit)+'</td><td>'+esc(r.brier_multiclass)+'</td><td>'+esc(r.log_loss)+'</td><td>'+esc(r.verified_result&&r.verified_result.source_url)+'</td></tr>';});
- setHtml('results-table',out.length?'<table><thead><tr><th>比赛 ID</th><th>模型</th><th>比分</th><th>结果</th><th>Top1 命中</th><th>Brier</th><th>Log Loss</th><th>赛果来源</th></tr></thead><tbody>'+out.join('')+'</tbody></table>':'<div class="empty">evaluation.json 中没有已核验赛果。请先完成双源赛果身份映射和完赛状态核验。</div>');
-}
-function renderCoverage(){
- var f=data.feedstatus||{},a=data.astatus||{},h=data.history||{},s=data.pstatus||{},o=data.odds||{};
- $('cov-odds').textContent=(o.match_count||oddsRows().length)+' 场';
- $('cov-history').textContent=(h.dataset&&h.dataset.matches?Number(h.dataset.matches).toLocaleString():'—')+' 场';
- $('cov-lineup').textContent=(f.lineup_coverage===0?'未接入/覆盖为0':'未公开');$('cov-xg').textContent=(f.independent_xg_coverage===0?'未接入/覆盖为0':'未公开');
- var items=[
-  ['原始赔率与盘口',pill('已接入','good')+' '+esc(o.updated_at||'')],
-  ['赛程',pill('部分接入','warn')+' 以原始 T 表格为准；需要标准化赛事 ID 与开球时区。'],
-  ['赛果',pill('未完成验证','bad')+' 公开 evaluation 当前为 '+esc((data.evaluation||{}).verified_completed_count||0)+' 个已验证完赛样本。'],
-  ['五大玩法',pill((a.markets_coverage?'已生成历史分析':'未提供'),'warn')+' 目前分析依赖赔率概率与历史联赛先验，不是独立预测。'],
-  ['真实首发',pill('未发布','bad')+' 需授权数据源且比赛开球前才可能出现。'],
-  ['伤停报告',pill('未发布','bad')+' 需要球队/球员数据接口和比赛身份映射。'],
-  ['球员统计',pill('未发布','bad')+' 当前公开 Feed 没有球员级数据。'],
-  ['xG',pill('未发布','bad')+' 不能用赔率反推并称为 xG。'],
-  ['天气与场地',pill('未发布','bad')+' 需要真实球场坐标、天气 API 与场地映射。'],
-  ['历史资料',pill('已接入汇总','good')+' '+esc(h.schema_version||'')+'；历史市场时间质量仍需审查。']
- ];
- setHtml('coverage-details',items.map(function(x){return kv(x[0],x[1]);}).join(''));
- var src=[];
- Object.keys(urls).forEach(function(k){src.push(kv(k,link(urls[k],urls[k])+'<div class="small">'+esc(errors[k]||'已请求')+'</div>'));});
- setHtml('source-details',src.join(''));
-}
-function switchView(view){
- currentView=view;
- document.querySelectorAll('.view').forEach(function(el){el.classList.toggle('active',el.id==='view-'+view);});
- document.querySelectorAll('.nav button').forEach(function(el){el.classList.toggle('active',el.getAttribute('data-view')===view);});
-}
-document.querySelectorAll('.nav button').forEach(function(el){el.addEventListener('click',function(){switchView(el.getAttribute('data-view'));});});
-$('refresh').addEventListener('click',loadAll);
-$('match-search').addEventListener('input',renderFixtures);
-loadAll();setInterval(loadAll,60000);
+<section id="view-overview" class="view active"><div class="section"><div><h2>运行总览</h2><p>同时显示最新预测、昨日复盘、投注及正式赛果核验状态。</p></div><span class="tag warn" id="overview-state">读取中</span></div><div class="stats" id="overview-stats"></div><div class="split"><div class="card"><h3>最新运行链路</h3><div id="overview-chain"></div><div class="links" style="margin-top:10px"><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">统一流水线</a><a href="https://github.com/Kangdewo/jingcai-live/tree/main/predictions" target="_blank" rel="noopener">预测归档</a></div></div><div class="card"><h3>昨日及后续待办</h3><div id="overview-events"></div></div></div><div class="card"><h3>数据直达</h3><div class="links" id="overview-links"></div></div></section>
+<section id="view-fixtures" class="view"><div class="section"><div><h2>最新赛程与赔率</h2><p>最新 T 数据；胜平负、让球、比分、进球及半全场等原始 SP，不等于模型独立胜率。</p></div><span class="tag" id="fixture-state">读取中</span></div><div class="data-actions"><input class="input" id="fixture-filter" placeholder="筛选编号 / 联赛 / 球队"><span id="fixture-meta" class="muted mini"></span></div><div class="tablebox" id="fixture-list"></div></section>
+<section id="view-markets" class="view"><div class="section"><div><h2>当前五大玩法</h2><p>按同一场次ID关联，区分最新市场概率分析与真正冻结的独立模型预测。</p></div><span class="tag" id="market-state">读取中</span></div><div class="stats" id="market-stats"></div><div id="market-alert" class="note"></div><div class="tablebox" id="market-list"></div></section>
+<section id="view-yesterday" class="view"><div class="section"><div><h2>2026年10月26日赛前—赛果复盘</h2><p>同一场比赛对齐「赛前研究冻结 / 当时 SP / 外部赛果 / 五玩法核对」。</p></div><span class="tag warn">历史审计 · 非正式双源核验</span></div><div id="yesterday-banner" class="note warn"></div><div class="stats" id="yesterday-stats"></div><div class="tablebox" id="yesterday-table"></div><div class="card"><h3>冻结时间与来源</h3><div id="yesterday-evidence"></div></div></section>
+<section id="view-tickets" class="view"><div class="section"><div><h2>体彩实单账本</h2><p>来自 10月26日已冻结的7张实单；下注 SP 与投注单元逐项保留，理论结算与实际到账分开。</p></div><span class="tag warn">理论返奖 · 未核对兑奖凭证</span></div><div class="stats" id="ticket-stats"></div><div class="note warn">票面最大可得奖金不是实际返奖。仅展示公开安全的投注数据，不公开票据照片及身份信息。除 D 票外，无法证明其他票与编号模型的对应关系；D 也仅为临时研究归属。</div><div class="tablebox" id="ticket-table"></div><div class="section"><div><h2>逐注明细（58注）</h2><p>使用原冻结 SP 对照四场已知结果，单注理论奖金可复算。</p></div><select class="input" id="ticket-filter" style="width:auto"><option value="all">所有票</option><option value="A">A票</option><option value="B">B票</option><option value="C">C票</option><option value="D">D票</option><option value="E">E票</option><option value="F">F票</option><option value="G">G票</option><option value="hit">仅中奖</option></select></div><div class="tablebox" id="bets-table"></div></section>
+<section id="view-history" class="view"><div class="section"><div><h2>历史研究与每日留档</h2><p>约 4.15 万场历史结果是汇总库；每日赛前市场基线另行保留首次和最近快照。</p></div><span class="tag" id="history-state">读取中</span></div><div class="stats" id="history-stats"></div><div class="split"><div class="card"><h3>历史数据质量说明</h3><div id="history-quality"></div></div><div class="card"><h3>已有赛后复盘</h3><div class="note" style="margin:0 0 8px"><strong>2026-10-26</strong> · 4场赛果 / 5指标初版 / 7张实单 · <button class="linkbtn" data-go="yesterday">打开完整复盘</button></div><div class="mini muted">未导入的比赛不自动算命中；官方或可信赛果必须按比赛ID与赛前快照对应。</div></div></div><div class="section"><div><h2>自动赛前归档</h2><p>新增留档程序只收集未开赛市场基线，保存首次和最近版本，赛后不会反写。</p></div></div><div id="daily-archive" class="tablebox"></div></section>
+<section id="view-results" class="view"><div class="section"><div><h2>赛果与模型评估</h2><p>两个统计池必须分开：人工赛后复盘 ≠ 正式自动双源核验。</p></div><span class="tag" id="result-state">读取中</span></div><div class="stats" id="result-stats"></div><div class="split"><div class="card"><h3>正式自动核验</h3><div id="result-formal"></div></div><div class="card"><h3>历史外部复盘</h3><div id="result-historical"></div></div></div><div class="note warn">仅外部报道确认了赛果，不代表 `T+ resultlink` 已实现两家独立源的赛果验证。不得把人工核对成绩回填 `evaluation.json` 或提升为 001—006 独立模型命中率。</div></section>
+<section id="view-ai" class="view"><div class="section"><div><h2>AI 与模型运行</h2><p>区分 API LLM 影子试验、市场基线与对话中编号模型。</p></div><span class="tag" id="ai-state">读取中</span></div><div class="stats" id="ai-stats"></div><div class="card"><h3>模型及下一阶段接入条件</h3><div id="ai-details"></div><div class="links" style="margin-top:10px"><a href="https://github.com/Kangdewo/jingcai-live/settings/secrets/actions" target="_blank" rel="noopener">API Secrets（需登录）</a><a href="https://github.com/Kangdewo/jingcai-live/settings/variables/actions" target="_blank" rel="noopener">模型变量（需登录）</a><a href="https://github.com/Kangdewo/jingcai-live/actions/workflows/tplus-pipeline.yml" target="_blank" rel="noopener">统一流水线</a></div></div></section>
+<section id="view-coverage" class="view"><div class="section"><div><h2>数据来源与实际覆盖</h2><p>已经接通、仅汇总、需要外部数据源三个状态，逐项标明。</p></div></div><div class="stats" id="coverage-stats"></div><div class="card"><h3>字段可用性</h3><div id="coverage-list"></div></div><div class="card" style="margin-top:10px"><h3>原始文件索引</h3><div id="coverage-files"></div></div></section>
+<footer class="footer">T+ 足球数据中枢 · 历史数据和市场概率供研究，不构成投注建议。对已发生比赛的人工复盘与正式模型前瞻评估采用不同统计口径。页面只呈现实际能从公开文件取得的信息。</footer>
+</div><script>
+(()=>{'use strict';
+const RAW='https://raw.githubusercontent.com/Kangdewo/jingcai-live/main/';
+const SOURCES={odds:'odds_latest.json',status:'status.json',feed:'model_feed/latest.json',forecast:'predictions/latest.json',runner:'predictions/status.json',evaluation:'predictions/evaluation.json',analysis:'predictions/analysis_latest.json',astatus:'predictions/analysis_status.json',history:'history_feed/summary.json'};
+const OTHER={review:'data/reviews/2026-10-26.json',daily:'data/daily/index.json'};
+let D={},err={},active='overview';
+const $=id=>document.getElementById(id);
+const esc=v=>String(v===undefined||v===null?'—':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const set=(id,html)=>{if($(id))$(id).innerHTML=html;};
+const label=(v,cls='')=>`<span class="tag ${cls}">${esc(v)}</span>`;
+const item=(name,v)=>`<div class="kv"><div class="key">${esc(name)}</div><div class="val">${v}</div></div>`;
+const metric=(n,v,sub)=>`<div class="card"><div class="cap">${esc(n)}</div><div class="big">${esc(v)}</div><div class="hint">${esc(sub||'')}</div></div>`;
+const link=(s,u)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s)}</a>`;
+const p=(v,d=1)=>Number.isFinite(Number(v))?`${(Number(v)*100).toFixed(d)}%`:'—';
+const money=(v)=>typeof v==='number'?'¥'+v.toFixed(2):'—';
+const roi=(v)=>typeof v==='number'?v.toFixed(2)+'%':'—';
+const fmt=(v)=>v||'未知';
+function dateBJT(s){if(!s)return '未知';let d=new Date(s);if(isNaN(d.getTime()))return String(s);return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d)+' 北京时间'}
+function table(headers,rows){return rows.length?`<table><thead><tr>${headers.map(h=>'<th>'+esc(h)+'</th>').join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`:'<div class="empty">当前数据源没有返回可展示的记录。</div>'}
+function tr(...cols){return'<tr>'+cols.map(x=>'<td>'+x+'</td>').join('')+'</tr>'}
+function show(view){if(!$('view-'+view))return;active=view;document.querySelectorAll('.view').forEach(n=>n.classList.toggle('active',n.id==='view-'+view));document.querySelectorAll('.nav button').forEach(n=>n.classList.toggle('active',n.dataset.view===view));window.scrollTo({top:0,behavior:'instant'})}
+document.addEventListener('click',e=>{let n=e.target.closest('[data-view],[data-go]');if(n){const v=n.dataset.view||n.dataset.go;if(v)show(v)}});
+async function get(url){let r=await fetch(url+(url.includes('?')?'&':'?')+'v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()}
+async function refresh(){ $('refresh-time').textContent='读取公开数据中…';let keys=[...Object.keys(SOURCES),...Object.keys(OTHER)];const results=await Promise.allSettled(keys.map(k=>get(SOURCES[k]?RAW+SOURCES[k]:OTHER[k])));results.forEach((r,i)=>{let k=keys[i];if(r.status==='fulfilled'){D[k]=r.value;delete err[k]}else err[k]=String(r.reason||'不可用')});render();$('refresh-time').textContent='页面读取 '+new Date().toLocaleTimeString('zh-CN',{hour12:false})+' · 每60秒重读'}
+function rawMatches(){return Object.values((D.odds||{}).matches||{}).sort((a,b)=>String(a.mDate||'').localeCompare(String(b.mDate||''))||String(a.mTime||'').localeCompare(String(b.mTime||''))||String(a.numStr||'').localeCompare(String(b.numStr||'')))}
+function overview(){let o=D.odds||{},f=D.feed||{},c=D.forecast||{},ev=D.evaluation||{},r=D.review||{},s=D.runner||{},sm=r.summary||{};
+set('overview-stats',metric('原始T赔率',rawMatches().length+' 场','更新 '+fmt(o.updated_at))+metric('当前市场预测',String(c.match_count||0)+' 场','T+ Feed '+String(f.match_count||0)+' 场')+metric('昨日理论盈亏',typeof sm.theoretical_net_cny==='number'?money(sm.theoretical_net_cny):'—','7张票 / 58注，未核实兑奖')+metric('正式双源核验',String(ev.verified_completed_count||0)+' 场',ev.status||'未执行'));
+let state=s.ai_runner_state||'未提供';$('overview-state').className='tag '+(state==='ENABLED'?'good':'warn');$('overview-state').textContent='市场基线正常 · AI '+state;
+set('overview-chain',item('最新赔率',fmt(o.updated_at))+item('T+ Feed',dateBJT(f.generated_at_utc))+item('五大玩法',dateBJT((D.analysis||{}).generated_at_utc))+item('独立AI运行',label(state,state==='DISABLED'?'bad':'warn'))+item('正式赛果样本',label(String(ev.verified_completed_count||0)+'场',(ev.verified_completed_count||0)>0?'good':'warn')));
+set('overview-events',item('10/26 复盘',sm.matches?`<button class="linkbtn" data-go="yesterday">4场比分 / 五玩法核对 →</button>`:'需导入')+item('10/26 实票',sm.tickets?`<button class="linkbtn" data-go="tickets">7张 · 58注 / 理论返奖 ${money(sm.theoretical_return_cny)} →</button>`:'无记录')+item('历史首次留档',`<button class="linkbtn" data-go="history">查看自动归档 →</button>`)+item('真实伤停 / 首发',label('未接入','bad'))+item('赛果进入正式模型成绩',label('双源验证未完成','warn')));
+set('overview-links',Object.entries(SOURCES).map(([n,path])=>link(n,RAW+path)).join('')+link('昨日历史复盘',OTHER.review));}
+function fixtures(){let o=D.odds||{},filter=$('fixture-filter').value.trim().toLowerCase(),r=rawMatches().filter(x=>[x.home,x.away,x.league,x.numStr].join(' ').toLowerCase().includes(filter));$('fixture-state').textContent=rawMatches().length+'场赔率';$('fixture-meta').textContent='原始更新 '+fmt(o.updated_at)+'；页面没有官方完赛赛果前不会自动补比分。';
+set('fixture-list',table(['编号 / 时间','赛事 / 球队','胜/平/负 SP','让球 / 让胜平负 SP','比分低价三项','总进球低价三项'],r.map(m=>{let scores=Object.entries(m).filter(([k,v])=>k.startsWith('crs_')&&Number.isFinite(Number(v))).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,3).map(([k,v])=>`${k.slice(4)} @${v}`).join('<br>');let tg=Object.entries(m).filter(([k,v])=>k.startsWith('ttg_')&&Number.isFinite(Number(v))).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,3).map(([k,v])=>`${k.slice(4)}球 @${v}`).join('<br>');return tr(`<strong>${esc(m.numStr)}</strong><div class="muted">${esc(m.mDate)} ${esc(m.mTime)}</div>`,`<div class="muted">${esc(m.league)}</div><strong>${esc(m.home)} vs ${esc(m.away)}</strong>`,esc([m.had_h,m.had_d,m.had_a].join(' / ')),esc(m.goal)+'<br>'+esc([m.hhad_h,m.hhad_d,m.hhad_a].join(' / ')),scores||'未给出',tg||'未给出')})))}
+function mkTop(m,k){let q=(m.market_odds_implied||{})[k]||{},v=q.top_three||[];return v.map(x=>`${esc(x.outcome)} <span class="muted">${p(x.probability)}</span>`).join('<br>')||'<span class="muted">无</span>'}
+function markets(){let a=D.analysis||{},rows=a.matches||[],current=rawMatches().map(x=>x.numStr),matched=rows.filter(x=>current.includes(x.t_match_id?.split(':').slice(-1)[0])).length;let f=(D.astatus||{});set('market-stats',metric('分析场次',rows.length+' 场','独立于正式AI准确率')+metric('覆盖玩法',rows.length?(rows[0].five_markets_covered||5)+'/5':'—','胜平负 / 让球 / 比分 / 总球 / 半全场')+metric('同编号匹配',matched+' / '+current.length,'按完整竞彩编号匹配')+metric('分析时间',dateBJT(f.updated_at_utc||a.generated_at_utc),'不保证是临场冻结'));$('market-state').textContent=matched===current.length?'当前匹配':'局部匹配/待更新';
+set('market-alert',matched===current.length?'市场概率分析已与当前赔率编号对齐。它是盘口分析，不是独立球队模型。':'市场分析与当前赛程未完整对齐；不要把旧比赛概率套到新场次。');set('market-list',table(['编号','球队','分析类型','胜平负 Top3','让球 Top3','比分 Top3','总球 Top3','半全场 Top3'],rows.map(x=>tr(esc(x.t_match_id),`<strong>${esc(x.home)} vs ${esc(x.away)}</strong>`,`<span class="source">${esc(x.model_id||x.model_class)}</span>`,mkTop(x,'spf'),mkTop(x,'rqspf'),mkTop(x,'exact_score'),mkTop(x,'total_goals'),mkTop(x,'half_full')))))}
+function hits(value){if(value===null||value===undefined)return label('待核验');return value?label('命中','good'):label('未中','bad')}
+function yesterday(){let r=D.review||{},s=r.summary||{},ms=r.matches||[];set('yesterday-banner',r.schema_version?'赛前市场基线来自 10月26日 20:20 的 GitHub 历史提交；T 赔率快照为当日 20:26；研究初版冻结于 20:30。赛果与票面按后续外部材料核对，但未进入 T+ 正式双源赛果库。':'历史复盘数据暂未加载，请检查 docs/data/reviews/2026-10-26.json。');
+set('yesterday-stats',metric('昨日4场市场方向',`${s.baseline_1x2_hits??'—'}/${s.matches||4}`,'market_devig_v1 · 非独立AI')+metric('初版五玩法比分命中',`${s.initial_research_score_hits??'—'}/${s.matches||4}`,'初版研究比分，不是实单')+metric('初版让球命中',`${s.initial_research_rqspf_hits??'—'}/${s.matches||4}`,'按冻结整数让球核对')+metric('单票理论返奖',money(s.theoretical_return_cny),'所有票合计，不是到账'));
+set('yesterday-table',table(['比赛与外部赛果','冻结研究(胜/让/比分/总球/半全场)','对应成绩(胜/让/比分/总球/半全场)','当时胜平负SP','让球SP','实际比分SP','市场基线'],ms.map(m=>{let c=m.checks,pr=m.prediction,od=m.odds_snapshot,re=m.result;
+let checks=[c.had_hit,c.rqspf_hit,c.score_hit,c.total_goals_hit,c.half_full_hit].map(hits).join(' ');
+return tr(`<strong>${esc(m.code)} ${esc(m.home)}—${esc(m.away)}</strong><div class="tag good">${esc(re.ft)} 完赛</div><div class="muted">${esc(m.league)} · ${esc(m.kickoff_bjt)}</div>${link('赛果来源 ↗',re.source_url)}`,`${esc(pr.had)} / ${esc(pr.rqspf)} / ${esc(pr.score)} / ${esc(pr.total_goals)}球 / ${esc(pr.half_full)}`,checks,`<span class="muted">19:34 ${esc((od.early_had_hda||[]).join(' / '))}</span><br>20:26 ${esc(od.had_hda.join(' / '))}`,`${esc(od.handicap)}<br>${esc(od.hhad_hda.join(' / '))}`,`${esc(od.early_actual_score_sp)} → <strong>${esc(od.actual_exact_score_sp)}</strong>`,`${esc({home:'主胜',draw:'平',away:'客胜'}[m.baseline.top1])} ${hits(c.baseline_top1_hit)}<br><span class="muted">${p(m.baseline.p_1x2[m.baseline.top1])}</span>`)})));
+set('yesterday-evidence',item('前票面市场基线',`2026-10-26 20:20:49 北京时间 · ${link('查看当时GitHub提交','https://github.com/Kangdewo/jingcai-live/commit/9311155d0f3f')}`)+item('赔率快照',`19:34 与 20:26 两版盘口对照；2026-10-26 20:26:43 北京时间 · Git blob SHA ${esc((ms[0]||{}).odds_snapshot?.source_blob_sha||'未知')}`)+item('研究初版',`2026-10-26 20:30:09 北京时间，非 001—006 独立模型生产版`)+item('外部比分',`001 本菲卡俱乐部；002 公共比分；003 西甲官方；004 弗拉门戈俱乐部。`)+item('半全场',`已核到半场比分的 ${s.initial_research_htft_evaluable||0} 场中命中 ${s.initial_research_htft_hits||0} 场；其他场次不强算。`));}
+function tickets(){let r=D.review||{},s=r.summary||{},tickets=r.tickets||[];set('ticket-stats',metric('票数 / 注数',`${s.tickets??'—'}张 / ${s.bet_units??'—'}注`,'原始出票冻结')+metric('总投入',money(s.stake_cny),'不是资金建议')+metric('理论返奖',money(s.theoretical_return_cny),'冻结票面SP乘积')+metric('理论收益 / ROI',`${money(s.theoretical_net_cny)} / ${roi(s.theoretical_roi_pct)}`,'体彩官方兑奖尚未确认'));
+set('ticket-table',table(['票号 / 票面时间','过关','注数 / 投入','中奖注数','理论返奖','理论净额 / ROI','模型归属'],tickets.map(x=>tr(`<strong>${esc(x.id)}票</strong><div class="muted">${esc(x.placed_at_bjt)}</div>`,esc(x.pass),`${x.bet_count}注 / ${money(x.stake)}`,`${x.winning_bets}/${x.bet_count}`,money(x.theoretical_return),`${money(x.theoretical_net)}<br>${roi(x.theoretical_roi_pct)}`,x.model_attribution?label('GPT-6研究版（暂定）','warn'):label('无法核验归属')))));
+let filter=$('ticket-filter').value;let bets=(r.bets||[]).filter(b=>filter==='all'||filter==='hit'&&b.hit||b.ticket_id===filter);set('bets-table',table(['注号','票号','过关','每腿选择/SP','投入','结果','理论返奖'],bets.map(b=>tr(esc(b.id),esc(b.ticket_id),`${b.pass}关`,b.legs.map(l=>`${esc(l.code)} ${esc(l.score)} @${esc(l.sp)}`).join('<br>'),money(b.stake),hits(b.hit),money(b.theoretical_payout)))));}
+function history(){let h=D.history||{},s=h.dataset||{},d=D.daily||{},r=D.review||{};set('history-stats',metric('历史完赛样本',Number(s.matches||0).toLocaleString()+' 场','公开汇总而非逐场授权发布')+metric('历史区间',`${s.date_min||'—'} 至 ${s.date_max||'—'}`,'仅汇总覆盖')+metric('旧模型归档',Number(s.historic_model_predictions||0).toLocaleString(),'不是2026年10月最新模型记录')+metric('当前已整理逐场复盘',String((r.matches||[]).length)+' 场','10/26外部复盘，与正式核验分离'));
+$('history-state').textContent=s.matches?'历史汇总已接通':'历史库不可用';set('history-quality',item('历史市场时间',esc(h.history_market_time_quality||'未知'))+item('公开记录范围',esc(h.public_aggregate_only?'仅汇总；未公开原始逐场数据':'请核验公开权限'))+item('可用历史结果',esc((h.available_factual_results||[]).join(' / ')))+item('缺失玩法SP',esc((h.absent_official_legacy_markets||[]).join(' / ')))+item('真实xG',label(h.no_real_xg?'未包含':'需复查',h.no_real_xg?'bad':''))+item('时间泄漏警示',esc(h.reason||'无')));
+let days=d.dates||[];set('daily-archive',table(['中国日期（比赛开球日）','首次/最近赛前基线场次','读取留档文件','备注'],days.map(x=>tr(esc(x.date_bjt),`${esc(x.match_count)}场`,link('JSON快照',x.path),label('只存赛前市场概率','warn')))))}
+function results(){let e=D.evaluation||{},sm=(D.review||{}).summary||{},summary=e.summary||{};$('result-state').textContent=(e.verified_completed_count||0)+' 场正式验证';set('result-stats',metric('正式双源完赛',String(e.verified_completed_count||0)+'场',e.status||'无记录')+metric('正式 Top1 命中率',e.verified_completed_count? p(summary.top1_hit_rate):'—','无有效样本不显示百分比')+metric('人工赛后复盘',String(sm.matches||0)+'场','不混入正式evaluation')+metric('人工市场基线方向',sm.matches?`${sm.baseline_1x2_hits}/${sm.matches}`:'—','非独立AI / 非实单模型'));
+set('result-formal',item('正式状态',label(e.status||'未提供','warn'))+item('有效核验场次',String(e.verified_completed_count||0))+item('正式 Brier',typeof summary.mean_brier==='number'?summary.mean_brier.toFixed(4):'—')+item('正式 Log Loss',typeof summary.mean_log_loss==='number'?summary.mean_log_loss.toFixed(4):'—'));
+set('result-historical',item('外部赛果复盘',`2026-10-26 · ${sm.matches||0}场 · <button class="linkbtn" data-go="yesterday">查看具体比分及来源</button>`)+item('有票面复盘',`${sm.tickets||0}张，${sm.bet_units||0}注`)+item('理论盈亏',money(sm.theoretical_net_cny))+item('官方兑奖确认',label('尚未取得','warn')));}
+function ai(){let s=D.runner||{},f=D.forecast||{},state=s.ai_runner_state||'UNKNOWN';$('ai-state').textContent=state;$('ai-state').className='tag '+(state==='ENABLED'?'good':'bad');set('ai-stats',metric('AI Runner',state,'开关默认关闭，避免付费API消耗')+metric('API请求次数',String(s.agent_requests_attempted||0),'非001—005独立模型')+metric('API预测保存',String(s.agent_predictions_saved||0),'只有实际保存才计入')+metric('球队级独立特征',s.has_independent_team_features?'部分接入':'未接入','xG / 实际首发 / 球员伤停'));
+set('ai-details',item('市场基线',label('market_devig_v1','warn')+' 只是赔率去水结果，不是球队独立AI。')+item('独立LLM影子实验','必须由仓库密钥与TPLUS_ENABLE_AI=1明确开启；API可能额外计费。')+item('ChatGPT对话中001—005/006/007','不能因网页更新就定时运行，需要独立授权接口和冻结协议。')+item('当前模型类型',esc((f.model_inventory||[]).map(x=>x.id).join(' / ')||'无'))+item('赛前冻结机制','只有在开球前实际执行并留存信息截止时间的记录才能参与盲测。')+item('当前约束',esc((f.limitations||[]).join('；')||'无')));}
+function coverage(){let od=D.odds||{},h=D.history||{},e=D.evaluation||{},r=D.review||{},d=D.daily||{};set('coverage-stats',metric('原始T赔率',rawMatches().length+'场','公开盘口')+metric('历史汇总',Number(h.dataset?.matches||0).toLocaleString()+'场','非逐场公开账本')+metric('昨日人工复盘',String((r.matches||[]).length)+'场','赛果外部来源已标注')+metric('正式双源验收',String(e.verified_completed_count||0)+'场','不能拿人工结果冒充'));
+let fields=[['赔率及五大玩法',label('已接入','good')+' T盘口与市场分析'],['当日赛程',label('部分接入','warn')+' 需独立赛事ID和时区'],['昨日比赛结果',label('历史审计','warn')+' 4场外部比分，不写入正式evaluation'],['冻结票面与SP',label('2026-10-26已整理','good')+' 7张58注，已去除票据照片/个人身份'],['逐场长期历史',label('只有部分','warn')+' 约41,514场仅汇总授权数据；以后自动留赛前快照'],['赛果自动双源核验',label('待接通','bad')+' 身份匹配 / 完赛状态 / 双独立来源仍需处理'],['官方首发 / 伤停 / 球员',label('未接入','bad')+' 需授权球队和球员数据 API'],['真实xG / 赛场天气',label('未接入','bad')+' 需独立数据与球场坐标'],['独立AI预测',label('默认关闭','warn')+' 需要密钥、权限、费用确认并保存模型独立记录']];set('coverage-list',fields.map(([k,v])=>item(k,v)).join(''));
+const files=Object.entries(SOURCES).map(([k,path])=>item(k,link(path,RAW+path)+(err[k]?` <span class="bad">${esc(err[k])}</span>`:''))).join('');set('coverage-files',files+item('2026-10-26人工复盘',link('2026-10-26.json',OTHER.review))+item('自动赛前档案索引',link('index.json',OTHER.daily)));}
+function render(){overview();fixtures();markets();yesterday();tickets();history();results();ai();coverage()}
+$('refresh').onclick=refresh;$('fixture-filter').oninput=fixtures;$('ticket-filter').onchange=tickets;
+refresh();setInterval(refresh,60000);
 })();
-</script>
-</body>
-</html>
+</script></body></html>
