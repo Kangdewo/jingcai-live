@@ -50,7 +50,7 @@ jobs:
               raise SystemExit(f'SOURCE_STALE: refusing forecasts from a {age:.1f}-minute-old T snapshot')
           PY
       - name: Run T feed contract tests
-        run: python -m unittest discover -s tests -p 'test_build.py' -v
+        run: python tests/test_build.py
       - name: Run baseline prediction tests
         run: python -m unittest discover -s tests -p 'test_autopredict.py' -v
       - name: Run AI adapter tests
