@@ -1,0 +1,32 @@
+{
+  "schema_version": "TPlusLedgerDay.4",
+  "date_bjt": "2026-10-27",
+  "date_basis": "Asia/Shanghai betting issue date (not kickoff calendar date)",
+  "settlement_type": "pending_no_audited_ticket_records",
+  "summary": null,
+  "tickets": [],
+  "recommendations": [],
+  "matches": [],
+  "model_status": [
+    {
+      "model": "market_devig_v1",
+      "status": "current_market_only",
+      "note": "当前公开模型只有赔率市场基线"
+    },
+    {
+      "model": "001—005 / 006 / 007",
+      "status": "no_connected_independent_run",
+      "note": "对话模型没有自动接入GitHub Actions，待有权限的独立服务端及冻结记录"
+    }
+  ],
+  "notes": [
+    "截至本次生成时未导入经过冻结与复核的当日实单；空缺不代表没有出票或0元亏损。",
+    "页面实时读取最新T盘口与市场基线，但这些不是已出票凭据。"
+  ],
+  "source_documents": [
+    "predictions/latest.json",
+    "predictions/status.json"
+  ],
+  "not_formal_ai_evaluation": true,
+  "attribution_rule": "Only evidence-backed ticket linkage; group attribution is NOT individual model ranking. No after-the-fact changes to freezes."
+}

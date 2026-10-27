@@ -1,0 +1,1947 @@
+{
+  "schema_version": "TPlusLedgerDay.4",
+  "date_bjt": "2026-10-26",
+  "date_basis": "Asia/Shanghai betting issue date (not kickoff calendar date)",
+  "settlement_type": "reconstructed_theoretical_not_redeemed",
+  "summary": {
+    "tickets": 7,
+    "bet_units": 58,
+    "stake_cny": 116,
+    "theoretical_return_cny": 112.25,
+    "theoretical_net_cny": -3.75,
+    "theoretical_roi_pct": -3.2328,
+    "winning_units": 4,
+    "cashout_verified": false,
+    "fully_reconciled": true
+  },
+  "tickets": [
+    {
+      "id": "A",
+      "stake": 22,
+      "theoretical_return": 74.75,
+      "theoretical_net": 52.75,
+      "theoretical_roi_pct": 239.77,
+      "bet_count": 11,
+      "winning_bets": 1,
+      "issued_at_bjt": "2026-10-26 21:51:10",
+      "pass": "2/3/4",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    },
+    {
+      "id": "B",
+      "stake": 8,
+      "theoretical_return": 24.5,
+      "theoretical_net": 16.5,
+      "theoretical_roi_pct": 206.25,
+      "bet_count": 4,
+      "winning_bets": 2,
+      "issued_at_bjt": "2026-10-26 21:51:15",
+      "pass": "单关",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    },
+    {
+      "id": "C",
+      "stake": 12,
+      "theoretical_return": 0.0,
+      "theoretical_net": -12.0,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 6,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-26 21:52:53",
+      "pass": "2关",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    },
+    {
+      "id": "D",
+      "stake": 12,
+      "theoretical_return": 0.0,
+      "theoretical_net": -12.0,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 6,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-26 21:53:24",
+      "pass": "2关",
+      "model_group": "GPT-6 21:45研究版",
+      "attribution_quality": "provisional_only",
+      "note": "暂定研究方案对应D票，不能视为独立AI正式成绩"
+    },
+    {
+      "id": "E",
+      "stake": 32,
+      "theoretical_return": 0.0,
+      "theoretical_net": -32.0,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 16,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-26 21:57:51",
+      "pass": "3/4关",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    },
+    {
+      "id": "F",
+      "stake": 22,
+      "theoretical_return": 0.0,
+      "theoretical_net": -22.0,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 11,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-26 21:59:51",
+      "pass": "2/3/4",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    },
+    {
+      "id": "G",
+      "stake": 8,
+      "theoretical_return": 13.0,
+      "theoretical_net": 5.0,
+      "theoretical_roi_pct": 62.5,
+      "bet_count": 4,
+      "winning_bets": 1,
+      "issued_at_bjt": "2026-10-26 21:59:56",
+      "pass": "单关",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "未找到模型—完整票据映射"
+    }
+  ],
+  "recommendations": [
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "001",
+      "market": "had",
+      "market_label": "胜平负",
+      "pick": "负",
+      "hit": true,
+      "actual": "1:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "001",
+      "market": "rqspf",
+      "market_label": "竞彩让球",
+      "pick": "让负",
+      "hit": false,
+      "actual": "1:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "001",
+      "market": "score",
+      "market_label": "精确比分",
+      "pick": "0:2",
+      "hit": false,
+      "actual": "1:2",
+      "purchase_status": "purchased_choice_only",
+      "linked_ticket_ids": [
+        "C",
+        "D"
+      ],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "001",
+      "market": "total_goals",
+      "market_label": "精确总进球",
+      "pick": "2",
+      "hit": false,
+      "actual": "1:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "001",
+      "market": "half_full",
+      "market_label": "半全场",
+      "pick": "负负",
+      "hit": false,
+      "actual": "1:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "002",
+      "market": "had",
+      "market_label": "胜平负",
+      "pick": "负",
+      "hit": false,
+      "actual": "1:1",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "002",
+      "market": "rqspf",
+      "market_label": "竞彩让球",
+      "pick": "让平",
+      "hit": false,
+      "actual": "1:1",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "002",
+      "market": "score",
+      "market_label": "精确比分",
+      "pick": "0:1",
+      "hit": false,
+      "actual": "1:1",
+      "purchase_status": "purchased_choice_only",
+      "linked_ticket_ids": [
+        "D"
+      ],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "002",
+      "market": "total_goals",
+      "market_label": "精确总进球",
+      "pick": "1",
+      "hit": false,
+      "actual": "1:1",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "002",
+      "market": "half_full",
+      "market_label": "半全场",
+      "pick": "平负",
+      "hit": null,
+      "actual": "1:1",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "003",
+      "market": "had",
+      "market_label": "胜平负",
+      "pick": "胜",
+      "hit": true,
+      "actual": "2:0",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "003",
+      "market": "rqspf",
+      "market_label": "竞彩让球",
+      "pick": "让平",
+      "hit": false,
+      "actual": "2:0",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "003",
+      "market": "score",
+      "market_label": "精确比分",
+      "pick": "1:0",
+      "hit": false,
+      "actual": "2:0",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "003",
+      "market": "total_goals",
+      "market_label": "精确总进球",
+      "pick": "1",
+      "hit": false,
+      "actual": "2:0",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "003",
+      "market": "half_full",
+      "market_label": "半全场",
+      "pick": "胜胜",
+      "hit": true,
+      "actual": "2:0",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "004",
+      "market": "had",
+      "market_label": "胜平负",
+      "pick": "胜",
+      "hit": true,
+      "actual": "3:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "004",
+      "market": "rqspf",
+      "market_label": "竞彩让球",
+      "pick": "让胜",
+      "hit": false,
+      "actual": "3:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "004",
+      "market": "score",
+      "market_label": "精确比分",
+      "pick": "2:0",
+      "hit": false,
+      "actual": "3:2",
+      "purchase_status": "purchased_choice_only",
+      "linked_ticket_ids": [
+        "C",
+        "D",
+        "E"
+      ],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "004",
+      "market": "total_goals",
+      "market_label": "精确总进球",
+      "pick": "2",
+      "hit": false,
+      "actual": "3:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "T研究初版（综合非独立）",
+      "code": "004",
+      "market": "half_full",
+      "market_label": "半全场",
+      "pick": "胜胜",
+      "hit": true,
+      "actual": "3:2",
+      "purchase_status": "not_purchased",
+      "linked_ticket_ids": [],
+      "note": "此处仅比较同场同玩法相同选择，出票结构、模型身份另行审核"
+    },
+    {
+      "model": "market_devig_v1",
+      "code": "001",
+      "market": "spf",
+      "market_label": "赔率去水市场基线",
+      "pick": "负",
+      "hit": true,
+      "actual": "1:2",
+      "purchase_status": "not_model_ticket_attributable",
+      "linked_ticket_ids": [],
+      "note": "仅市场基线，不能算独立AI，也不自动等于彩票下注"
+    },
+    {
+      "model": "market_devig_v1",
+      "code": "002",
+      "market": "spf",
+      "market_label": "赔率去水市场基线",
+      "pick": "负",
+      "hit": false,
+      "actual": "1:1",
+      "purchase_status": "not_model_ticket_attributable",
+      "linked_ticket_ids": [],
+      "note": "仅市场基线，不能算独立AI，也不自动等于彩票下注"
+    },
+    {
+      "model": "market_devig_v1",
+      "code": "003",
+      "market": "spf",
+      "market_label": "赔率去水市场基线",
+      "pick": "胜",
+      "hit": true,
+      "actual": "2:0",
+      "purchase_status": "not_model_ticket_attributable",
+      "linked_ticket_ids": [],
+      "note": "仅市场基线，不能算独立AI，也不自动等于彩票下注"
+    },
+    {
+      "model": "market_devig_v1",
+      "code": "004",
+      "market": "spf",
+      "market_label": "赔率去水市场基线",
+      "pick": "胜",
+      "hit": true,
+      "actual": "3:2",
+      "purchase_status": "not_model_ticket_attributable",
+      "linked_ticket_ids": [],
+      "note": "仅市场基线，不能算独立AI，也不自动等于彩票下注"
+    }
+  ],
+  "matches": [
+    {
+      "code": "001",
+      "league": "葡超",
+      "home": "圣克拉拉",
+      "away": "本菲卡",
+      "kickoff_bjt": "2026-10-27 02:45",
+      "score": "1:2",
+      "half_time": "1:0",
+      "result_source_url": "https://www.slbenfica.pt/pt-pt/agora/noticias/2026/10/26/futebol-cronica-santa-clara-benfica-9-jornada-liga-betclic",
+      "odds_snapshot": {
+        "asof_bjt": "2026-10-26 20:26:43",
+        "source_blob_sha": "49df9b85b46cb05bc567b955b43c94e63f2d2db5",
+        "had_hda": [
+          9.5,
+          5.05,
+          1.21
+        ],
+        "handicap": "+1",
+        "hhad_hda": [
+          3.38,
+          3.65,
+          1.79
+        ],
+        "actual_exact_score_sp": 6.5,
+        "early_asof_bjt": "2026-10-26 19:34:15",
+        "early_had_hda": [
+          9.35,
+          4.95,
+          1.22
+        ],
+        "early_actual_score_sp": 6.75,
+        "early_source_blob_sha": "16cfdc577ace1897cdb5c3dbe7da599e182c817b"
+      },
+      "research_prediction": {
+        "freeze_at_bjt": "2026-10-26T20:30:09+08:00",
+        "freeze_kind": "market_anchored_initial_five_markets",
+        "had": "负",
+        "rqspf": "让负",
+        "score": "0:2",
+        "total_goals": "2",
+        "half_full": "负负",
+        "handicap": "+1",
+        "risk": "中；客胜偏热，但圣克拉拉近期不败，本菲卡有伤停",
+        "model_identity": "T research synthesis — NOT independent model 001–006"
+      },
+      "research_checks": {
+        "had_hit": true,
+        "rqspf_hit": false,
+        "score_hit": false,
+        "total_goals_hit": false,
+        "half_full_hit": false,
+        "baseline_top1_hit": true
+      }
+    },
+    {
+      "code": "002",
+      "league": "法乙",
+      "home": "布洛涅",
+      "away": "兰斯",
+      "kickoff_bjt": "2026-10-27 03:45",
+      "score": "1:1",
+      "half_time": null,
+      "result_source_url": "https://www.sofascore.com/football/match/us-boulogne-cote-dopale-stade-de-reims/HIslJ",
+      "odds_snapshot": {
+        "asof_bjt": "2026-10-26 20:26:43",
+        "source_blob_sha": "49df9b85b46cb05bc567b955b43c94e63f2d2db5",
+        "had_hda": [
+          3.7,
+          3.3,
+          1.8
+        ],
+        "handicap": "+1",
+        "hhad_hda": [
+          1.76,
+          3.2,
+          4.02
+        ],
+        "actual_exact_score_sp": 5.75,
+        "early_asof_bjt": "2026-10-26 19:34:15",
+        "early_had_hda": [
+          3.7,
+          3.3,
+          1.8
+        ],
+        "early_actual_score_sp": 6.0,
+        "early_source_blob_sha": "16cfdc577ace1897cdb5c3dbe7da599e182c817b"
+      },
+      "research_prediction": {
+        "freeze_at_bjt": "2026-10-26T20:30:09+08:00",
+        "freeze_kind": "market_anchored_initial_five_markets",
+        "had": "负",
+        "rqspf": "让平",
+        "score": "0:1",
+        "total_goals": "1",
+        "half_full": "平负",
+        "handicap": "+1",
+        "risk": "高；客胜接近五成、让平仅约四分之一市场概率，主攻客队净胜1球是C2/C3联合情景选择",
+        "model_identity": "T research synthesis — NOT independent model 001–006"
+      },
+      "research_checks": {
+        "had_hit": false,
+        "rqspf_hit": false,
+        "score_hit": false,
+        "total_goals_hit": false,
+        "half_full_hit": null,
+        "baseline_top1_hit": false
+      }
+    },
+    {
+      "code": "003",
+      "league": "西甲",
+      "home": "塞维利亚",
+      "away": "奥萨苏纳",
+      "kickoff_bjt": "2026-10-27 04:00",
+      "score": "2:0",
+      "half_time": "1:0",
+      "result_source_url": "https://www.laliga.com/en-NL/match/temporada-2026-2027-laliga-ea-sports-sevilla-fc-ca-osasuna-10",
+      "odds_snapshot": {
+        "asof_bjt": "2026-10-26 20:26:43",
+        "source_blob_sha": "49df9b85b46cb05bc567b955b43c94e63f2d2db5",
+        "had_hda": [
+          1.61,
+          3.4,
+          4.66
+        ],
+        "handicap": "-1",
+        "hhad_hda": [
+          3.56,
+          2.87,
+          2.0
+        ],
+        "actual_exact_score_sp": 7.5,
+        "early_asof_bjt": "2026-10-26 19:34:15",
+        "early_had_hda": [
+          1.61,
+          3.4,
+          4.66
+        ],
+        "early_actual_score_sp": 7.5,
+        "early_source_blob_sha": "16cfdc577ace1897cdb5c3dbe7da599e182c817b"
+      },
+      "research_prediction": {
+        "freeze_at_bjt": "2026-10-26T20:30:09+08:00",
+        "freeze_kind": "market_anchored_initial_five_markets",
+        "had": "胜",
+        "rqspf": "让平",
+        "score": "1:0",
+        "total_goals": "1",
+        "half_full": "胜胜",
+        "handicap": "-1",
+        "risk": "中高；主队近期三场不胜，奥萨苏纳新帅且有伤缺；需防平",
+        "model_identity": "T research synthesis — NOT independent model 001–006"
+      },
+      "research_checks": {
+        "had_hit": true,
+        "rqspf_hit": false,
+        "score_hit": false,
+        "total_goals_hit": false,
+        "half_full_hit": true,
+        "baseline_top1_hit": true
+      }
+    },
+    {
+      "code": "004",
+      "league": "巴甲",
+      "home": "弗拉门戈",
+      "away": "米竞技",
+      "kickoff_bjt": "2026-10-27 07:00",
+      "score": "3:2",
+      "half_time": "2:1",
+      "result_source_url": "https://www.flamengo.com.br/flamengo/noticias/futebol/com-emocao-ate-o-fim-flamengo-vira-sobre-o-atletico-mg-e-volta-a-lideranca-do-brasileirao",
+      "odds_snapshot": {
+        "asof_bjt": "2026-10-26 20:26:43",
+        "source_blob_sha": "49df9b85b46cb05bc567b955b43c94e63f2d2db5",
+        "had_hda": [
+          1.16,
+          6.0,
+          9.9
+        ],
+        "handicap": "-1",
+        "hhad_hda": [
+          1.73,
+          3.32,
+          4.0
+        ],
+        "actual_exact_score_sp": 19.0,
+        "early_asof_bjt": "2026-10-26 19:34:15",
+        "early_had_hda": [
+          1.16,
+          6,
+          9.9
+        ],
+        "early_actual_score_sp": 19.0,
+        "early_source_blob_sha": "16cfdc577ace1897cdb5c3dbe7da599e182c817b"
+      },
+      "research_prediction": {
+        "freeze_at_bjt": "2026-10-26T20:30:09+08:00",
+        "freeze_kind": "market_anchored_initial_five_markets",
+        "had": "胜",
+        "rqspf": "让胜",
+        "score": "2:0",
+        "total_goals": "2",
+        "half_full": "胜胜",
+        "handicap": "-1",
+        "risk": "中；主队赔率深热，周中杯赛出局后存在体能及心理不确定性",
+        "model_identity": "T research synthesis — NOT independent model 001–006"
+      },
+      "research_checks": {
+        "had_hit": true,
+        "rqspf_hit": false,
+        "score_hit": false,
+        "total_goals_hit": false,
+        "half_full_hit": true,
+        "baseline_top1_hit": true
+      }
+    }
+  ],
+  "model_status": [
+    {
+      "model": "market_devig_v1",
+      "status": "market_baseline_only",
+      "note": "四场胜平负方向3/4，非独立AI"
+    },
+    {
+      "model": "GPT-6研究版 D票",
+      "status": "provisional_only",
+      "note": "D票12元，不能扩展为其他票归属"
+    },
+    {
+      "model": "001—006独立生产模型",
+      "status": "no_verified_logs",
+      "note": "本批无完整独立执行/冻结输出，不能评分"
+    }
+  ],
+  "notes": [
+    "比赛开球日期为10/27凌晨，但此账本按10/26出票日期归档。",
+    "赛果来自赛后人工外部资料，尚未进入正式双源评价池。",
+    "整票D暂定GPT-6研究版，其余A/B/C/E/F/G不能强制分配到001—005。"
+  ],
+  "source_documents": [
+    "docs/data/reviews/2026-10-26.json",
+    "20261026_七张体彩实票_不可覆盖原始冻结.json",
+    "Tplus_T_四场五指标_初版冻结.json",
+    "GitHub历史提交 9311155d0f3f（market_devig_v1）"
+  ],
+  "not_formal_ai_evaluation": true,
+  "attribution_rule": "Only evidence-backed ticket linkage; group attribution is NOT individual model ranking. No after-the-fact changes to freezes.",
+  "bets": [
+    {
+      "id": "A-01",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": true,
+      "theoretical_payout": 74.75
+    },
+    {
+      "id": "A-02",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-03",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-04",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-05",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-06",
+      "ticket_id": "A",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-07",
+      "ticket_id": "A",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-08",
+      "ticket_id": "A",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-09",
+      "ticket_id": "A",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-10",
+      "ticket_id": "A",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "A-11",
+      "ticket_id": "A",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "B-01",
+      "ticket_id": "B",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        }
+      ],
+      "hit": true,
+      "theoretical_payout": 13.0
+    },
+    {
+      "id": "B-02",
+      "ticket_id": "B",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": true,
+      "theoretical_payout": 11.5
+    },
+    {
+      "id": "B-03",
+      "ticket_id": "B",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "B-04",
+      "ticket_id": "B",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "004",
+          "score": "2:1",
+          "sp": 6.7
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-01",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-02",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-03",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-04",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-05",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "C-06",
+      "ticket_id": "C",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "1:1",
+          "sp": 5.75
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-01",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "002",
+          "score": "0:1",
+          "sp": 6.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-02",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "003",
+          "score": "2:1",
+          "sp": 6.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-03",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "0:2",
+          "sp": 6.0
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-04",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "0:1",
+          "sp": 6.5
+        },
+        {
+          "code": "003",
+          "score": "2:1",
+          "sp": 6.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-05",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "0:1",
+          "sp": 6.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "D-06",
+      "ticket_id": "D",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "2:1",
+          "sp": 6.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-01",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-02",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-03",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-04",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-05",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-06",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-07",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-08",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-09",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-10",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-11",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-12",
+      "ticket_id": "E",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-13",
+      "ticket_id": "E",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-14",
+      "ticket_id": "E",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "2:1",
+          "sp": 22.0
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-15",
+      "ticket_id": "E",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "2:0",
+          "sp": 6.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "E-16",
+      "ticket_id": "E",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:1",
+          "sp": 9.5
+        },
+        {
+          "code": "002",
+          "score": "2:1",
+          "sp": 11.5
+        },
+        {
+          "code": "003",
+          "score": "3:1",
+          "sp": 14.5
+        },
+        {
+          "code": "004",
+          "score": "1:1",
+          "sp": 10.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-01",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-02",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-03",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-04",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-05",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-06",
+      "ticket_id": "F",
+      "pass": 2,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-07",
+      "ticket_id": "F",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-08",
+      "ticket_id": "F",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-09",
+      "ticket_id": "F",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-10",
+      "ticket_id": "F",
+      "pass": 3,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "F-11",
+      "ticket_id": "F",
+      "pass": 4,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        },
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        },
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        },
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "G-01",
+      "ticket_id": "G",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "001",
+          "score": "1:2",
+          "sp": 6.5
+        }
+      ],
+      "hit": true,
+      "theoretical_payout": 13.0
+    },
+    {
+      "id": "G-02",
+      "ticket_id": "G",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "002",
+          "score": "5:2",
+          "sp": 500.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "G-03",
+      "ticket_id": "G",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "003",
+          "score": "1:4",
+          "sp": 150.0
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    },
+    {
+      "id": "G-04",
+      "ticket_id": "G",
+      "pass": 1,
+      "stake": 2.0,
+      "legs": [
+        {
+          "code": "004",
+          "score": "4:1",
+          "sp": 15.5
+        }
+      ],
+      "hit": false,
+      "theoretical_payout": 0.0
+    }
+  ],
+  "match_review_path": "data/reviews/2026-10-26.json"
+}

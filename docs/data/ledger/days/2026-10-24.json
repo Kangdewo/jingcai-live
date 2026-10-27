@@ -1,0 +1,121 @@
+{
+  "schema_version": "TPlusLedgerDay.4",
+  "date_bjt": "2026-10-24",
+  "date_basis": "Asia/Shanghai betting issue date (not kickoff calendar date)",
+  "settlement_type": "reconstructed_theoretical_not_redeemed",
+  "summary": {
+    "tickets": 3,
+    "bet_units": 34,
+    "stake_cny": 68,
+    "theoretical_return_cny": 62.38,
+    "theoretical_net_cny": -5.62,
+    "theoretical_roi_pct": -8.2647,
+    "winning_units": 4,
+    "cashout_verified": false,
+    "fully_reconciled": true
+  },
+  "tickets": [
+    {
+      "id": "A",
+      "stake": 34,
+      "theoretical_return": 0,
+      "theoretical_net": -34,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 17,
+      "winning_bets": 0,
+      "issued_at_bjt": null,
+      "pass": "",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "来源审计：具体出票结构不可确定模型提出者"
+    },
+    {
+      "id": "B",
+      "stake": 12,
+      "theoretical_return": 0,
+      "theoretical_net": -12,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 6,
+      "winning_bets": 0,
+      "issued_at_bjt": null,
+      "pass": "",
+      "model_group": "",
+      "attribution_quality": "unattributed",
+      "note": "两项盘口与初版预测不同，但命中；更改提出者不明"
+    },
+    {
+      "id": "C",
+      "stake": 22,
+      "theoretical_return": 62.38,
+      "theoretical_net": 40.38,
+      "theoretical_roi_pct": 183.55,
+      "bet_count": 11,
+      "winning_bets": 4,
+      "issued_at_bjt": null,
+      "pass": "",
+      "model_group": "T-20261024-INITIAL-v1 部分选项一致",
+      "attribution_quality": "partial_selection_only",
+      "note": "四个单项与初盘一致，不代表原样推荐过整张组合票"
+    }
+  ],
+  "recommendations": [
+    {
+      "model": "T-20261024-INITIAL-v1",
+      "code": "023",
+      "market": "exact_score",
+      "pick": "2:1",
+      "purchase_status": "purchased_choice_only",
+      "note": "C票单项符合初盘，组合归属未证实"
+    },
+    {
+      "model": "T-20261024-INITIAL-v1",
+      "code": "024",
+      "market": "spf",
+      "pick": "胜",
+      "purchase_status": "purchased_choice_only",
+      "note": "C票单项符合初盘"
+    },
+    {
+      "model": "T-20261024-INITIAL-v1",
+      "code": "025",
+      "market": "exact_score",
+      "pick": "1:2",
+      "purchase_status": "purchased_choice_only",
+      "note": "C票单项符合初盘"
+    },
+    {
+      "model": "T-20261024-INITIAL-v1",
+      "code": "029",
+      "market": "spf",
+      "pick": "负",
+      "purchase_status": "purchased_choice_only",
+      "note": "C票单项符合初盘"
+    },
+    {
+      "model": "T-20261024-INITIAL-v1",
+      "code": "026",
+      "market": "hhad",
+      "pick": "让负/原初版待查",
+      "purchase_status": "evidence_insufficient",
+      "note": "B票不同于初盘，不能追认修改来源"
+    }
+  ],
+  "matches": [],
+  "model_status": [
+    {
+      "model": "T初版研究",
+      "status": "partial_selection_evidence",
+      "note": "部分票面选项对应；不能归功于独立005"
+    }
+  ],
+  "notes": [
+    "旧模型001—005独立输出不可证实；X老师没有签核。",
+    "10/24实票为三张、34注；理论结算，非兑奖到账。"
+  ],
+  "source_documents": [
+    "T表格_20261025_实票来源责任与模型归属锁定_v1.xlsx",
+    "T表格_20261025_中奖来源与模型责任审计报告.md"
+  ],
+  "not_formal_ai_evaluation": true,
+  "attribution_rule": "Only evidence-backed ticket linkage; group attribution is NOT individual model ranking. No after-the-fact changes to freezes."
+}

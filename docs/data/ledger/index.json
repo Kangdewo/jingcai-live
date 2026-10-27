@@ -1,0 +1,89 @@
+{
+  "schema_version": "TPlusLedgerIndex.4",
+  "date_basis": "Asia/Shanghai issue date, not kickoff date",
+  "currency": "CNY",
+  "scope": "audited theoretical ticket accounting; independent AI metrics separate",
+  "dates": [
+    {
+      "date_bjt": "2026-10-24",
+      "status": "reviewed_theoretical",
+      "summary": {
+        "tickets": 3,
+        "bet_units": 34,
+        "winning_units": 4,
+        "stake_cny": 68.0,
+        "theoretical_return_cny": 62.38,
+        "theoretical_net_cny": -5.62
+      },
+      "path": "data/ledger/days/2026-10-24.json"
+    },
+    {
+      "date_bjt": "2026-10-25",
+      "status": "reviewed_theoretical",
+      "summary": {
+        "tickets": 4,
+        "bet_units": 29,
+        "winning_units": 2,
+        "stake_cny": 58.0,
+        "theoretical_return_cny": 20.85,
+        "theoretical_net_cny": -37.15
+      },
+      "path": "data/ledger/days/2026-10-25.json"
+    },
+    {
+      "date_bjt": "2026-10-26",
+      "status": "reviewed_theoretical",
+      "summary": {
+        "tickets": 7,
+        "bet_units": 58,
+        "winning_units": 4,
+        "stake_cny": 116.0,
+        "theoretical_return_cny": 112.25,
+        "theoretical_net_cny": -3.75
+      },
+      "path": "data/ledger/days/2026-10-26.json"
+    },
+    {
+      "date_bjt": "2026-10-27",
+      "status": "pending",
+      "summary": null,
+      "path": "data/ledger/days/2026-10-27.json"
+    }
+  ],
+  "cumulative": {
+    "settled_days": 3,
+    "stake_cny": 242.0,
+    "theoretical_return_cny": 195.48,
+    "net_cny": -46.52,
+    "roi_pct": -19.2231,
+    "cashout_verified": false
+  },
+  "cumulative_points": [
+    {
+      "date_bjt": "2026-10-24",
+      "stake_cny": 68.0,
+      "theoretical_return_cny": 62.38,
+      "net_cny": -5.62
+    },
+    {
+      "date_bjt": "2026-10-25",
+      "stake_cny": 126.0,
+      "theoretical_return_cny": 83.23,
+      "net_cny": -42.77
+    },
+    {
+      "date_bjt": "2026-10-26",
+      "stake_cny": 242.0,
+      "theoretical_return_cny": 195.48,
+      "net_cny": -46.52
+    }
+  ],
+  "privacy": "never publish names, ticket photos, barcodes, tokens, identifying fingerprints",
+  "rules": [
+    "Only ticket-complete settled days enter ROI",
+    "Missing/pending days are not zero-return or zero-stake days",
+    "No individual-model ROI without ticket-plan ID/time evidence",
+    "No post-match edits to originally frozen records",
+    "Formal TPlus dual-source evaluation.json is separate"
+  ]
+}

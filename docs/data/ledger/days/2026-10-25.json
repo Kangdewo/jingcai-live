@@ -1,0 +1,269 @@
+{
+  "schema_version": "TPlusLedgerDay.4",
+  "date_bjt": "2026-10-25",
+  "date_basis": "Asia/Shanghai betting issue date (not kickoff calendar date)",
+  "settlement_type": "reconstructed_theoretical_not_redeemed",
+  "summary": {
+    "tickets": 4,
+    "bet_units": 29,
+    "stake_cny": 58,
+    "theoretical_return_cny": 20.85,
+    "theoretical_net_cny": -37.15,
+    "theoretical_roi_pct": -64.0517,
+    "winning_units": 2,
+    "cashout_verified": false,
+    "fully_reconciled": true
+  },
+  "tickets": [
+    {
+      "id": "A",
+      "stake": 8,
+      "theoretical_return": 0,
+      "theoretical_net": -8,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 4,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-25 22:11:06",
+      "pass": "2/3关",
+      "model_group": "01/001/002模型组",
+      "attribution_quality": "group_only",
+      "note": ""
+    },
+    {
+      "id": "B",
+      "stake": 6,
+      "theoretical_return": 12.4,
+      "theoretical_net": 6.4,
+      "theoretical_roi_pct": 106.67,
+      "bet_count": 3,
+      "winning_bets": 1,
+      "issued_at_bjt": "2026-10-25 22:11:11",
+      "pass": "单关",
+      "model_group": "01/001/002模型组",
+      "attribution_quality": "group_only",
+      "note": ""
+    },
+    {
+      "id": "C",
+      "stake": 22,
+      "theoretical_return": 8.45,
+      "theoretical_net": -13.55,
+      "theoretical_roi_pct": -61.59,
+      "bet_count": 11,
+      "winning_bets": 1,
+      "issued_at_bjt": "2026-10-25 22:07:30",
+      "pass": "2/3/4关",
+      "model_group": "01/001/002模型组",
+      "attribution_quality": "group_only",
+      "note": ""
+    },
+    {
+      "id": "D01",
+      "stake": 22,
+      "theoretical_return": 0,
+      "theoretical_net": -22,
+      "theoretical_roi_pct": -100.0,
+      "bet_count": 11,
+      "winning_bets": 0,
+      "issued_at_bjt": "2026-10-25 22:50:26",
+      "pass": "2/3/4关",
+      "model_group": "独立D01方案",
+      "attribution_quality": "ticket_plan_association",
+      "note": "D01四个选项已登记，整票0注命中；不推定001—005单独责任"
+    }
+  ],
+  "recommendations": [
+    {
+      "model": "独立D01方案",
+      "code": "019",
+      "market": "spf",
+      "pick": "平",
+      "actual": "0:0",
+      "hit": true,
+      "purchase_status": "purchased",
+      "note": "单腿命中，但与其他腿串关未中奖"
+    },
+    {
+      "model": "独立D01方案",
+      "code": "025",
+      "market": "total_goals",
+      "pick": "3球",
+      "actual": "0:2",
+      "hit": false,
+      "purchase_status": "purchased"
+    },
+    {
+      "model": "独立D01方案",
+      "code": "026",
+      "market": "exact_score",
+      "pick": "1:2",
+      "actual": "0:2",
+      "hit": false,
+      "purchase_status": "purchased"
+    },
+    {
+      "model": "独立D01方案",
+      "code": "029",
+      "market": "hhad",
+      "pick": "让平",
+      "actual": "2:2",
+      "hit": false,
+      "purchase_status": "purchased"
+    }
+  ],
+  "matches": [
+    {
+      "code": "019",
+      "home": "塞尔塔",
+      "away": "贝蒂斯",
+      "score": "0:0",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "020",
+      "home": "雷恩",
+      "away": "斯特拉斯堡",
+      "score": "3:0",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "021",
+      "home": "桑德兰",
+      "away": "利兹联",
+      "score": "0:0",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "022",
+      "home": "弗赖堡",
+      "away": "拜仁",
+      "score": "1:3",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "023",
+      "home": "莱切",
+      "away": "尤文图斯",
+      "score": "0:2",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "024",
+      "home": "皇家社会",
+      "away": "莱万特",
+      "score": "2:1",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "025",
+      "home": "阿尔克马",
+      "away": "特温特",
+      "score": "0:2",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "026",
+      "home": "乌迪内斯",
+      "away": "AC米兰",
+      "score": "0:2",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "027",
+      "home": "巴塞罗那",
+      "away": "皇家马德里",
+      "score": "1:2",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    },
+    {
+      "code": "029",
+      "home": "洛杉矶FC",
+      "away": "洛城银河",
+      "score": "2:2",
+      "half_time": null,
+      "league": "待查",
+      "kickoff_bjt": null,
+      "odds_snapshot": {},
+      "source_document": "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+      "result_status": "historical_workbook_reconciliation_not_formal_double_source"
+    }
+  ],
+  "model_status": [
+    {
+      "model": "01/001/002模型组",
+      "status": "group_only",
+      "note": "合并组别36元投入，不能拆成单模型盈利"
+    },
+    {
+      "model": "独立D01方案",
+      "status": "ticket_plan_association",
+      "note": "22元票，返奖0；不等同于其他06/005模型"
+    },
+    {
+      "model": "G-20261025-G0-v1",
+      "status": "frozen_but_unlinked",
+      "note": "有冻结版名称，缺乏可对齐的整票模型归属与逐项独立赛前输出"
+    },
+    {
+      "model": "06-20261025-FINAL-INDEPENDENT-v2",
+      "status": "frozen_but_unlinked",
+      "note": "需归档原始逐场输出与时间戳后才能独立结算；不得以D01替代06"
+    }
+  ],
+  "notes": [
+    "10月25日“十单”代表A/B/C票10项选项，不是10张票。",
+    "四张票29注，2注命中，按出票赔率推算。",
+    "旧模型组01/001/002不能拆分为三个独立模型贡献。"
+  ],
+  "source_documents": [
+    "20261026_原组10项与D01四票29注_逐注返奖结算.xlsx",
+    "20261025_三张实票_外部排除与我的五指标冻结.xlsx"
+  ],
+  "not_formal_ai_evaluation": true,
+  "attribution_rule": "Only evidence-backed ticket linkage; group attribution is NOT individual model ranking. No after-the-fact changes to freezes."
+}
