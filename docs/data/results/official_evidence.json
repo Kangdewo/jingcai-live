@@ -1,0 +1,23 @@
+{
+  "schema_version": "TPlusOfficialCorroboration.v5.1",
+  "asof_utc": "2026-10-27T13:00:00+00:00",
+  "research_only": true,
+  "automatic_api_dual_verified": false,
+  "counts_toward_formal_accuracy": false,
+  "matches": [
+    {
+      "t_match_id": "t:2026-10-27:周一003",
+      "home": "塞维利亚",
+      "away": "奥萨苏纳",
+      "kickoff_utc": "2026-10-26T20:00:00+00:00",
+      "official_full_time": [2, 0],
+      "official_result_status": "CORROBORATED_BY_LEAGUE_AND_CLUB_REPORTS",
+      "sources": [
+        {"publisher": "LaLiga", "url": "https://www.laliga.com/en-NL/match/temporada-2026-2027-laliga-ea-sports-sevilla-fc-ca-osasuna-10"},
+        {"publisher": "Sevilla FC", "url": "https://sevillafc.es/en/actualidad/noticias/match-report-osasuna-h-2627"},
+        {"publisher": "CA Osasuna", "url": "https://www.osasuna.es/en-laliga-2026-sevilla-vs-osasuna"}
+      ],
+      "caveat_cn": "官方赛果用于往日复盘展示，不代表 OpenLigaDB 和 football-data.org 双源机器核验，不能因此计入正式模型评分。"
+    }
+  ]
+}

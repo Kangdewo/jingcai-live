@@ -1,0 +1,19 @@
+{
+  "schema_version": "TPlusAlternativeProviderCandidates.v5.1",
+  "note_cn": "仅用于替代源诊断；候选数据不进入正式赛果。ESPN 接口未经在本环境验证，不自动批准，不得假定候选事件 ID 正确。",
+  "candidates": [
+    {
+      "t_match_id": "t:2026-10-27:周一003",
+      "provider": "espn",
+      "league": "esp.1",
+      "event_id": "401882828",
+      "kickoff_utc": "2026-10-26T20:00:00+00:00",
+      "home": "塞维利亚",
+      "away": "奥萨苏纳",
+      "home_team_id": null,
+      "away_team_id": null,
+      "approved_for_diagnostic": false,
+      "notes": "第三方页面提示 ESPN event 401882828，但未核实 ESPN 自身两队 team.id。只有人工从 ESPN 官方返回结果确认 event/team/时间后才能打开只读候选诊断。"
+    }
+  ]
+}

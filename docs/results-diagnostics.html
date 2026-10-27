@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>T+ v5.1 · 赛果来源诊断</title>
+<style>
+:root{color-scheme:dark;--bg:#071422;--panel:#101f32;--border:#30445b;--txt:#e5f0fc;--dim:#a2b5cb;--a:#69c6e7;--bad:#ffaaaa;--good:#83dcb3;--warn:#f2cb88}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.65 system-ui,-apple-system,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif}main{max-width:1240px;margin:auto;padding:20px}header,nav,.titleline,.cards,.two{display:flex;align-items:center;gap:10px;flex-wrap:wrap}header{justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:14px}h1{font-size:22px;line-height:1.4;margin:0}h2{font-size:16px;margin:0 0 9px}p{margin:5px 0}.hint{color:var(--dim);font-size:12px}.pill{font-size:12px;border:1px solid var(--border);border-radius:99px;padding:3px 9px}.warn{color:var(--warn)}.bad{color:var(--bad)}.good{color:var(--good)}a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}button{cursor:pointer;background:#123747;color:var(--txt);border:1px solid #356a79;border-radius:9px;padding:8px 13px;font:inherit}.panel{border:1px solid var(--border);background:var(--panel);padding:15px;border-radius:13px;margin-top:12px}.cards{align-items:stretch}.metric{flex:1;min-width:180px}.metric strong{display:block;font-size:23px;font-variant-numeric:tabular-nums}.two{align-items:stretch}.two>*{flex:1;min-width:260px}.row{display:flex;gap:14px;justify-content:space-between;padding:8px 0;border-bottom:1px solid #27405a;overflow-wrap:anywhere}.row:last-child{border:0}.label{color:var(--dim)}.status{font-size:15px;font-weight:700}.details{font-size:12px;overflow-wrap:anywhere}.footer{padding:20px 0;color:var(--dim);font-size:12px}.empty{padding:14px;color:var(--warn)}
+</style>
+</head>
+<body><main>
+<header><div><h1>T+ · 赛果源诊断 <span class="pill">v5.1</span></h1><p class="hint">两家 API 独立检测 · 官方赛果独立呈现 · 第三来源仅候选审查</p></div><nav><a href="./">返回数据中枢</a><button id="reload" type="button">刷新状态</button></nav></header>
+<div class="panel warn">核验边界：西甲或俱乐部官方页面的完赛报告可以支持历史复盘展示，但不等于 OpenLigaDB 与 football-data.org 已经通过双 API 核验。此诊断页不改变预测记录、赛果核验数或实单收益。</div>
+<section class="cards"><div class="panel metric"><span class="label">已批准映射</span><strong id="approved">—</strong></div><div class="panel metric"><span class="label">本轮 API 探测</span><strong id="probed">—</strong></div><div class="panel metric"><span class="label">GitHub API Secret</span><strong id="secret">—</strong></div><div class="panel metric"><span class="label">诊断更新时间（北京时间）</span><strong id="when" style="font-size:15px">—</strong></div></section>
+<h2 style="margin-top:18px">真实接口状态</h2><div id="results" class="empty">正在加载诊断文件……</div>
+<h2 style="margin-top:18px">官方完赛资料（不计正式双源）</h2><div id="official" class="empty">正在读取……</div>
+<p class="footer">数据来源：docs/data/results/diagnostics.json 与 official_evidence.json。页面自动每60秒重新读取；数据自身仅在 GitHub 工作流运行时更新。密钥始终留在 GitHub Actions Secrets 中。</p>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const texts={HTTP_ERROR:'HTTP 请求错误',FETCH_OR_FORMAT_ERROR:'数据读取或格式错误',SOURCE_STALE_NOT_FINISHED:'上游长期未更新',SOURCE_NOT_FINISHED:'来源尚未标记完赛',FINISHED_CONFIRMED:'来源确认完赛',SECRET_MISSING:'API Secret 缺失',ALT_ID_REVIEW_REQUIRED:'候选 ID 尚未批准诊断',NO_ALT_CANDIDATE:'没有第三源候选',ALT_CANDIDATE_REVIEW_ONLY:'第三源候选（仅供人工审查）',ALT_SCHEMA_UNSUPPORTED:'替代源接口格式不支持',IDENTITY_MISMATCH:'球队/日期/比赛 ID 不一致'};
+const st=x=>esc(texts[x]||x||'无数据');
+const cl=x=>/FINISHED_CONFIRMED/.test(x)?'good':/ERROR|MISMATCH|SECRET_MISSING/.test(x)?'bad':'warn';
+const hdate=v=>{if(!v)return '尚未运行';const d=new Date(v);return isNaN(+d)?'日期无效':new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(d)};
+async function loadJSON(url){const r=await fetch(url+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return await r.json()}
+async function show(){
+try{
+ const [data,official]=await Promise.all([loadJSON('data/results/diagnostics.json'),loadJSON('data/results/official_evidence.json')]);
+ $('approved').textContent=data.approved_links??'—';$('probed').textContent=data.probed_links??'—';$('secret').textContent=data.api_secret_present==null?'未检测':data.api_secret_present?'已配置':'未配置';$('when').textContent=hdate(data.checked_at_utc);
+ const rows=Array.isArray(data.matches)?data.matches:[];
+ $('results').innerHTML=rows.length?rows.map(r=>{
+ const sources=Object.entries(r.sources||{}).map(([name,v])=>`<div class="row"><span class="label">${esc(name)}</span><span class="${cl(v.state)}">${st(v.state)}${v.http_status?' · HTTP '+esc(v.http_status):''}</span></div><div class="hint details">${v.hint?'原因：'+esc(v.hint)+' · ':''}${v.last_updated?'源更新时间：'+esc(v.last_updated)+' · ':''}${v.age_hours_approx?'约滞后'+esc(v.age_hours_approx)+'小时 · ':''}${v.score?'比分 '+esc(v.score.join(':')):''}</div>`).join('');
+ const alt=r.alternative||{};return `<div class="panel"><h2>${esc(r.t_match_id)}</h2><div class="two"><div>${sources}</div><div class="panel"><b>替代数据源</b><p class="${cl(alt.state)}">${st(alt.state)}</p><p class="hint">仅用于审查，不能自动写入正式赛果</p></div></div></div>`}).join(''):'<div class="panel warn">暂无诊断记录。请先通过 GitHub Actions 手动运行 v5 工作流。</div>';
+ const items=Array.isArray(official.matches)?official.matches:[];
+ $('official').innerHTML=items.map(m=>`<div class="panel"><div class="titleline"><h2>${esc(m.home)} ${esc((m.official_full_time||[]).join(' : '))} ${esc(m.away)}</h2><span class="pill good">联赛/俱乐部官方资料已交叉核对</span></div><p class="hint">${esc(m.t_match_id)} · 官方比分仅作历史复盘，不进入正式模型成绩</p>${(m.sources||[]).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)} ↗</a>`).join(' · ')}</div>`).join('')||'<div class="panel">暂无官方核对记录</div>';
+}catch(e){$('results').innerHTML=`<div class="panel bad">加载失败：${esc(e.message)}。请检查 GitHub Pages 部署与文件路径。</div>`}
+}
+$('reload').addEventListener('click',show);show();setInterval(show,60000);
+</script>
+</body></html>
