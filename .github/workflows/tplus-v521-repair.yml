@@ -1,0 +1,112 @@
+name: T+ v5.2.1 repair ESPN daily requests
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tplus-v52-non-laliga
+  cancel-in-progress: false
+jobs:
+  repair_and_verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply single-day ESPN repair and amend stale test
+        shell: bash
+        run: |
+          python - <<'PYCODE'
+          from pathlib import Path
+          import sys
+          script=Path('tplus_results/non_laliga_v52.py')
+          test=Path('tests/test_non_laliga_v52.py')
+          if not (script.is_file() and test.is_file()):
+              sys.exit('EXPECTED_V52_FILES_MISSING; aborting without changes')
+          source=script.read_text(encoding='utf-8')
+          tests=test.read_text(encoding='utf-8')
+          edits=[
+              (
+                  "r'https://site\\.api\\.espn\\.com/apis/site/v2/sports/soccer/(ita\\.1|ger\\.dfb_pokal|eng\\.league_cup)/scoreboard\\?dates=[0-9]{8}-[0-9]{8}&limit=100'",
+                  "r'https://site\\.api\\.espn\\.com/apis/site/v2/sports/soccer/(ita\\.1|ger\\.dfb_pokal|eng\\.league_cup)/scoreboard\\?dates=[0-9]{8}&limit=100'",
+              ),
+              (
+                  "        out[(league,'espn')]=ESPN_BASE+espn_code+'/scoreboard?dates='+a.strftime('%Y%m%d')+'-'+b.strftime('%Y%m%d')+'&limit=100'",
+                  "        # ESPN sometimes rejects ranges with 400; fetch one UTC calendar day per request.\n        for n in range((b-a).days+1):\n            day=a+dt.timedelta(days=n)\n            out[(league,'espn',day.isoformat())]=ESPN_BASE+espn_code+'/scoreboard?dates='+day.strftime('%Y%m%d')+'&limit=100'",
+              ),
+              (
+                  "            responses[name]=[x for x in (parse_fd(y) if name[1]=='football_data' else parse_espn(y) for y in arr) if x]",
+                  "            parsed=[x for x in (parse_fd(y) if name[1]=='football_data' else parse_espn(y) for y in arr) if x]\n            label=name[:2]\n            if name[1]=='espn':\n                # ESPN broadcast days overlap. Keep exactly one event per provider match ID.\n                by_id={str(item['match_id']):item for item in responses.get(label,[])+parsed if safe_id(item.get('match_id'))}\n                responses[label]=list(by_id.values())\n            else:\n                responses[label]=parsed",
+              ),
+              (
+                  '            errors[name]=safe_err(exc)',
+                  '            errors[name[:2]]=safe_err(exc)',
+              ),
+          ]
+          test_old="        self.assertEqual({('意甲','espn'),('意甲','football_data')},set(src))"
+          test_new=("        self.assertEqual(1,sum(k[1]=='football_data' for k in src))\n"
+                    "        self.assertEqual(3,sum(k[1]=='espn' for k in src))\n"
+                    "        self.assertTrue(all('dates=' in v and '-' not in v.split('dates=',1)[1].split('&',1)[0]\n"
+                    "                            for k,v in src.items() if k[1]=='espn'))")
+          # Fail closed: no partial patches or blind replacements on changed source.
+          if all(source.count(old)==1 for old,_ in edits) and tests.count(test_old)==1:
+              for old,new in edits:
+                  source=source.replace(old,new)
+              tests=tests.replace(test_old,test_new)
+          elif 'by_id={str(item' in source and 'self.assertEqual(3,sum(k[1]' in tests:
+              print('ALREADY_PATCHED; test suite will still run')
+          else:
+              sys.exit('V52_SOURCE_CHANGED; do not apply uncertain patch')
+          compile(source, str(script), 'exec')
+          compile(tests, str(test), 'exec')
+          script.write_text(source,encoding='utf-8')
+          test.write_text(tests,encoding='utf-8')
+          print('REPAIR_APPLIED_OR_ALREADY_PRESENT; NO_RESULTS_OR_FORECASTS_MODIFIED')
+          PYCODE
+      - name: Run v5.2 regression tests before network requests
+        run: python -m unittest discover -s tests -p test_non_laliga_v52.py -v
+      - name: Probe football-data competition metadata (HTTP status only, no token leakage)
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        shell: bash
+        run: |
+          python - <<'PYCODE'
+          import os,urllib.request,urllib.error
+          token=os.environ.get('FOOTBALL_DATA_API_KEY','')
+          if not token:
+              print('FOOTBALL_DATA_BASIC_PROBE: SECRET_MISSING')
+          else:
+              req=urllib.request.Request('https://api.football-data.org/v4/competitions/SA',headers={'X-Auth-Token':token,'Accept':'application/json'})
+              try:
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                      print('FOOTBALL_DATA_BASIC_PROBE: HTTP_'+str(r.status))
+              except urllib.error.HTTPError as e:
+                  print('FOOTBALL_DATA_BASIC_PROBE: HTTP_'+str(e.code))
+              except Exception as e:
+                  print('FOOTBALL_DATA_BASIC_PROBE: NETWORK_'+type(e).__name__)
+          PYCODE
+      - name: Rerun v5.2 match discovery with new ESPN date handling
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python -m tplus_results.non_laliga_v52
+      - name: Commit tested fix and new reports to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'tplus-v521-repair[bot]'
+          git config user.email 'tplus-v521-repair[bot]@users.noreply.github.com'
+          git add tplus_results/non_laliga_v52.py tests/test_non_laliga_v52.py docs/data/results/non_laliga_discovery.json docs/data/results/non_laliga_verified.json
+          if git diff --cached --quiet; then echo 'NO_CHANGES'; exit 0; fi
+          git commit -m 'fix(tplus): per-day ESPN requests and validated non-LaLiga refresh'
+          for i in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 8
+          done
+          exit 1
