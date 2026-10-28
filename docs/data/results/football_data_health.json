@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-27T16:00:40.099433+00:00",
-  "classification": "AUTHENTICATED_REQUEST_REJECTED_CHECK_TOKEN_FORMAT_OR_PROVIDER_MESSAGE",
+  "checked_at_utc": "2026-10-28T04:52:09.894442+00:00",
+  "classification": "FD_AVAILABLE_FOR_SCHEDULE",
   "note_cn": "仅供API故障诊断。不存储密钥、原始错误正文或任何赛果。",
   "probes": [
     {
@@ -13,19 +13,19 @@
     },
     {
       "authenticated": true,
-      "error_hint": "TOKEN_REJECTED_HINT",
-      "http_status": 400,
-      "outcome": "HTTP_ERROR",
-      "probe": "authenticated_serie_a",
-      "response_is_json": true
+      "error_hint": "NONE",
+      "http_status": 200,
+      "json_shape": "object",
+      "outcome": "HTTP_OK",
+      "probe": "authenticated_serie_a"
     },
     {
       "authenticated": true,
-      "error_hint": "TOKEN_REJECTED_HINT",
-      "http_status": 400,
-      "outcome": "HTTP_ERROR",
-      "probe": "authenticated_serie_a_schedule",
-      "response_is_json": true
+      "error_hint": "NONE",
+      "http_status": 200,
+      "json_shape": "object",
+      "outcome": "HTTP_OK",
+      "probe": "authenticated_serie_a_schedule"
     }
   ],
   "schema_version": "TPlusFootballDataHealth.v5.3",
