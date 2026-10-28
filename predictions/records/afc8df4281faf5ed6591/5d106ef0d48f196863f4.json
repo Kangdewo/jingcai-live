@@ -1,0 +1,34 @@
+{
+  "away": "切尔西",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-10-28T08:45:16+00:00",
+  "forecast_recorded_at_utc": "2026-10-28T08:45:16.542352+00:00",
+  "home": "利物浦",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-10-28T08:45:16+00:00",
+  "input_hash": "5d106ef0d48f196863f4",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-10-28T20:00:00+00:00",
+  "lead_minutes_at_recording": 674.72,
+  "league": "英联赛杯",
+  "market_overround": 0.12895,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.31079967,
+    "draw": 0.23495466,
+    "home": 0.45424567
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "3015",
+  "t_match_id": "t:2026-10-29:周三015",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-10-28 16:42:01",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
