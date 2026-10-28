@@ -33,10 +33,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -56,7 +53,23 @@
             "status": "STATUS_FULL_TIME"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "SS Lazio",
+            "away_id": 110,
+            "finished": true,
+            "full_time": [
+              2,
+              6
+            ],
+            "home": "US Sassuolo Calcio",
+            "home_id": 471,
+            "kickoff_utc": "2026-10-27T17:30:00Z",
+            "match_id": 558556,
+            "provider": "football_data",
+            "status": "FINISHED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -144,10 +157,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -167,7 +177,23 @@
             "status": "STATUS_FULL_TIME"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "Cagliari Calcio",
+            "away_id": 104,
+            "finished": true,
+            "full_time": [
+              4,
+              2
+            ],
+            "home": "AS Roma",
+            "home_id": 100,
+            "kickoff_utc": "2026-10-27T19:45:00Z",
+            "match_id": 558555,
+            "provider": "football_data",
+            "status": "FINISHED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -183,10 +209,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -206,7 +229,23 @@
             "status": "STATUS_FULL_TIME"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "Como 1907",
+            "away_id": 7397,
+            "finished": true,
+            "full_time": [
+              1,
+              3
+            ],
+            "home": "Torino FC",
+            "home_id": 586,
+            "kickoff_utc": "2026-10-27T19:45:00Z",
+            "match_id": 558557,
+            "provider": "football_data",
+            "status": "FINISHED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -255,10 +294,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -275,7 +311,20 @@
             "status": "STATUS_SCHEDULED"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "FC Internazionale Milano",
+            "away_id": 108,
+            "finished": false,
+            "full_time": null,
+            "home": "Venezia FC",
+            "home_id": 454,
+            "kickoff_utc": "2026-10-28T17:30:00Z",
+            "match_id": 558550,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -291,10 +340,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -311,7 +357,20 @@
             "status": "STATUS_SCHEDULED"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "Bologna FC 1909",
+            "away_id": 103,
+            "finished": false,
+            "full_time": null,
+            "home": "AC Milan",
+            "home_id": 98,
+            "kickoff_utc": "2026-10-28T17:30:00Z",
+            "match_id": 558549,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -327,10 +386,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -347,7 +403,20 @@
             "status": "STATUS_SCHEDULED"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "Udinese Calcio",
+            "away_id": 115,
+            "finished": false,
+            "full_time": null,
+            "home": "Parma Calcio 1913",
+            "home_id": 112,
+            "kickoff_utc": "2026-10-28T17:30:00Z",
+            "match_id": 558553,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -462,10 +531,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -482,7 +548,20 @@
             "status": "STATUS_SCHEDULED"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "SSC Napoli",
+            "away_id": 113,
+            "finished": false,
+            "full_time": null,
+            "home": "AC Monza",
+            "home_id": 5911,
+            "kickoff_utc": "2026-10-28T19:45:00Z",
+            "match_id": 558554,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -498,10 +577,7 @@
       "has_prematch_baseline_record": true,
       "provider_state": {
         "espn": "CANDIDATE_FOUND",
-        "football_data": {
-          "http_status": 400,
-          "state": "HTTP_ERROR"
-        }
+        "football_data": "CANDIDATE_FOUND"
       },
       "sources": {
         "espn": [
@@ -518,7 +594,20 @@
             "status": "STATUS_SCHEDULED"
           }
         ],
-        "football_data": []
+        "football_data": [
+          {
+            "away": "Juventus FC",
+            "away_id": 109,
+            "finished": false,
+            "full_time": null,
+            "home": "Genoa CFC",
+            "home_id": 107,
+            "kickoff_utc": "2026-10-28T19:45:00Z",
+            "match_id": 558552,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     },
@@ -556,7 +645,7 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-10-27T22:58:31.538924+00:00",
+  "checked_at_utc": "2026-10-28T05:03:20.888406+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 16,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
