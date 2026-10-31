@@ -708,28 +708,34 @@
           {
             "away": "Monza",
             "away_id": "4007",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              1
+            ],
             "home": "Bologna",
             "home_id": "107",
             "kickoff_utc": "2026-10-31T14:00Z",
             "match_id": "401874798",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "AC Monza",
             "away_id": 5911,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              1
+            ],
             "home": "Bologna FC 1909",
             "home_id": 103,
             "kickoff_utc": "2026-10-31T14:00:00Z",
             "match_id": 558539,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -754,28 +760,34 @@
           {
             "away": "AS Roma",
             "away_id": "104",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              5
+            ],
             "home": "Udinese",
             "home_id": "118",
             "kickoff_utc": "2026-10-31T17:00Z",
             "match_id": "401874990",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "AS Roma",
             "away_id": 100,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              5
+            ],
             "home": "Udinese Calcio",
             "home_id": 115,
             "kickoff_utc": "2026-10-31T17:00:00Z",
             "match_id": 558542,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -800,28 +812,34 @@
           {
             "away": "Internazionale",
             "away_id": "110",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              3,
+              1
+            ],
             "home": "AC Milan",
             "home_id": "103",
             "kickoff_utc": "2026-10-31T19:45Z",
             "match_id": "401874795",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "FC Internazionale Milano",
             "away_id": 108,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              3,
+              1
+            ],
             "home": "AC Milan",
             "home_id": 98,
             "kickoff_utc": "2026-10-31T19:45:00Z",
             "match_id": 558548,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -966,7 +984,7 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-10-31T13:40:31.554482+00:00",
+  "checked_at_utc": "2026-10-31T22:30:56.422466+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 22,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
