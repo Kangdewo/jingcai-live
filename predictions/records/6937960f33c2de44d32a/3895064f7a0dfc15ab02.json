@@ -1,0 +1,34 @@
+{
+  "away": "赫尔火花",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-10-31T08:58:00+00:00",
+  "forecast_recorded_at_utc": "2026-10-31T08:58:00.714817+00:00",
+  "home": "国际图尔",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-10-31T08:58:00+00:00",
+  "input_hash": "3895064f7a0dfc15ab02",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-02T16:00:00+00:00",
+  "lead_minutes_at_recording": 3301.99,
+  "league": "芬超",
+  "market_overround": 0.139391,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.14506805,
+    "draw": 0.19503593,
+    "home": 0.65989602
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "1001",
+  "t_match_id": "t:2026-11-03:周一001",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-10-31 16:55:44",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
