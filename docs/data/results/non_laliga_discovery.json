@@ -968,35 +968,41 @@
           {
             "away": "Napoli",
             "away_id": "114",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "Juventus",
             "home_id": "111",
             "kickoff_utc": "2026-11-01T19:45Z",
             "match_id": "401874949",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "SSC Napoli",
             "away_id": 113,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "Juventus FC",
             "home_id": 109,
             "kickoff_utc": "2026-11-01T19:45:00Z",
             "match_id": 558547,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-01T18:26:48.788295+00:00",
+  "checked_at_utc": "2026-11-01T22:51:22.316773+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 22,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
