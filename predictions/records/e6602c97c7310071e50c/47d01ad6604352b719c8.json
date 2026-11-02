@@ -1,0 +1,34 @@
+{
+  "away": "南锡",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-02T09:40:41+00:00",
+  "forecast_recorded_at_utc": "2026-11-02T09:40:41.696555+00:00",
+  "home": "圣旺红星",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-02T09:40:41+00:00",
+  "input_hash": "47d01ad6604352b719c8",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-02T19:45:00+00:00",
+  "lead_minutes_at_recording": 604.31,
+  "league": "法乙",
+  "market_overround": 0.138439,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.28335345,
+    "draw": 0.31371275,
+    "home": 0.4029338
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "1005",
+  "t_match_id": "t:2026-11-03:周一005",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-02 17:38:36",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
