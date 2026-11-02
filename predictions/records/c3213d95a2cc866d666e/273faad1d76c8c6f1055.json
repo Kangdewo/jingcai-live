@@ -1,0 +1,34 @@
+{
+  "away": "罗马",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-02T19:46:57+00:00",
+  "forecast_recorded_at_utc": "2026-11-02T19:46:57.541412+00:00",
+  "home": "曼联",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-02T19:46:57+00:00",
+  "input_hash": "273faad1d76c8c6f1055",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-03T20:00:00+00:00",
+  "lead_minutes_at_recording": 1453.04,
+  "league": "欧冠",
+  "market_overround": 0.138618,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.34441489,
+    "draw": 0.23736702,
+    "home": 0.41821809
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "2008",
+  "t_match_id": "t:2026-11-04:周二008",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-03 03:45:39",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
