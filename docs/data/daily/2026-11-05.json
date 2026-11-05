@@ -370,6 +370,47 @@
         "t_match_id": "t:2026-11-05:周三012"
       },
       "snapshots_observed": 2
+    },
+    "t:2026-11-05:周四001": {
+      "first": {
+        "away": "上海申花",
+        "date_bjt": "2026-11-05",
+        "forecast_recorded_at_utc": "2026-11-05T09:56:26.391817+00:00",
+        "home": "町田泽维",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-05T09:56:26+00:00",
+        "input_hash": "eeb1adb2bc5feab7e509",
+        "kickoff_utc": "2026-11-05T10:00:00+00:00",
+        "league": "亚冠乙",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.09091966,
+          "draw": 0.16554241,
+          "home": 0.74353793
+        },
+        "t_match_id": "t:2026-11-05:周四001"
+      },
+      "latest": {
+        "away": "上海申花",
+        "date_bjt": "2026-11-05",
+        "forecast_recorded_at_utc": "2026-11-05T09:56:26.391817+00:00",
+        "home": "町田泽维",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-05T09:56:26+00:00",
+        "input_hash": "eeb1adb2bc5feab7e509",
+        "kickoff_utc": "2026-11-05T10:00:00+00:00",
+        "league": "亚冠乙",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.09091966,
+          "draw": 0.16554241,
+          "home": 0.74353793
+        },
+        "t_match_id": "t:2026-11-05:周四001"
+      },
+      "snapshots_observed": 1
     }
   },
   "schema_version": "TPlusDailyPrematchArchive.1",
