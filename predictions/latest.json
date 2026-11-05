@@ -1,6 +1,6 @@
 {
   "ai_agent_runs": [],
-  "generated_at_utc": "2026-11-04T22:50:38.035535+00:00",
+  "generated_at_utc": "2026-11-05T02:53:31.966206+00:00",
   "independent_ai_agents_configured": false,
   "limitations": [
     "No independent team xG or verified lineup features in public T feed",
@@ -15,15 +15,15 @@
         "Market-implied baseline only; NO independent xG, form or verified lineups",
         "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
       ],
-      "feed_generated_at_utc": "2026-11-04T22:50:37+00:00",
-      "forecast_recorded_at_utc": "2026-11-04T22:50:38.035535+00:00",
+      "feed_generated_at_utc": "2026-11-05T02:53:31+00:00",
+      "forecast_recorded_at_utc": "2026-11-05T02:53:31.966206+00:00",
       "home": "帕梅拉斯",
       "independent_of_market": false,
-      "information_cutoff_utc": "2026-11-04T22:50:37+00:00",
+      "information_cutoff_utc": "2026-11-05T02:53:31+00:00",
       "input_hash": "efedba0bec1472aaa356",
       "is_betting_advice": false,
       "kickoff_utc": "2026-11-05T22:30:00+00:00",
-      "lead_minutes_at_recording": 1419.37,
+      "lead_minutes_at_recording": 1176.47,
       "league": "巴甲",
       "market_overround": 0.138996,
       "model_class": "odds_market_baseline",
@@ -39,7 +39,7 @@
       "t_match_id": "t:2026-11-06:周四013",
       "top1": "home",
       "total_goals_distribution": null,
-      "upstream_local_time": "2026-11-05 06:47:44",
+      "upstream_local_time": "2026-11-05 10:53:01",
       "upstream_time_zone_assumed": "Asia/Shanghai",
       "xg_source": null
     }
@@ -53,5 +53,5 @@
   ],
   "research_only": true,
   "schema_version": "0.4",
-  "source_feed_generated_at_utc": "2026-11-04T22:50:37+00:00"
+  "source_feed_generated_at_utc": "2026-11-05T02:53:31+00:00"
 }
