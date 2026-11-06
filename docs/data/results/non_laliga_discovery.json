@@ -339,7 +339,7 @@
             "kickoff_utc": "2026-11-06T19:45Z",
             "match_id": "401874815",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FIRST_HALF"
           }
         ],
         "football_data": [
@@ -353,7 +353,7 @@
             "kickoff_utc": "2026-11-06T19:45:00Z",
             "match_id": 558537,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "IN_PLAY"
           }
         ]
       },
@@ -544,7 +544,7 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-06T07:57:21.741570+00:00",
+  "checked_at_utc": "2026-11-06T19:58:09.756389+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 11,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
