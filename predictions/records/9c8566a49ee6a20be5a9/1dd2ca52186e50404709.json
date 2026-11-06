@@ -1,0 +1,34 @@
+{
+  "away": "弗鲁米嫩",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-06T18:23:04+00:00",
+  "forecast_recorded_at_utc": "2026-11-06T18:23:04.246345+00:00",
+  "home": "维多利亚",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-06T18:23:04+00:00",
+  "input_hash": "1dd2ca52186e50404709",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-06T23:00:00+00:00",
+  "lead_minutes_at_recording": 276.93,
+  "league": "巴甲",
+  "market_overround": 0.138922,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.39023243,
+    "draw": 0.30276654,
+    "home": 0.30700104
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "5014",
+  "t_match_id": "t:2026-11-07:周五014",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-07 02:20:57",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
