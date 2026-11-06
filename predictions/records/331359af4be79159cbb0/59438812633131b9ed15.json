@@ -1,0 +1,34 @@
+{
+  "away": "川崎前锋",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-06T03:37:50+00:00",
+  "forecast_recorded_at_utc": "2026-11-06T03:37:50.831570+00:00",
+  "home": "柏太阳神",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-06T03:37:50+00:00",
+  "input_hash": "59438812633131b9ed15",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-07T07:00:00+00:00",
+  "lead_minutes_at_recording": 1642.15,
+  "league": "日职",
+  "market_overround": 0.139852,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.32857947,
+    "draw": 0.23711005,
+    "home": 0.43431048
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "6003",
+  "t_match_id": "t:2026-11-07:周六003",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-06 11:34:52",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
