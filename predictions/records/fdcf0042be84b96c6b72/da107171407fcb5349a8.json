@@ -1,0 +1,34 @@
+{
+  "away": "阿拉维斯",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-06T11:26:43+00:00",
+  "forecast_recorded_at_utc": "2026-11-06T11:26:43.720121+00:00",
+  "home": "塞维利亚",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-06T11:26:43+00:00",
+  "input_hash": "da107171407fcb5349a8",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-06T20:00:00+00:00",
+  "lead_minutes_at_recording": 513.27,
+  "league": "西甲",
+  "market_overround": 0.139058,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.19422979,
+    "draw": 0.28319957,
+    "home": 0.52257064
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "5012",
+  "t_match_id": "t:2026-11-07:周五012",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-06 19:25:23",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
