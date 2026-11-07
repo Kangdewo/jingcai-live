@@ -2,6 +2,47 @@
   "date_bjt": "2026-11-09",
   "not_formal_score_evaluation": true,
   "records": {
+    "t:2026-11-09:周日020": {
+      "first": {
+        "away": "摩纳哥",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "勒芒",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "7ef268cc894370083d59",
+        "kickoff_utc": "2026-11-08T16:15:00+00:00",
+        "league": "法甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.56602993,
+          "draw": 0.23088063,
+          "home": 0.20308944
+        },
+        "t_match_id": "t:2026-11-09:周日020"
+      },
+      "latest": {
+        "away": "摩纳哥",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "勒芒",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "7ef268cc894370083d59",
+        "kickoff_utc": "2026-11-08T16:15:00+00:00",
+        "league": "法甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.56602993,
+          "draw": 0.23088063,
+          "home": 0.20308944
+        },
+        "t_match_id": "t:2026-11-09:周日020"
+      },
+      "snapshots_observed": 1
+    },
     "t:2026-11-09:周日021": {
       "first": {
         "away": "维拉",
@@ -25,10 +66,10 @@
       "latest": {
         "away": "维拉",
         "date_bjt": "2026-11-09",
-        "forecast_recorded_at_utc": "2026-11-07T02:55:27.433906+00:00",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
         "home": "曼联",
         "independent_model": false,
-        "information_cutoff_utc": "2026-11-07T02:55:27+00:00",
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
         "input_hash": "f794631924bc2c20e147",
         "kickoff_utc": "2026-11-08T16:30:00+00:00",
         "league": "英超",
@@ -41,7 +82,48 @@
         },
         "t_match_id": "t:2026-11-09:周日021"
       },
-      "snapshots_observed": 5
+      "snapshots_observed": 6
+    },
+    "t:2026-11-09:周日022": {
+      "first": {
+        "away": "柏林联合",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "弗赖堡",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "1cc6bbdbea63a38ffc20",
+        "kickoff_utc": "2026-11-08T16:30:00+00:00",
+        "league": "德甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.13498445,
+          "draw": 0.20031939,
+          "home": 0.66469616
+        },
+        "t_match_id": "t:2026-11-09:周日022"
+      },
+      "latest": {
+        "away": "柏林联合",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "弗赖堡",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "1cc6bbdbea63a38ffc20",
+        "kickoff_utc": "2026-11-08T16:30:00+00:00",
+        "league": "德甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.13498445,
+          "draw": 0.20031939,
+          "home": 0.66469616
+        },
+        "t_match_id": "t:2026-11-09:周日022"
+      },
+      "snapshots_observed": 1
     },
     "t:2026-11-09:周日023": {
       "first": {
@@ -66,23 +148,105 @@
       "latest": {
         "away": "科莫",
         "date_bjt": "2026-11-09",
-        "forecast_recorded_at_utc": "2026-11-07T02:55:27.433906+00:00",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
         "home": "国际米兰",
         "independent_model": false,
-        "information_cutoff_utc": "2026-11-07T02:55:27+00:00",
-        "input_hash": "fb3ee4137a37b39b7a2b",
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "df587eccd9a1bdd88495",
         "kickoff_utc": "2026-11-08T17:00:00+00:00",
         "league": "意甲",
         "model_id": "market_devig_v1",
         "outcome_top1": "home",
         "p_1x2": {
-          "away": 0.24585526,
-          "draw": 0.22220336,
-          "home": 0.53194138
+          "away": 0.25464802,
+          "draw": 0.22241409,
+          "home": 0.52293789
         },
         "t_match_id": "t:2026-11-09:周日023"
       },
-      "snapshots_observed": 5
+      "snapshots_observed": 6
+    },
+    "t:2026-11-09:周日024": {
+      "first": {
+        "away": "赫塔费",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "比利亚雷",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "ca0f2ce38b7434a50fe4",
+        "kickoff_utc": "2026-11-08T17:30:00+00:00",
+        "league": "西甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.12270876,
+          "draw": 0.19716127,
+          "home": 0.68012997
+        },
+        "t_match_id": "t:2026-11-09:周日024"
+      },
+      "latest": {
+        "away": "赫塔费",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "比利亚雷",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "ca0f2ce38b7434a50fe4",
+        "kickoff_utc": "2026-11-08T17:30:00+00:00",
+        "league": "西甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.12270876,
+          "draw": 0.19716127,
+          "home": 0.68012997
+        },
+        "t_match_id": "t:2026-11-09:周日024"
+      },
+      "snapshots_observed": 1
+    },
+    "t:2026-11-09:周日025": {
+      "first": {
+        "away": "莱万特",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "塞尔塔",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "a5244056af1a07cb0966",
+        "kickoff_utc": "2026-11-08T17:30:00+00:00",
+        "league": "西甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.2100675,
+          "draw": 0.25451656,
+          "home": 0.53541594
+        },
+        "t_match_id": "t:2026-11-09:周日025"
+      },
+      "latest": {
+        "away": "莱万特",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "塞尔塔",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "a5244056af1a07cb0966",
+        "kickoff_utc": "2026-11-08T17:30:00+00:00",
+        "league": "西甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.2100675,
+          "draw": 0.25451656,
+          "home": 0.53541594
+        },
+        "t_match_id": "t:2026-11-09:周日025"
+      },
+      "snapshots_observed": 1
     },
     "t:2026-11-09:周日026": {
       "first": {
@@ -107,10 +271,10 @@
       "latest": {
         "away": "波尔图",
         "date_bjt": "2026-11-09",
-        "forecast_recorded_at_utc": "2026-11-07T02:55:27.433906+00:00",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
         "home": "吉马良斯",
         "independent_model": false,
-        "information_cutoff_utc": "2026-11-07T02:55:27+00:00",
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
         "input_hash": "7018a2770bf83cf8a846",
         "kickoff_utc": "2026-11-08T18:00:00+00:00",
         "league": "葡超",
@@ -123,7 +287,130 @@
         },
         "t_match_id": "t:2026-11-09:周日026"
       },
-      "snapshots_observed": 5
+      "snapshots_observed": 6
+    },
+    "t:2026-11-09:周日027": {
+      "first": {
+        "away": "沙尔克04",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "霍芬海姆",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "56f1bbe09f87040c3ee0",
+        "kickoff_utc": "2026-11-08T18:30:00+00:00",
+        "league": "德甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.19500432,
+          "draw": 0.223857,
+          "home": 0.58113869
+        },
+        "t_match_id": "t:2026-11-09:周日027"
+      },
+      "latest": {
+        "away": "沙尔克04",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "霍芬海姆",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "56f1bbe09f87040c3ee0",
+        "kickoff_utc": "2026-11-08T18:30:00+00:00",
+        "league": "德甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.19500432,
+          "draw": 0.223857,
+          "home": 0.58113869
+        },
+        "t_match_id": "t:2026-11-09:周日027"
+      },
+      "snapshots_observed": 1
+    },
+    "t:2026-11-09:周日028": {
+      "first": {
+        "away": "尤文图斯",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "佛罗伦萨",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "2ea3601fa5f8cd4c2f3e",
+        "kickoff_utc": "2026-11-08T19:45:00+00:00",
+        "league": "意甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.42606687,
+          "draw": 0.26596901,
+          "home": 0.30796412
+        },
+        "t_match_id": "t:2026-11-09:周日028"
+      },
+      "latest": {
+        "away": "尤文图斯",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "佛罗伦萨",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "2ea3601fa5f8cd4c2f3e",
+        "kickoff_utc": "2026-11-08T19:45:00+00:00",
+        "league": "意甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.42606687,
+          "draw": 0.26596901,
+          "home": 0.30796412
+        },
+        "t_match_id": "t:2026-11-09:周日028"
+      },
+      "snapshots_observed": 1
+    },
+    "t:2026-11-09:周日029": {
+      "first": {
+        "away": "马赛",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "朗斯",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "d5ece5406c4f8c499fa8",
+        "kickoff_utc": "2026-11-08T19:45:00+00:00",
+        "league": "法甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.30481714,
+          "draw": 0.24728828,
+          "home": 0.44789458
+        },
+        "t_match_id": "t:2026-11-09:周日029"
+      },
+      "latest": {
+        "away": "马赛",
+        "date_bjt": "2026-11-09",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+        "home": "朗斯",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "d5ece5406c4f8c499fa8",
+        "kickoff_utc": "2026-11-08T19:45:00+00:00",
+        "league": "法甲",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.30481714,
+          "draw": 0.24728828,
+          "home": 0.44789458
+        },
+        "t_match_id": "t:2026-11-09:周日029"
+      },
+      "snapshots_observed": 1
     },
     "t:2026-11-09:周日030": {
       "first": {
@@ -148,23 +435,23 @@
       "latest": {
         "away": "巴萨",
         "date_bjt": "2026-11-09",
-        "forecast_recorded_at_utc": "2026-11-07T02:55:27.433906+00:00",
+        "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
         "home": "马竞",
         "independent_model": false,
-        "information_cutoff_utc": "2026-11-07T02:55:27+00:00",
-        "input_hash": "1ee25d5cc64435fd3a46",
+        "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+        "input_hash": "2078285dd431318665c6",
         "kickoff_utc": "2026-11-08T20:00:00+00:00",
         "league": "西甲",
         "model_id": "market_devig_v1",
         "outcome_top1": "away",
         "p_1x2": {
-          "away": 0.51607281,
-          "draw": 0.21398141,
-          "home": 0.26994578
+          "away": 0.53243848,
+          "draw": 0.20917226,
+          "home": 0.25838926
         },
         "t_match_id": "t:2026-11-09:周日030"
       },
-      "snapshots_observed": 5
+      "snapshots_observed": 6
     }
   },
   "schema_version": "TPlusDailyPrematchArchive.1",

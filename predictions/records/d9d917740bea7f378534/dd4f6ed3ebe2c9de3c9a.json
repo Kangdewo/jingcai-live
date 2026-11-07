@@ -1,0 +1,34 @@
+{
+  "away": "热刺",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-07T09:24:07+00:00",
+  "forecast_recorded_at_utc": "2026-11-07T09:24:07.264169+00:00",
+  "home": "利兹联",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-07T09:24:07+00:00",
+  "input_hash": "dd4f6ed3ebe2c9de3c9a",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-07T12:30:00+00:00",
+  "lead_minutes_at_recording": 185.88,
+  "league": "英超",
+  "market_overround": 0.138289,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.39395136,
+    "draw": 0.27453485,
+    "home": 0.33151379
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "6006",
+  "t_match_id": "t:2026-11-07:周六006",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-07 17:23:08",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
