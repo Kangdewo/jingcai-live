@@ -3,110 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "罗马",
-        "home": "乌迪内斯",
-        "kickoff_utc": "2026-10-31T17:00:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-01:周六021"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "AS Roma",
-            "away_id": "104",
-            "finished": true,
-            "full_time": [
-              2,
-              5
-            ],
-            "home": "Udinese",
-            "home_id": "118",
-            "kickoff_utc": "2026-10-31T17:00Z",
-            "match_id": "401874990",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "AS Roma",
-            "away_id": 100,
-            "finished": true,
-            "full_time": [
-              2,
-              5
-            ],
-            "home": "Udinese Calcio",
-            "home_id": 115,
-            "kickoff_utc": "2026-10-31T17:00:00Z",
-            "match_id": 558542,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
-        "away": "国际米兰",
-        "home": "AC米兰",
-        "kickoff_utc": "2026-10-31T19:45:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-01:周六025"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Internazionale",
-            "away_id": "110",
-            "finished": true,
-            "full_time": [
-              3,
-              1
-            ],
-            "home": "AC Milan",
-            "home_id": "103",
-            "kickoff_utc": "2026-10-31T19:45Z",
-            "match_id": "401874795",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "FC Internazionale Milano",
-            "away_id": 108,
-            "finished": true,
-            "full_time": [
-              3,
-              1
-            ],
-            "home": "AC Milan",
-            "home_id": 98,
-            "kickoff_utc": "2026-10-31T19:45:00Z",
-            "match_id": 558548,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "威尼斯",
         "home": "科莫",
         "kickoff_utc": "2026-11-01T11:30:00+00:00",
@@ -332,28 +228,34 @@
           {
             "away": "Bologna",
             "away_id": "107",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              2
+            ],
             "home": "Parma",
             "home_id": "115",
             "kickoff_utc": "2026-11-07T17:00Z",
             "match_id": "401874974",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Bologna FC 1909",
             "away_id": 103,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              2
+            ],
             "home": "Parma Calcio 1913",
             "home_id": 112,
             "kickoff_utc": "2026-11-07T17:00:00Z",
             "match_id": 558535,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -378,28 +280,34 @@
           {
             "away": "Sassuolo",
             "away_id": "3997",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              3,
+              0
+            ],
             "home": "AS Roma",
             "home_id": "104",
             "kickoff_utc": "2026-11-07T19:45Z",
             "match_id": "401874803",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "US Sassuolo Calcio",
             "away_id": 471,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              3,
+              0
+            ],
             "home": "AS Roma",
             "home_id": 100,
             "kickoff_utc": "2026-11-07T19:45:00Z",
             "match_id": 558531,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -544,10 +452,10 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-07T14:05:37.144872+00:00",
+  "checked_at_utc": "2026-11-07T22:46:50.932496+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 11,
+  "fixtures_examined": 9,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
-  "provider_requests": 12,
+  "provider_requests": 11,
   "schema_version": "TPlusNonLaLigaV5.2"
 }
