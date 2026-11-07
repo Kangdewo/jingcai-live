@@ -332,28 +332,34 @@
           {
             "away": "Udinese",
             "away_id": "118",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              1
+            ],
             "home": "Venezia",
             "home_id": "17530",
             "kickoff_utc": "2026-11-06T19:45Z",
             "match_id": "401874815",
             "provider": "espn",
-            "status": "STATUS_FIRST_HALF"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Udinese Calcio",
             "away_id": 115,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              1
+            ],
             "home": "Venezia FC",
             "home_id": 454,
             "kickoff_utc": "2026-11-06T19:45:00Z",
             "match_id": 558537,
             "provider": "football_data",
-            "status": "IN_PLAY"
+            "status": "FINISHED"
           }
         ]
       },
@@ -544,7 +550,7 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-06T19:58:09.756389+00:00",
+  "checked_at_utc": "2026-11-07T07:13:57.092789+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 11,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
