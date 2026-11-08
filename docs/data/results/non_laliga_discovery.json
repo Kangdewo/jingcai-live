@@ -3,58 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "那不勒斯",
-        "home": "尤文图斯",
-        "kickoff_utc": "2026-11-01T19:45:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-02:周日021"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Napoli",
-            "away_id": "114",
-            "finished": true,
-            "full_time": [
-              2,
-              0
-            ],
-            "home": "Juventus",
-            "home_id": "111",
-            "kickoff_utc": "2026-11-01T19:45Z",
-            "match_id": "401874949",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "SSC Napoli",
-            "away_id": 113,
-            "finished": true,
-            "full_time": [
-              2,
-              0
-            ],
-            "home": "Juventus FC",
-            "home_id": 109,
-            "kickoff_utc": "2026-11-01T19:45:00Z",
-            "match_id": 558547,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "乌迪内斯",
         "home": "威尼斯",
         "kickoff_utc": "2026-11-06T19:45:00+00:00",
@@ -332,38 +280,44 @@
           {
             "away": "Como",
             "away_id": "2572",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "Internazionale",
             "home_id": "110",
             "kickoff_utc": "2026-11-08T17:00Z",
             "match_id": "401874808",
             "provider": "espn",
-            "status": "STATUS_SECOND_HALF"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Como 1907",
             "away_id": 7397,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "FC Internazionale Milano",
             "home_id": 108,
             "kickoff_utc": "2026-11-08T17:00:00Z",
             "match_id": 558530,
             "provider": "football_data",
-            "status": "IN_PLAY"
+            "status": "FINISHED"
           }
         ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-08T18:23:08.078343+00:00",
+  "checked_at_utc": "2026-11-08T22:55:26.694117+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 7,
+  "fixtures_examined": 6,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
-  "provider_requests": 11,
+  "provider_requests": 6,
   "schema_version": "TPlusNonLaLigaV5.2"
 }
