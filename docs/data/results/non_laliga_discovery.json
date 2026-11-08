@@ -3,110 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "威尼斯",
-        "home": "科莫",
-        "kickoff_utc": "2026-11-01T11:30:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-01:周日007"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Venezia",
-            "away_id": "17530",
-            "finished": true,
-            "full_time": [
-              1,
-              0
-            ],
-            "home": "Como",
-            "home_id": "2572",
-            "kickoff_utc": "2026-11-01T11:30Z",
-            "match_id": "401875002",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "Venezia FC",
-            "away_id": 454,
-            "finished": true,
-            "full_time": [
-              1,
-              0
-            ],
-            "home": "Como 1907",
-            "home_id": 7397,
-            "kickoff_utc": "2026-11-01T11:30:00Z",
-            "match_id": 558543,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
-        "away": "卡利亚里",
-        "home": "拉齐奥",
-        "kickoff_utc": "2026-11-01T14:00:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-01:周日013"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Cagliari",
-            "away_id": "2925",
-            "finished": true,
-            "full_time": [
-              2,
-              1
-            ],
-            "home": "Lazio",
-            "home_id": "112",
-            "kickoff_utc": "2026-11-01T14:00Z",
-            "match_id": "401874983",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "Cagliari Calcio",
-            "away_id": 104,
-            "finished": true,
-            "full_time": [
-              2,
-              1
-            ],
-            "home": "SS Lazio",
-            "home_id": 110,
-            "kickoff_utc": "2026-11-01T14:00:00Z",
-            "match_id": 558546,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "那不勒斯",
         "home": "尤文图斯",
         "kickoff_utc": "2026-11-01T19:45:00+00:00",
@@ -332,28 +228,34 @@
           {
             "away": "Lazio",
             "away_id": "112",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              1
+            ],
             "home": "Napoli",
             "home_id": "114",
             "kickoff_utc": "2026-11-08T11:30Z",
             "match_id": "401874810",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "SS Lazio",
             "away_id": 110,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              1
+            ],
             "home": "SSC Napoli",
             "home_id": 113,
             "kickoff_utc": "2026-11-08T11:30:00Z",
             "match_id": 558533,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -378,28 +280,34 @@
           {
             "away": "AC Milan",
             "away_id": "103",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              2
+            ],
             "home": "Genoa",
             "home_id": "3263",
             "kickoff_utc": "2026-11-08T14:00Z",
             "match_id": "401875018",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "AC Milan",
             "away_id": 98,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              2
+            ],
             "home": "Genoa CFC",
             "home_id": 107,
             "kickoff_utc": "2026-11-08T14:00:00Z",
             "match_id": 558536,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -431,7 +339,7 @@
             "kickoff_utc": "2026-11-08T17:00Z",
             "match_id": "401874808",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_SECOND_HALF"
           }
         ],
         "football_data": [
@@ -445,16 +353,16 @@
             "kickoff_utc": "2026-11-08T17:00:00Z",
             "match_id": 558530,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "IN_PLAY"
           }
         ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-08T07:25:17.139767+00:00",
+  "checked_at_utc": "2026-11-08T18:23:08.078343+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 9,
+  "fixtures_examined": 7,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
   "provider_requests": 11,
   "schema_version": "TPlusNonLaLigaV5.2"
