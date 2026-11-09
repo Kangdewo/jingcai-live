@@ -1,0 +1,90 @@
+{
+  "date_bjt": "2026-11-11",
+  "not_formal_score_evaluation": true,
+  "records": {
+    "t:2026-11-11:周二001": {
+      "first": {
+        "away": "诺茨郡",
+        "date_bjt": "2026-11-11",
+        "forecast_recorded_at_utc": "2026-11-09T11:20:52.642879+00:00",
+        "home": "伯顿",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-09T11:20:52+00:00",
+        "input_hash": "3fcb5e048a17e1bed20c",
+        "kickoff_utc": "2026-11-10T19:00:00+00:00",
+        "league": "英锦标赛",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.33502538,
+          "draw": 0.26598985,
+          "home": 0.39898477
+        },
+        "t_match_id": "t:2026-11-11:周二001"
+      },
+      "latest": {
+        "away": "诺茨郡",
+        "date_bjt": "2026-11-11",
+        "forecast_recorded_at_utc": "2026-11-09T11:20:52.642879+00:00",
+        "home": "伯顿",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-09T11:20:52+00:00",
+        "input_hash": "3fcb5e048a17e1bed20c",
+        "kickoff_utc": "2026-11-10T19:00:00+00:00",
+        "league": "英锦标赛",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "home",
+        "p_1x2": {
+          "away": 0.33502538,
+          "draw": 0.26598985,
+          "home": 0.39898477
+        },
+        "t_match_id": "t:2026-11-11:周二001"
+      },
+      "snapshots_observed": 1
+    },
+    "t:2026-11-11:周二002": {
+      "first": {
+        "away": "米尔顿",
+        "date_bjt": "2026-11-11",
+        "forecast_recorded_at_utc": "2026-11-09T11:20:52.642879+00:00",
+        "home": "布罗姆利",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-09T11:20:52+00:00",
+        "input_hash": "39c03b8a3dec671d6032",
+        "kickoff_utc": "2026-11-10T19:30:00+00:00",
+        "league": "英锦标赛",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.56258119,
+          "draw": 0.22388435,
+          "home": 0.21353446
+        },
+        "t_match_id": "t:2026-11-11:周二002"
+      },
+      "latest": {
+        "away": "米尔顿",
+        "date_bjt": "2026-11-11",
+        "forecast_recorded_at_utc": "2026-11-09T11:20:52.642879+00:00",
+        "home": "布罗姆利",
+        "independent_model": false,
+        "information_cutoff_utc": "2026-11-09T11:20:52+00:00",
+        "input_hash": "39c03b8a3dec671d6032",
+        "kickoff_utc": "2026-11-10T19:30:00+00:00",
+        "league": "英锦标赛",
+        "model_id": "market_devig_v1",
+        "outcome_top1": "away",
+        "p_1x2": {
+          "away": 0.56258119,
+          "draw": 0.22388435,
+          "home": 0.21353446
+        },
+        "t_match_id": "t:2026-11-11:周二002"
+      },
+      "snapshots_observed": 1
+    }
+  },
+  "schema_version": "TPlusDailyPrematchArchive.1",
+  "source_category": "T_market_implied_baseline_only"
+}
