@@ -3,58 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "乌迪内斯",
-        "home": "威尼斯",
-        "kickoff_utc": "2026-11-06T19:45:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-07:周五008"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Udinese",
-            "away_id": "118",
-            "finished": true,
-            "full_time": [
-              2,
-              1
-            ],
-            "home": "Venezia",
-            "home_id": "17530",
-            "kickoff_utc": "2026-11-06T19:45Z",
-            "match_id": "401874815",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "Udinese Calcio",
-            "away_id": 115,
-            "finished": true,
-            "full_time": [
-              2,
-              1
-            ],
-            "home": "Venezia FC",
-            "home_id": 454,
-            "kickoff_utc": "2026-11-06T19:45:00Z",
-            "match_id": 558537,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "博洛尼亚",
         "home": "帕尔马",
         "kickoff_utc": "2026-11-07T17:00:00+00:00",
@@ -314,10 +262,10 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-13T08:02:31.944217+00:00",
+  "checked_at_utc": "2026-11-13T20:29:59.840324+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 6,
+  "fixtures_examined": 5,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
-  "provider_requests": 6,
+  "provider_requests": 5,
   "schema_version": "TPlusNonLaLigaV5.2"
 }
