@@ -1,0 +1,36 @@
+{
+  "away": "乌拉圭",
+  "claimed_exact_T_minus_15": false,
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-13T22:51:02+00:00",
+  "forecast_recorded_at_utc": "2026-11-13T22:51:03.045480+00:00",
+  "freeze_label": "REAL_CAPTURE_WITHIN_15_MINUTES_BEFORE_KICKOFF",
+  "home": "阿根廷",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-13T22:51:02+00:00",
+  "input_hash": "eb3d0f5f8e8f3def5218",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-13T23:00:00+00:00",
+  "lead_minutes_at_recording": 8.95,
+  "league": "国际赛",
+  "market_overround": 0.138921,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.13104836,
+    "draw": 0.22805819,
+    "home": 0.64089345
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "5010",
+  "t_match_id": "t:2026-11-14:周五010",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-14 06:49:37",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
