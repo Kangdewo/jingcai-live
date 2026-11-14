@@ -3,58 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "萨索洛",
-        "home": "罗马",
-        "kickoff_utc": "2026-11-07T19:45:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-08:周六028"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Sassuolo",
-            "away_id": "3997",
-            "finished": true,
-            "full_time": [
-              3,
-              0
-            ],
-            "home": "AS Roma",
-            "home_id": "104",
-            "kickoff_utc": "2026-11-07T19:45Z",
-            "match_id": "401874803",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "US Sassuolo Calcio",
-            "away_id": 471,
-            "finished": true,
-            "full_time": [
-              3,
-              0
-            ],
-            "home": "AS Roma",
-            "home_id": 100,
-            "kickoff_utc": "2026-11-07T19:45:00Z",
-            "match_id": 558531,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "拉齐奥",
         "home": "那不勒斯",
         "kickoff_utc": "2026-11-08T11:30:00+00:00",
@@ -210,10 +158,10 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-14T18:45:20.976631+00:00",
+  "checked_at_utc": "2026-11-14T23:00:06.793826+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 4,
+  "fixtures_examined": 3,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
-  "provider_requests": 5,
+  "provider_requests": 4,
   "schema_version": "TPlusNonLaLigaV5.2"
 }
