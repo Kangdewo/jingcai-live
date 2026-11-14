@@ -3,58 +3,6 @@
   "cases": [
     {
       "fixture": {
-        "away": "博洛尼亚",
-        "home": "帕尔马",
-        "kickoff_utc": "2026-11-07T17:00:00+00:00",
-        "league": "意甲",
-        "t_match_id": "t:2026-11-08:周六022"
-      },
-      "formal_independent_model_evaluated": false,
-      "has_prematch_baseline_record": true,
-      "provider_state": {
-        "espn": "CANDIDATE_FOUND",
-        "football_data": "CANDIDATE_FOUND"
-      },
-      "sources": {
-        "espn": [
-          {
-            "away": "Bologna",
-            "away_id": "107",
-            "finished": true,
-            "full_time": [
-              1,
-              2
-            ],
-            "home": "Parma",
-            "home_id": "115",
-            "kickoff_utc": "2026-11-07T17:00Z",
-            "match_id": "401874974",
-            "provider": "espn",
-            "status": "STATUS_FULL_TIME"
-          }
-        ],
-        "football_data": [
-          {
-            "away": "Bologna FC 1909",
-            "away_id": 103,
-            "finished": true,
-            "full_time": [
-              1,
-              2
-            ],
-            "home": "Parma Calcio 1913",
-            "home_id": 112,
-            "kickoff_utc": "2026-11-07T17:00:00Z",
-            "match_id": 558535,
-            "provider": "football_data",
-            "status": "FINISHED"
-          }
-        ]
-      },
-      "verification_state": "NOT_MANUALLY_APPROVED"
-    },
-    {
-      "fixture": {
         "away": "萨索洛",
         "home": "罗马",
         "kickoff_utc": "2026-11-07T19:45:00+00:00",
@@ -262,9 +210,9 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-14T07:38:15.894874+00:00",
+  "checked_at_utc": "2026-11-14T18:45:20.976631+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 5,
+  "fixtures_examined": 4,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
   "provider_requests": 5,
   "schema_version": "TPlusNonLaLigaV5.2"
