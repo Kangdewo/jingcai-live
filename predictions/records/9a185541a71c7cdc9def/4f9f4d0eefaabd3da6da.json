@@ -1,0 +1,34 @@
+{
+  "away": "横滨水手",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-14T02:44:02+00:00",
+  "forecast_recorded_at_utc": "2026-11-14T02:44:02.765648+00:00",
+  "home": "鹿岛鹿角",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-14T02:44:02+00:00",
+  "input_hash": "4f9f4d0eefaabd3da6da",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-15T06:00:00+00:00",
+  "lead_minutes_at_recording": 1635.95,
+  "league": "日联赛杯",
+  "market_overround": 0.139813,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.23087819,
+    "draw": 0.23087819,
+    "home": 0.53824363
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "7002",
+  "t_match_id": "t:2026-11-15:周日002",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-14 10:42:41",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
