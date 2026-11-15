@@ -1,0 +1,34 @@
+{
+  "away": "英格兰",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-15T06:48:49+00:00",
+  "forecast_recorded_at_utc": "2026-11-15T06:48:49.531139+00:00",
+  "home": "西班牙",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-15T06:48:49+00:00",
+  "input_hash": "8703d86f165be81651f8",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-15T19:45:00+00:00",
+  "lead_minutes_at_recording": 776.17,
+  "league": "欧国联",
+  "market_overround": 0.139216,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.24315693,
+    "draw": 0.24049219,
+    "home": 0.51635088
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "7010",
+  "t_match_id": "t:2026-11-16:周日010",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-15 14:47:12",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
