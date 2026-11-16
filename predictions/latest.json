@@ -1,14 +1,287 @@
 {
   "ai_agent_runs": [],
-  "generated_at_utc": "2026-11-15T19:50:55.271645+00:00",
+  "generated_at_utc": "2026-11-16T10:59:57.184173+00:00",
   "independent_ai_agents_configured": false,
   "limitations": [
     "No independent team xG or verified lineup features in public T feed",
     "Predictions freeze only when scheduler actually runs before kickoff",
     "An externally shared ChatGPT conversation is not automatically invoked"
   ],
-  "match_count": 0,
-  "matches": [],
+  "match_count": 8,
+  "matches": [
+    {
+      "away": "摩尔多瓦",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "法罗群岛",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "3a203d1a35a4b88dec86",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T15:00:00+00:00",
+      "lead_minutes_at_recording": 240.05,
+      "league": "欧国联",
+      "market_overround": 0.139586,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.17039059,
+        "draw": 0.27422236,
+        "home": 0.55538705
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1001",
+      "t_match_id": "t:2026-11-16:周一001",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "斯洛伐克",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "哈萨克",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "177cc184ba23f27482f1",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T15:00:00+00:00",
+      "lead_minutes_at_recording": 240.05,
+      "league": "欧国联",
+      "market_overround": 0.137962,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.55617978,
+        "draw": 0.24410112,
+        "home": 0.1997191
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1002",
+      "t_match_id": "t:2026-11-16:周一002",
+      "top1": "away",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "保加利亚",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "爱沙尼亚",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "786e780e8464d39ca5e4",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T17:00:00+00:00",
+      "lead_minutes_at_recording": 360.05,
+      "league": "欧国联",
+      "market_overround": 0.139445,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.21249894,
+        "draw": 0.3026278,
+        "home": 0.48487327
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1003",
+      "t_match_id": "t:2026-11-17:周一003",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "卢森堡",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "冰岛",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "e4bd659711ebcec94816",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T17:00:00+00:00",
+      "lead_minutes_at_recording": 360.05,
+      "league": "欧国联",
+      "market_overround": 0.139137,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.05852386,
+        "draw": 0.13610199,
+        "home": 0.80537416
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1004",
+      "t_match_id": "t:2026-11-17:周一004",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "苏格兰",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "瑞士",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "4c9c2b70e5baa14ec34b",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T19:45:00+00:00",
+      "lead_minutes_at_recording": 525.05,
+      "league": "欧国联",
+      "market_overround": 0.139197,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.16106627,
+        "draw": 0.22507978,
+        "home": 0.61385395
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1005",
+      "t_match_id": "t:2026-11-17:周一005",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "荷兰",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "德国",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "0ef301d2c029e3d1b55c",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T19:45:00+00:00",
+      "lead_minutes_at_recording": 525.05,
+      "league": "欧国联",
+      "market_overround": 0.139641,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.25287307,
+        "draw": 0.22791417,
+        "home": 0.51921276
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1006",
+      "t_match_id": "t:2026-11-17:周一006",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "斯洛文尼",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "北马其顿",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "4660b69cf0ab750530d4",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T19:45:00+00:00",
+      "lead_minutes_at_recording": 525.05,
+      "league": "欧国联",
+      "market_overround": 0.139458,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.66993161,
+        "draw": 0.21147239,
+        "home": 0.118596
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1007",
+      "t_match_id": "t:2026-11-17:周一007",
+      "top1": "away",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    },
+    {
+      "away": "塞尔维亚",
+      "data_warnings": [
+        "Market-implied baseline only; NO independent xG, form or verified lineups",
+        "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+      ],
+      "feed_generated_at_utc": "2026-11-16T10:59:57+00:00",
+      "forecast_recorded_at_utc": "2026-11-16T10:59:57.184173+00:00",
+      "home": "希腊",
+      "independent_of_market": false,
+      "information_cutoff_utc": "2026-11-16T10:59:57+00:00",
+      "input_hash": "16941432d06ac6dc19f8",
+      "is_betting_advice": false,
+      "kickoff_utc": "2026-11-16T19:45:00+00:00",
+      "lead_minutes_at_recording": 525.05,
+      "league": "欧国联",
+      "market_overround": 0.139219,
+      "model_class": "odds_market_baseline",
+      "model_id": "market_devig_v1",
+      "p_1x2": {
+        "away": 0.11111316,
+        "draw": 0.18098845,
+        "home": 0.70789838
+      },
+      "schema_version": "0.4",
+      "score_distribution": null,
+      "source_match_key": "1008",
+      "t_match_id": "t:2026-11-17:周一008",
+      "top1": "home",
+      "total_goals_distribution": null,
+      "upstream_local_time": "2026-11-16 18:58:01",
+      "upstream_time_zone_assumed": "Asia/Shanghai",
+      "xg_source": null
+    }
+  ],
   "model_inventory": [
     {
       "id": "market_devig_v1",
@@ -18,5 +291,5 @@
   ],
   "research_only": true,
   "schema_version": "0.4",
-  "source_feed_generated_at_utc": "2026-11-15T19:50:55+00:00"
+  "source_feed_generated_at_utc": "2026-11-16T10:59:57+00:00"
 }
