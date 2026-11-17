@@ -1,0 +1,189 @@
+{
+  "analysis_created_at_utc": "2026-11-17T12:32:53.746553+00:00",
+  "analysis_input_hash": "157f03796792e108fe47d352",
+  "away": "罗马尼亚",
+  "betting_instruction": false,
+  "five_markets_covered": 5,
+  "history_league_prior": null,
+  "home": "波黑",
+  "independent_team_form_available": false,
+  "kickoff_utc": "2026-11-17T19:45:00+00:00",
+  "lead_minutes_at_recording": 432.1,
+  "league": "欧国联",
+  "legacy_market_input_hash": "eaebfe852b999370c180",
+  "market_handicap_integer": "-1",
+  "market_minus_history_prior_spf": null,
+  "market_odds_implied": {
+    "exact_score": {
+      "method": "inverse_decimal_odds_normalized; not independent forecasting",
+      "overround": 0.459195,
+      "probabilities": {
+        "0:0": 0.04895066,
+        "0:1": 0.05482474,
+        "0:2": 0.03426546,
+        "0:3": 0.01713273,
+        "0:4": 0.00571091,
+        "0:5": 0.00171327,
+        "1:0": 0.08566365,
+        "1:1": 0.10543219,
+        "1:2": 0.06230084,
+        "1:3": 0.02447533,
+        "1:4": 0.00856637,
+        "1:5": 0.00274124,
+        "2:0": 0.08062461,
+        "2:1": 0.10152729,
+        "2:2": 0.05271609,
+        "2:3": 0.02538182,
+        "2:4": 0.00856637,
+        "2:5": 0.00228436,
+        "3:0": 0.04895066,
+        "3:1": 0.06230084,
+        "3:2": 0.03606891,
+        "3:3": 0.01370618,
+        "4:0": 0.01903637,
+        "4:1": 0.02635805,
+        "4:2": 0.01713273,
+        "5:0": 0.00856637,
+        "5:1": 0.01142182,
+        "5:2": 0.00685309,
+        "平其它": 0.00274124,
+        "胜其它": 0.01713273,
+        "负其它": 0.00685309
+      },
+      "top_three": [
+        {
+          "outcome": "1:1",
+          "probability": 0.10543219
+        },
+        {
+          "outcome": "2:1",
+          "probability": 0.10152729
+        },
+        {
+          "outcome": "1:0",
+          "probability": 0.08566365
+        }
+      ]
+    },
+    "half_full": {
+      "method": "inverse_decimal_odds_normalized; not independent forecasting",
+      "overround": 0.254886,
+      "probabilities": {
+        "aa": 0.137394,
+        "ad": 0.05312568,
+        "ah": 0.03064943,
+        "da": 0.08756981,
+        "dd": 0.12259773,
+        "dh": 0.15937705,
+        "ha": 0.01992213,
+        "hd": 0.05312568,
+        "hh": 0.33623849
+      },
+      "top_three": [
+        {
+          "outcome": "hh",
+          "probability": 0.33623849
+        },
+        {
+          "outcome": "dh",
+          "probability": 0.15937705
+        },
+        {
+          "outcome": "aa",
+          "probability": 0.137394
+        }
+      ]
+    },
+    "rqspf": {
+      "method": "inverse_decimal_odds_normalized; not independent forecasting",
+      "overround": 0.139727,
+      "probabilities": {
+        "away": 0.47684935,
+        "draw": 0.243723,
+        "home": 0.27942765
+      },
+      "top_three": [
+        {
+          "outcome": "away",
+          "probability": 0.47684935
+        },
+        {
+          "outcome": "home",
+          "probability": 0.27942765
+        },
+        {
+          "outcome": "draw",
+          "probability": 0.243723
+        }
+      ]
+    },
+    "spf": {
+      "method": "inverse_decimal_odds_normalized; not independent forecasting",
+      "overround": 0.138743,
+      "probabilities": {
+        "away": 0.23606493,
+        "draw": 0.24736945,
+        "home": 0.51656562
+      },
+      "top_three": [
+        {
+          "outcome": "home",
+          "probability": 0.51656562
+        },
+        {
+          "outcome": "draw",
+          "probability": 0.24736945
+        },
+        {
+          "outcome": "away",
+          "probability": 0.23606493
+        }
+      ]
+    },
+    "total_goals": {
+      "method": "inverse_decimal_odds_normalized; not independent forecasting",
+      "overround": 0.254526,
+      "probabilities": {
+        "0": 0.05693672,
+        "1": 0.12856678,
+        "2": 0.23794448,
+        "3": 0.24909813,
+        "4": 0.15329116,
+        "5": 0.0880789,
+        "6": 0.05142671,
+        "7": 0.03465713
+      },
+      "top_three": [
+        {
+          "outcome": "3",
+          "probability": 0.24909813
+        },
+        {
+          "outcome": "2",
+          "probability": 0.23794448
+        },
+        {
+          "outcome": "4",
+          "probability": 0.15329116
+        }
+      ]
+    }
+  },
+  "model_class": "market_and_prior_research_not_independent_model",
+  "model_id": "market_5way_with_historical_league_context_v041",
+  "official_005_prediction": null,
+  "prior_available_for_match": false,
+  "schema_version": "TPlusFiveMarketHistory.0.4.1",
+  "source_input_cutoff_utc": "2026-11-17T12:32:53+00:00",
+  "source_match_key": "2004",
+  "t_match_id": "t:2026-11-18:周二004",
+  "time_confidence": "upstream_local_time_assumed_Asia_Shanghai_not_verified",
+  "true_xg_available": false,
+  "warnings": [
+    "All five market probabilities are derived from current T odds; they are NOT independent forecasts.",
+    "Historical priors are completed EARLIER calendar years only and cannot predict a specific matchup.",
+    "No independently verified 005, lineup, injuries, or xG data in these inputs.",
+    "Historical result frequencies are not historical bookmaker quoted prices.",
+    "Historical Chinese Jingcai half/full and integer handicap prices are not reconstructed."
+  ]
+}
