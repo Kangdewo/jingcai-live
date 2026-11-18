@@ -1,0 +1,34 @@
+{
+  "away": "巴竞技",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-18T11:29:47+00:00",
+  "forecast_recorded_at_utc": "2026-11-18T11:29:47.064043+00:00",
+  "home": "弗拉门戈",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-18T11:29:47+00:00",
+  "input_hash": "71fc5b0e23a467efb79d",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-18T23:30:00+00:00",
+  "lead_minutes_at_recording": 720.22,
+  "league": "巴甲",
+  "market_overround": 0.13925,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.06269791,
+    "draw": 0.13932869,
+    "home": 0.7979734
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "3002",
+  "t_match_id": "t:2026-11-19:周三002",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-18 19:24:28",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
