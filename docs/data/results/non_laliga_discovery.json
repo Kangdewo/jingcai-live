@@ -1,10 +1,241 @@
 {
   "api_key_present": true,
-  "cases": [],
-  "checked_at_utc": "2026-11-19T21:38:03.463451+00:00",
+  "cases": [
+    {
+      "fixture": {
+        "away": "卡利亚里",
+        "home": "科莫",
+        "kickoff_utc": "2026-11-21T14:00:00+00:00",
+        "league": "意甲",
+        "t_match_id": "t:2026-11-21:周六007"
+      },
+      "formal_independent_model_evaluated": false,
+      "has_prematch_baseline_record": true,
+      "provider_state": {
+        "espn": "CANDIDATE_FOUND",
+        "football_data": "CANDIDATE_FOUND"
+      },
+      "sources": {
+        "espn": [
+          {
+            "away": "Cagliari",
+            "away_id": "2925",
+            "finished": false,
+            "full_time": null,
+            "home": "Como",
+            "home_id": "2572",
+            "kickoff_utc": "2026-11-21T14:00Z",
+            "match_id": "401875056",
+            "provider": "espn",
+            "status": "STATUS_SCHEDULED"
+          }
+        ],
+        "football_data": [
+          {
+            "away": "Cagliari Calcio",
+            "away_id": 104,
+            "finished": false,
+            "full_time": null,
+            "home": "Como 1907",
+            "home_id": 7397,
+            "kickoff_utc": "2026-11-21T14:00:00Z",
+            "match_id": 558525,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
+      },
+      "verification_state": "NOT_MANUALLY_APPROVED"
+    },
+    {
+      "fixture": {
+        "away": "罗马",
+        "home": "帕尔马",
+        "kickoff_utc": "2026-11-21T17:00:00+00:00",
+        "league": "意甲",
+        "t_match_id": "t:2026-11-22:周六018"
+      },
+      "formal_independent_model_evaluated": false,
+      "has_prematch_baseline_record": true,
+      "provider_state": {
+        "espn": "CANDIDATE_FOUND",
+        "football_data": "CANDIDATE_FOUND"
+      },
+      "sources": {
+        "espn": [
+          {
+            "away": "AS Roma",
+            "away_id": "104",
+            "finished": false,
+            "full_time": null,
+            "home": "Parma",
+            "home_id": "115",
+            "kickoff_utc": "2026-11-21T17:00Z",
+            "match_id": "401874967",
+            "provider": "espn",
+            "status": "STATUS_SCHEDULED"
+          }
+        ],
+        "football_data": [
+          {
+            "away": "AS Roma",
+            "away_id": 100,
+            "finished": false,
+            "full_time": null,
+            "home": "Parma Calcio 1913",
+            "home_id": 112,
+            "kickoff_utc": "2026-11-21T17:00:00Z",
+            "match_id": 558526,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
+      },
+      "verification_state": "NOT_MANUALLY_APPROVED"
+    },
+    {
+      "fixture": {
+        "away": "威尼斯",
+        "home": "尤文图斯",
+        "kickoff_utc": "2026-11-22T11:30:00+00:00",
+        "league": "意甲",
+        "t_match_id": "t:2026-11-22:周日004"
+      },
+      "formal_independent_model_evaluated": false,
+      "has_prematch_baseline_record": true,
+      "provider_state": {
+        "espn": "CANDIDATE_FOUND",
+        "football_data": "CANDIDATE_FOUND"
+      },
+      "sources": {
+        "espn": [
+          {
+            "away": "Venezia",
+            "away_id": "17530",
+            "finished": false,
+            "full_time": null,
+            "home": "Juventus",
+            "home_id": "111",
+            "kickoff_utc": "2026-11-22T11:30Z",
+            "match_id": "401875008",
+            "provider": "espn",
+            "status": "STATUS_SCHEDULED"
+          }
+        ],
+        "football_data": [
+          {
+            "away": "Venezia FC",
+            "away_id": 454,
+            "finished": false,
+            "full_time": null,
+            "home": "Juventus FC",
+            "home_id": 109,
+            "kickoff_utc": "2026-11-22T11:30:00Z",
+            "match_id": 558521,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
+      },
+      "verification_state": "NOT_MANUALLY_APPROVED"
+    },
+    {
+      "fixture": {
+        "away": "乌迪内斯",
+        "home": "博洛尼亚",
+        "kickoff_utc": "2026-11-22T14:00:00+00:00",
+        "league": "意甲",
+        "t_match_id": "t:2026-11-22:周日008"
+      },
+      "formal_independent_model_evaluated": false,
+      "has_prematch_baseline_record": true,
+      "provider_state": {
+        "espn": "CANDIDATE_FOUND",
+        "football_data": "CANDIDATE_FOUND"
+      },
+      "sources": {
+        "espn": [
+          {
+            "away": "Udinese",
+            "away_id": "118",
+            "finished": false,
+            "full_time": null,
+            "home": "Bologna",
+            "home_id": "107",
+            "kickoff_utc": "2026-11-22T14:00Z",
+            "match_id": "401875047",
+            "provider": "espn",
+            "status": "STATUS_SCHEDULED"
+          }
+        ],
+        "football_data": [
+          {
+            "away": "Udinese Calcio",
+            "away_id": 115,
+            "finished": false,
+            "full_time": null,
+            "home": "Bologna FC 1909",
+            "home_id": 103,
+            "kickoff_utc": "2026-11-22T14:00:00Z",
+            "match_id": 558522,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
+      },
+      "verification_state": "NOT_MANUALLY_APPROVED"
+    },
+    {
+      "fixture": {
+        "away": "热那亚",
+        "home": "萨索洛",
+        "kickoff_utc": "2026-11-22T14:00:00+00:00",
+        "league": "意甲",
+        "t_match_id": "t:2026-11-22:周日009"
+      },
+      "formal_independent_model_evaluated": false,
+      "has_prematch_baseline_record": true,
+      "provider_state": {
+        "espn": "CANDIDATE_FOUND",
+        "football_data": "CANDIDATE_FOUND"
+      },
+      "sources": {
+        "espn": [
+          {
+            "away": "Genoa",
+            "away_id": "3263",
+            "finished": false,
+            "full_time": null,
+            "home": "Sassuolo",
+            "home_id": "3997",
+            "kickoff_utc": "2026-11-22T14:00Z",
+            "match_id": "401874960",
+            "provider": "espn",
+            "status": "STATUS_SCHEDULED"
+          }
+        ],
+        "football_data": [
+          {
+            "away": "Genoa CFC",
+            "away_id": 107,
+            "finished": false,
+            "full_time": null,
+            "home": "US Sassuolo Calcio",
+            "home_id": 471,
+            "kickoff_utc": "2026-11-22T14:00:00Z",
+            "match_id": 558524,
+            "provider": "football_data",
+            "status": "TIMED"
+          }
+        ]
+      },
+      "verification_state": "NOT_MANUALLY_APPROVED"
+    }
+  ],
+  "checked_at_utc": "2026-11-20T08:36:23.965497+00:00",
   "fixture_identity_conflicts": [],
-  "fixtures_examined": 0,
+  "fixtures_examined": 5,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
-  "provider_requests": 0,
+  "provider_requests": 5,
   "schema_version": "TPlusNonLaLigaV5.2"
 }
