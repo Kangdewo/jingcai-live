@@ -1,0 +1,34 @@
+{
+  "away": "桑德兰",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-21T11:42:15+00:00",
+  "forecast_recorded_at_utc": "2026-11-21T11:42:16.014609+00:00",
+  "home": "维拉",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-21T11:42:15+00:00",
+  "input_hash": "dfe05a8f5b21f1f0e1eb",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-21T15:00:00+00:00",
+  "lead_minutes_at_recording": 197.73,
+  "league": "英超",
+  "market_overround": 0.139086,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.1887951,
+    "draw": 0.22981602,
+    "home": 0.58138888
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "6014",
+  "t_match_id": "t:2026-11-21:周六014",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-21 19:39:17",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
