@@ -20,28 +20,34 @@
           {
             "away": "Cagliari",
             "away_id": "2925",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "Como",
             "home_id": "2572",
             "kickoff_utc": "2026-11-21T14:00Z",
             "match_id": "401875056",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Cagliari Calcio",
             "away_id": 104,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              2,
+              0
+            ],
             "home": "Como 1907",
             "home_id": 7397,
             "kickoff_utc": "2026-11-21T14:00:00Z",
             "match_id": 558525,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -66,28 +72,34 @@
           {
             "away": "AS Roma",
             "away_id": "104",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              5
+            ],
             "home": "Parma",
             "home_id": "115",
             "kickoff_utc": "2026-11-21T17:00Z",
             "match_id": "401874967",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "AS Roma",
             "away_id": 100,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              5
+            ],
             "home": "Parma Calcio 1913",
             "home_id": 112,
             "kickoff_utc": "2026-11-21T17:00:00Z",
             "match_id": 558526,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -232,7 +244,7 @@
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-21T08:19:04.017317+00:00",
+  "checked_at_utc": "2026-11-21T20:07:54.197636+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 5,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
