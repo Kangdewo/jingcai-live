@@ -124,28 +124,34 @@
           {
             "away": "Venezia",
             "away_id": "17530",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              4,
+              0
+            ],
             "home": "Juventus",
             "home_id": "111",
             "kickoff_utc": "2026-11-22T11:30Z",
             "match_id": "401875008",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Venezia FC",
             "away_id": 454,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              4,
+              0
+            ],
             "home": "Juventus FC",
             "home_id": 109,
             "kickoff_utc": "2026-11-22T11:30:00Z",
             "match_id": 558521,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -170,28 +176,34 @@
           {
             "away": "Udinese",
             "away_id": "118",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              1
+            ],
             "home": "Bologna",
             "home_id": "107",
             "kickoff_utc": "2026-11-22T14:00Z",
             "match_id": "401875047",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Udinese Calcio",
             "away_id": 115,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              1,
+              1
+            ],
             "home": "Bologna FC 1909",
             "home_id": 103,
             "kickoff_utc": "2026-11-22T14:00:00Z",
             "match_id": 558522,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
@@ -216,35 +228,41 @@
           {
             "away": "Genoa",
             "away_id": "3263",
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              0,
+              2
+            ],
             "home": "Sassuolo",
             "home_id": "3997",
             "kickoff_utc": "2026-11-22T14:00Z",
             "match_id": "401874960",
             "provider": "espn",
-            "status": "STATUS_SCHEDULED"
+            "status": "STATUS_FULL_TIME"
           }
         ],
         "football_data": [
           {
             "away": "Genoa CFC",
             "away_id": 107,
-            "finished": false,
-            "full_time": null,
+            "finished": true,
+            "full_time": [
+              0,
+              2
+            ],
             "home": "US Sassuolo Calcio",
             "home_id": 471,
             "kickoff_utc": "2026-11-22T14:00:00Z",
             "match_id": 558524,
             "provider": "football_data",
-            "status": "TIMED"
+            "status": "FINISHED"
           }
         ]
       },
       "verification_state": "NOT_MANUALLY_APPROVED"
     }
   ],
-  "checked_at_utc": "2026-11-22T08:01:52.779043+00:00",
+  "checked_at_utc": "2026-11-22T20:22:40.473565+00:00",
   "fixture_identity_conflicts": [],
   "fixtures_examined": 5,
   "note_cn": "发现的比赛只作为候选；未经人工批准的双源比赛身份绝不自动升级；杯赛加时与点球必须另行确认90分钟比分。",
