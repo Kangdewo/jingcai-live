@@ -1,0 +1,34 @@
+{
+  "away": "埃弗顿",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-23T04:08:45+00:00",
+  "forecast_recorded_at_utc": "2026-11-23T04:08:45.511221+00:00",
+  "home": "布伦特",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-23T04:08:45+00:00",
+  "input_hash": "9afe883a0f25d51d2fca",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-23T20:00:00+00:00",
+  "lead_minutes_at_recording": 951.24,
+  "league": "英超",
+  "market_overround": 0.139234,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.29958462,
+    "draw": 0.27430717,
+    "home": 0.42610822
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "1005",
+  "t_match_id": "t:2026-11-24:周一005",
+  "top1": "home",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-23 12:04:03",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
