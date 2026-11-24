@@ -1,0 +1,34 @@
+{
+  "away": "波尔图",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-24T11:40:36+00:00",
+  "forecast_recorded_at_utc": "2026-11-24T11:40:36.225684+00:00",
+  "home": "费耶诺德",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-24T11:40:36+00:00",
+  "input_hash": "18bac8c20d47ed247572",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-24T20:00:00+00:00",
+  "lead_minutes_at_recording": 499.4,
+  "league": "欧冠",
+  "market_overround": 0.139728,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.48208905,
+    "draw": 0.2437228,
+    "home": 0.27418815
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "2011",
+  "t_match_id": "t:2026-11-25:周二011",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-24 19:40:02",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
