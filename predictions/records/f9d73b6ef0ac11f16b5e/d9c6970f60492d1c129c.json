@@ -1,0 +1,34 @@
+{
+  "away": "比利亚雷",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-25T14:52:42+00:00",
+  "forecast_recorded_at_utc": "2026-11-25T14:52:42.725239+00:00",
+  "home": "斯拉维亚",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-25T14:52:42+00:00",
+  "input_hash": "d9c6970f60492d1c129c",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-25T17:45:00+00:00",
+  "lead_minutes_at_recording": 172.29,
+  "league": "欧冠",
+  "market_overround": 0.138801,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.49332405,
+    "draw": 0.24057995,
+    "home": 0.266096
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "3004",
+  "t_match_id": "t:2026-11-26:周三004",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-25 22:48:39",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
