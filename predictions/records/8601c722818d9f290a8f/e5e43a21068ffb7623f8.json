@@ -1,0 +1,34 @@
+{
+  "away": "博洛尼亚",
+  "data_warnings": [
+    "Market-implied baseline only; NO independent xG, form or verified lineups",
+    "Upstream naive timestamp interpreted as Asia/Shanghai; provenance not independently certified"
+  ],
+  "feed_generated_at_utc": "2026-11-26T15:28:00+00:00",
+  "forecast_recorded_at_utc": "2026-11-26T15:28:00.589659+00:00",
+  "home": "威尼斯",
+  "independent_of_market": false,
+  "information_cutoff_utc": "2026-11-26T15:28:00+00:00",
+  "input_hash": "e5e43a21068ffb7623f8",
+  "is_betting_advice": false,
+  "kickoff_utc": "2026-11-27T19:45:00+00:00",
+  "lead_minutes_at_recording": 1696.99,
+  "league": "意甲",
+  "market_overround": 0.138038,
+  "model_class": "odds_market_baseline",
+  "model_id": "market_devig_v1",
+  "p_1x2": {
+    "away": 0.43935262,
+    "draw": 0.27719408,
+    "home": 0.2834533
+  },
+  "schema_version": "0.4",
+  "score_distribution": null,
+  "source_match_key": "5006",
+  "t_match_id": "t:2026-11-28:周五006",
+  "top1": "away",
+  "total_goals_distribution": null,
+  "upstream_local_time": "2026-11-26 23:25:36",
+  "upstream_time_zone_assumed": "Asia/Shanghai",
+  "xg_source": null
+}
