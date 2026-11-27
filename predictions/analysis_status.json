@@ -1,17 +1,19 @@
 {
-  "history_league_prior_coverage": 8,
+  "history_league_prior_coverage": 32,
   "markets_coverage": {
-    "exact_score": 11,
-    "half_full": 11,
-    "rqspf": 11,
-    "spf": 11,
-    "total_goals": 11
+    "exact_score": 38,
+    "half_full": 38,
+    "rqspf": 38,
+    "spf": 38,
+    "total_goals": 38
   },
-  "match_count": 11,
-  "new_immutable_analysis_records": 11,
+  "match_count": 38,
+  "new_immutable_analysis_records": 38,
   "note": "No licensed team-level as-of feed is published; league aggregate is previous-years only.",
   "schema_version": "TPlusFiveMarketHistory.0.4.1",
-  "skipped_by_reason": {},
-  "updated_at_utc": "2026-11-26T23:58:47.913228+00:00",
+  "skipped_by_reason": {
+    "MISSING_1X2": 1
+  },
+  "updated_at_utc": "2026-11-27T08:12:14.351524+00:00",
   "verified_independent_team_feature_count": 0
 }
